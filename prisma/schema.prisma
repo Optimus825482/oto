@@ -1,0 +1,271 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  OPERATOR
+  TECHNICIAN
+  SUPPLIER
+  CUSTOMER
+}
+
+enum PartCategory {
+  ECU
+  TCU
+  ABS
+  BCM
+  SRS
+  SENSOR
+  IMMOBILIZER
+  OTHER
+}
+
+enum InquiryStatus {
+  NEW
+  BROADCASTED
+  QUOTES_RECEIVED
+  OFFER_SENT
+  PAID
+  SUPPLIER_SHIPPED
+  IN_TEST_LAB
+  TEST_PASSED
+  TEST_FAILED
+  SHIPPED_TO_CUSTOMER
+  DELIVERED
+  RETURN_REQUESTED
+  CANCELLED
+}
+
+enum OfferStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+enum PaymentStatus {
+  PENDING
+  ESCROW_HELD
+  RELEASED
+  REFUNDED
+}
+
+enum InvoiceType {
+  INDIVIDUAL
+  CORPORATE
+}
+
+enum TestResult {
+  PASS
+  FAIL
+}
+
+enum LedgerEntryType {
+  CREDIT_EARNED
+  PAYOUT_PAID
+  DEDUCTION_DEFECT
+}
+
+enum LedgerStatus {
+  PENDING
+  SETTLED
+}
+
+enum NotificationChannel {
+  SMS
+  WHATSAPP
+  PANEL
+}
+
+model User {
+  id              String           @id @default(cuid())
+  email           String           @unique
+  passwordHash    String
+  fullName        String
+  phone           String?
+  role            UserRole         @default(CUSTOMER)
+  isActive        Boolean          @default(true)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  supplierProfile SupplierProfile?
+  testRecords     TestLabRecord[]  @relation("TechnicianTests")
+}
+
+model SupplierProfile {
+  id              String                @id @default(cuid())
+  userId          String                @unique
+  user            User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  companyName     String
+  city            String
+  district        String?
+  taxNumber       String?
+  iban            String?
+  specialtyBrands String[]              @default([])
+  rating          Float                 @default(5.0)
+  totalDelivered  Int                   @default(0)
+  defectCount     Int                   @default(0)
+  balance         Float                 @default(0)
+  isApproved      Boolean               @default(true)
+  createdAt       DateTime              @default(now())
+  updatedAt       DateTime              @updatedAt
+
+  offers          SupplierOffer[]
+  orders          Order[]
+  ledgerEntries   SupplierLedgerEntry[]
+}
+
+model CatalogPart {
+  id             String       @id @default(cuid())
+  oemCode        String
+  normalizedCode String
+  hwCode         String?
+  swCode         String?
+  crossRefCodes  String[]     @default([])
+  category       PartCategory @default(ECU)
+  brand          String
+  model          String
+  yearRange      String?
+  engineCode     String?
+  manufacturer   String
+  condition      String       @default("İkinci El — Test Garantili")
+  imageUrl       String?
+  referencePrice Float?
+  isFeatured     Boolean      @default(false)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@index([brand, category])
+  @@index([normalizedCode])
+}
+
+model Inquiry {
+  id                 String          @id @default(cuid())
+  code               String          @unique
+  customerName       String?
+  customerPhone      String
+  customerEmail      String?
+  partCode           String?
+  normalizedPartCode String?
+  vin                String?
+  decodedVehicleJson Json?
+  category           PartCategory    @default(ECU)
+  brand              String?
+  photoUrl           String?
+  note               String?
+  status             InquiryStatus   @default(NEW)
+  selectedOfferId    String?
+  customerOfferPrice Float?
+  marginPercent      Float?
+  paymentToken       String?         @unique
+  broadcastedAt      DateTime?
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+
+  offers             SupplierOffer[]
+  order              Order?
+  notifications      NotificationLog[]
+
+  @@index([status, createdAt])
+  @@index([normalizedPartCode])
+}
+
+model SupplierOffer {
+  id            String          @id @default(cuid())
+  inquiryId     String
+  inquiry       Inquiry         @relation(fields: [inquiryId], references: [id], onDelete: Cascade)
+  supplierId    String
+  supplier      SupplierProfile @relation(fields: [supplierId], references: [id], onDelete: Cascade)
+  purchasePrice Float
+  shippingDays  Int             @default(1)
+  conditionNote String
+  photoUrl      String?
+  status        OfferStatus     @default(PENDING)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@unique([inquiryId, supplierId])
+  @@index([inquiryId, status])
+}
+
+model Order {
+  id                 String                @id @default(cuid())
+  orderNo            String                @unique
+  inquiryId          String                @unique
+  inquiry            Inquiry               @relation(fields: [inquiryId], references: [id], onDelete: Cascade)
+  supplierId         String
+  supplier           SupplierProfile       @relation(fields: [supplierId], references: [id])
+  customerPrice      Float
+  purchasePrice      Float
+  shippingCost       Float                 @default(350)
+  netProfit          Float
+  paymentStatus      PaymentStatus         @default(PENDING)
+  paymentRef         String?
+  inboundCargoCode   String?
+  inboundTrackingNo  String?
+  outboundCargoCode  String?
+  outboundTrackingNo String?
+  deliveryAddress    String?
+  invoiceNo          String?               @unique
+  invoiceType        InvoiceType           @default(INDIVIDUAL)
+  taxInfoJson        Json?
+  returnDeadlineAt   DateTime?
+  status             InquiryStatus         @default(PAID)
+  createdAt          DateTime              @default(now())
+  updatedAt          DateTime              @updatedAt
+
+  testLabRecord      TestLabRecord?
+  ledgerEntries      SupplierLedgerEntry[]
+
+  @@index([status, createdAt])
+}
+
+model TestLabRecord {
+  id               String     @id @default(cuid())
+  orderId          String     @unique
+  order            Order      @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  technicianId     String?
+  technician       User?      @relation("TechnicianTests", fields: [technicianId], references: [id])
+  serialNo         String
+  hologramSealCode String
+  physicalCheckOk  Boolean    @default(false)
+  pinCheckOk       Boolean    @default(false)
+  canObdCheckOk    Boolean    @default(false)
+  result           TestResult
+  notes            String?
+  photoUrls        String[]   @default([])
+  certificateCode  String?    @unique
+  testedAt         DateTime   @default(now())
+}
+
+model SupplierLedgerEntry {
+  id          String          @id @default(cuid())
+  supplierId  String
+  supplier    SupplierProfile @relation(fields: [supplierId], references: [id], onDelete: Cascade)
+  orderId     String?
+  order       Order?          @relation(fields: [orderId], references: [id])
+  type        LedgerEntryType
+  amount      Float
+  description String
+  status      LedgerStatus    @default(PENDING)
+  createdAt   DateTime        @default(now())
+
+  @@index([supplierId, createdAt])
+}
+
+model NotificationLog {
+  id               String              @id @default(cuid())
+  channel          NotificationChannel
+  recipient        String
+  template         String
+  message          String
+  status           String              @default("SENT")
+  relatedInquiryId String?
+  relatedInquiry   Inquiry?            @relation(fields: [relatedInquiryId], references: [id], onDelete: SetNull)
+  createdAt        DateTime            @default(now())
+}
