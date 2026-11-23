@@ -1,0 +1,1169 @@
+[
+  {
+    "oemCode": "89661-02K60",
+    "hwCode": "0281 015 391",
+    "swCode": "EDC17CP07",
+    "crossRefCodes": [
+      "8966102K60",
+      "0281015391",
+      "1037502153",
+      "EDC17CP07",
+      "1NDTV"
+    ],
+    "category": "ECU",
+    "brand": "Toyota",
+    "model": "Corolla E150 / Auris 1.4 D-4D Euro 4",
+    "yearRange": "2008-2012",
+    "engineCode": "1ND-TV",
+    "manufacturer": "Bosch",
+    "referencePrice": 8800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "89661-0D590",
+    "hwCode": "0281 016 588",
+    "swCode": "EDC17CP07",
+    "crossRefCodes": [
+      "896610D590",
+      "89661-0D591",
+      "0281016588",
+      "EDC17CP07",
+      "1NDTV"
+    ],
+    "category": "ECU",
+    "brand": "Toyota",
+    "model": "Yaris XP90 / XP130 1.4 D-4D Motor Beyni",
+    "yearRange": "2009-2014",
+    "engineCode": "1ND-TV",
+    "manufacturer": "Bosch",
+    "referencePrice": 8400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "89661-0D880",
+    "hwCode": "275900-1431",
+    "swCode": "DENSO-1NRFE",
+    "crossRefCodes": [
+      "896610D880",
+      "2759001431",
+      "1NRFE",
+      "89661-0D881"
+    ],
+    "category": "ECU",
+    "brand": "Toyota",
+    "model": "Yaris 1.33 Dual VVT-i Benzinli Motor Beyni",
+    "yearRange": "2011-2017",
+    "engineCode": "1NR-FE",
+    "manufacturer": "Denso",
+    "referencePrice": 8100,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "89661-0KF30",
+    "hwCode": "275100-7500",
+    "swCode": "DENSO-2KDFTV",
+    "crossRefCodes": [
+      "896610KF30",
+      "2751007500",
+      "2KD-FTV",
+      "89661-0KF31"
+    ],
+    "category": "ECU",
+    "brand": "Toyota",
+    "model": "Hilux VII 2.5 D-4D 4x2 / 4x4 Motor Beyni",
+    "yearRange": "2008-2015",
+    "engineCode": "2KD-FTV",
+    "manufacturer": "Denso",
+    "referencePrice": 10500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "89661-0KW70",
+    "hwCode": "275900-9012",
+    "swCode": "DENSO-2GDFTV",
+    "crossRefCodes": [
+      "896610KW70",
+      "2759009012",
+      "2GD-FTV",
+      "89661-0KW71"
+    ],
+    "category": "ECU",
+    "brand": "Toyota",
+    "model": "Hilux VIII 2.4 D-4D Euro 6 Motor Beyni",
+    "yearRange": "2016-2021",
+    "engineCode": "2GD-FTV",
+    "manufacturer": "Denso",
+    "referencePrice": 12400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "89661-05D40",
+    "hwCode": "275900-0421",
+    "swCode": "DENSO-1ADFTV",
+    "crossRefCodes": [
+      "8966105D40",
+      "2759000421",
+      "1AD-FTV",
+      "89661-05D41"
+    ],
+    "category": "ECU",
+    "brand": "Toyota",
+    "model": "Avensis T27 2.0 D-4D Dizel Motor Beyni",
+    "yearRange": "2009-2015",
+    "engineCode": "1AD-FTV",
+    "manufacturer": "Denso",
+    "referencePrice": 9800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "89661-F4020",
+    "hwCode": "275900-8311",
+    "swCode": "DENSO-8NRFTS",
+    "crossRefCodes": [
+      "89661F4020",
+      "2759008311",
+      "8NR-FTS",
+      "89661-F4021"
+    ],
+    "category": "ECU",
+    "brand": "Toyota",
+    "model": "C-HR / Auris 1.2 Turbo Benzinli Motor Beyni",
+    "yearRange": "2016-2021",
+    "engineCode": "8NR-FTS",
+    "manufacturer": "Denso",
+    "referencePrice": 11200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "89661-F4130",
+    "hwCode": "276200-0450",
+    "swCode": "DENSO-2ZRFXE",
+    "crossRefCodes": [
+      "89661F4130",
+      "2762000450",
+      "2ZR-FXE",
+      "89661-F4131"
+    ],
+    "category": "ECU",
+    "brand": "Toyota",
+    "model": "C-HR / Corolla 1.8 Hybrid Motor Kontrol Beyni",
+    "yearRange": "2017-2022",
+    "engineCode": "2ZR-FXE",
+    "manufacturer": "Denso",
+    "referencePrice": 12800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "44540-02780",
+    "hwCode": "133800-18900",
+    "swCode": "ADVICS-VSC",
+    "crossRefCodes": [
+      "4454002780",
+      "13380018900",
+      "44540-02810",
+      "44050-02510"
+    ],
+    "category": "ABS",
+    "brand": "Toyota",
+    "model": "Auris E180 / Corolla ABS VSC Hidrolik Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "1ND-TV / 1ZR-FAE",
+    "manufacturer": "Advics",
+    "referencePrice": 7900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "44540-0K120",
+    "hwCode": "133800-15420",
+    "swCode": "ADVICS-4WD",
+    "crossRefCodes": [
+      "445400K120",
+      "13380015420",
+      "44050-0K120",
+      "44510-0K120"
+    ],
+    "category": "ABS",
+    "brand": "Toyota",
+    "model": "Hilux VII / VIII ABS VSC Fren Modülatörü",
+    "yearRange": "2012-2019",
+    "engineCode": "2KD-FTV / 2GD-FTV",
+    "manufacturer": "Advics",
+    "referencePrice": 9200,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "37820-5BA-E12",
+    "hwCode": "KEIHIN-398000",
+    "swCode": "37805-5BA-E120",
+    "crossRefCodes": [
+      "378205BAE12",
+      "37820-5BA-E11",
+      "37820-5BA-E13",
+      "R16B1",
+      "KEIHIN"
+    ],
+    "category": "ECU",
+    "brand": "Honda",
+    "model": "Civic FC5 1.6 i-VTEC Benzinli Motor Beyni",
+    "yearRange": "2016-2021",
+    "engineCode": "R16B1",
+    "manufacturer": "Keihin",
+    "referencePrice": 10900,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "37820-5AA-A52",
+    "hwCode": "KEIHIN-412000",
+    "swCode": "37805-5AA-A520",
+    "crossRefCodes": [
+      "378205AAA52",
+      "37820-5AA-A51",
+      "L15B7",
+      "KEIHIN"
+    ],
+    "category": "ECU",
+    "brand": "Honda",
+    "model": "Civic FC5 1.5 VTEC Turbo RS Motor Beyni",
+    "yearRange": "2017-2021",
+    "engineCode": "L15B7",
+    "manufacturer": "Keihin",
+    "referencePrice": 12500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "37820-R6K-G03",
+    "hwCode": "0281 019 935",
+    "swCode": "EDC17CP50",
+    "crossRefCodes": [
+      "37820R6KG03",
+      "37820-R6K-G02",
+      "0281019935",
+      "EDC17CP50",
+      "N16A1"
+    ],
+    "category": "ECU",
+    "brand": "Honda",
+    "model": "CR-V RE6 / Civic FK3 1.6 i-DTEC Motor Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "N16A1 / N16A4",
+    "manufacturer": "Bosch",
+    "referencePrice": 11400,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "37820-R5F-G12",
+    "hwCode": "0281 031 372",
+    "swCode": "EDC17CP50",
+    "crossRefCodes": [
+      "37820R5FG12",
+      "0281031372",
+      "EDC17CP50",
+      "N16A4"
+    ],
+    "category": "ECU",
+    "brand": "Honda",
+    "model": "CR-V 1.6 i-DTEC 160HP Biturbo Motor Beyni",
+    "yearRange": "2015-2018",
+    "engineCode": "N16A4",
+    "manufacturer": "Bosch",
+    "referencePrice": 12200,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "37820-RB0-E23",
+    "hwCode": "KEIHIN-294100",
+    "swCode": "37805-RB0-E230",
+    "crossRefCodes": [
+      "37820RB0E23",
+      "37820-RB0-E22",
+      "L13Z1",
+      "KEIHIN"
+    ],
+    "category": "ECU",
+    "brand": "Honda",
+    "model": "Jazz GE 1.4 i-VTEC Benzinli Motor Beyni",
+    "yearRange": "2009-2015",
+    "engineCode": "L13Z1",
+    "manufacturer": "Keihin",
+    "referencePrice": 7800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "37820-RL2-G02",
+    "hwCode": "KEIHIN-308500",
+    "swCode": "37805-RL2-G020",
+    "crossRefCodes": [
+      "37820RL2G02",
+      "37820-RL2-G01",
+      "R20A3",
+      "KEIHIN"
+    ],
+    "category": "ECU",
+    "brand": "Honda",
+    "model": "Accord CU1 2.0 i-VTEC Motor Beyni",
+    "yearRange": "2008-2014",
+    "engineCode": "R20A3",
+    "manufacturer": "Keihin",
+    "referencePrice": 8900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "57110-TR0-A72",
+    "hwCode": "NISSIN-VSA-TR0",
+    "swCode": "57110-TR0-A720",
+    "crossRefCodes": [
+      "57110TR0A72",
+      "57110-TR0-A71",
+      "R16A1",
+      "R18Z1"
+    ],
+    "category": "ABS",
+    "brand": "Honda",
+    "model": "Civic FB7 1.6 i-VTEC ABS VSA Pompa Beyni",
+    "yearRange": "2012-2016",
+    "engineCode": "R16A1 / R18Z1",
+    "manufacturer": "Nissin",
+    "referencePrice": 7600,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "38200-TR0-G21",
+    "hwCode": "MICU-TR0-G2",
+    "swCode": "38200-TR0",
+    "crossRefCodes": [
+      "38200TR0G21",
+      "38200-TR0-G11",
+      "MICU",
+      "Civic FB7"
+    ],
+    "category": "BCM",
+    "brand": "Honda",
+    "model": "Civic FB7 MICU Gövde & Sigorta Kontrol Modülü",
+    "yearRange": "2012-2016",
+    "engineCode": "R16A1 / N16A1",
+    "manufacturer": "Omron / Honda",
+    "referencePrice": 5800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "39104-2A701",
+    "hwCode": "0281 013 576",
+    "swCode": "EDC16C39",
+    "crossRefCodes": [
+      "391042A701",
+      "39104-2A700",
+      "0281013576",
+      "EDC16C39",
+      "D4FA"
+    ],
+    "category": "ECU",
+    "brand": "Hyundai",
+    "model": "Accent Era / Getz 1.5 CRDi VGT Motor Beyni",
+    "yearRange": "2006-2011",
+    "engineCode": "D4FA",
+    "manufacturer": "Bosch",
+    "referencePrice": 6900,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "39110-26BA0",
+    "hwCode": "9030930797KA",
+    "swCode": "MG7.9.8",
+    "crossRefCodes": [
+      "3911026BA0",
+      "39110-26BB0",
+      "9030930797KA",
+      "MG798",
+      "G4EE"
+    ],
+    "category": "ECU",
+    "brand": "Hyundai",
+    "model": "Accent Era 1.4 / 1.6 Benzinli Motor Beyni",
+    "yearRange": "2006-2012",
+    "engineCode": "G4EE / G4ED",
+    "manufacturer": "Kefico / Bosch",
+    "referencePrice": 6400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "39110-03325",
+    "hwCode": "9001090261KB",
+    "swCode": "MEG17.9.12",
+    "crossRefCodes": [
+      "3911003325",
+      "39110-03320",
+      "9001090261KB",
+      "MEG17.9.12",
+      "G4LA"
+    ],
+    "category": "ECU",
+    "brand": "Hyundai",
+    "model": "i20 / i10 1.2 MPI Benzinli Motor Beyni",
+    "yearRange": "2012-2018",
+    "engineCode": "G4LA",
+    "manufacturer": "Kefico / Bosch",
+    "referencePrice": 7400,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "39124-2B130",
+    "hwCode": "9001040258KC",
+    "swCode": "MEG17.9.13",
+    "crossRefCodes": [
+      "391242B130",
+      "39124-2B110",
+      "9001040258KC",
+      "MEG17.9.13",
+      "G4FA"
+    ],
+    "category": "ECU",
+    "brand": "Hyundai",
+    "model": "i20 / Accent Blue 1.4 CVVT Otomatik Motor Beyni",
+    "yearRange": "2011-2016",
+    "engineCode": "G4FA / G4LC",
+    "manufacturer": "Kefico / Bosch",
+    "referencePrice": 7900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "39110-2BBD5",
+    "hwCode": "9001140349KD",
+    "swCode": "MED17.9.8",
+    "crossRefCodes": [
+      "391102BBD5",
+      "39110-2BBD0",
+      "MED17.9.8",
+      "G4FD"
+    ],
+    "category": "ECU",
+    "brand": "Hyundai",
+    "model": "i30 / Elantra / ix35 1.6 GDi Motor Beyni",
+    "yearRange": "2012-2017",
+    "engineCode": "G4FD",
+    "manufacturer": "Kefico / Bosch",
+    "referencePrice": 8700,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "39110-2F310",
+    "hwCode": "0281 016 537",
+    "swCode": "EDC17CP14",
+    "crossRefCodes": [
+      "391102F310",
+      "0281016537",
+      "EDC17CP14",
+      "D4HA"
+    ],
+    "category": "ECU",
+    "brand": "Hyundai",
+    "model": "ix35 / Tucson / Santa Fe 2.0 CRDi Motor Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "D4HA",
+    "manufacturer": "Bosch",
+    "referencePrice": 9900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "95440-2D510",
+    "hwCode": "K7DCT-2D510",
+    "swCode": "TCU-7DCT",
+    "crossRefCodes": [
+      "954402D510",
+      "95440-2D500",
+      "G4FJ",
+      "7DCT"
+    ],
+    "category": "TCU",
+    "brand": "Hyundai",
+    "model": "Tucson / i30 1.6 T-GDI 7DCT Şanzıman Beyni",
+    "yearRange": "2016-2020",
+    "engineCode": "G4FJ / D4FE",
+    "manufacturer": "Hyundai Kefico",
+    "referencePrice": 10200,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "95400-1R300",
+    "hwCode": "MOBIS-BCM-1R",
+    "swCode": "95400-1R30",
+    "crossRefCodes": [
+      "954001R300",
+      "95400-1R310",
+      "95400-1R100",
+      "Mobis"
+    ],
+    "category": "BCM",
+    "brand": "Hyundai",
+    "model": "Accent Blue / i20 BCM Gövde Kontrol Modülü",
+    "yearRange": "2011-2017",
+    "engineCode": "D4FB / G4FA",
+    "manufacturer": "Hyundai Mobis",
+    "referencePrice": 5400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "39114-2A410",
+    "hwCode": "0281 013 421",
+    "swCode": "EDC16C39",
+    "crossRefCodes": [
+      "391142A410",
+      "39114-2A411",
+      "0281013421",
+      "EDC16C39",
+      "D4FA"
+    ],
+    "category": "ECU",
+    "brand": "Kia",
+    "model": "Rio / Cerato 1.5 & 1.6 CRDi Motor Beyni",
+    "yearRange": "2007-2011",
+    "engineCode": "D4FA / D4FB",
+    "manufacturer": "Bosch",
+    "referencePrice": 7100,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "39101-2U310",
+    "hwCode": "0281 034 892",
+    "swCode": "EDC17C57",
+    "crossRefCodes": [
+      "391012U310",
+      "0281034892",
+      "EDC17C57",
+      "D4FE"
+    ],
+    "category": "ECU",
+    "brand": "Kia",
+    "model": "Sportage QL / Ceed CD 1.6 CRDi Motor Beyni",
+    "yearRange": "2018-2021",
+    "engineCode": "D4FE",
+    "manufacturer": "Bosch",
+    "referencePrice": 12100,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "39110-03415",
+    "hwCode": "9001090315KB",
+    "swCode": "MEG17.9.12",
+    "crossRefCodes": [
+      "3911003415",
+      "39110-03410",
+      "9001090315KB",
+      "MEG17.9.12",
+      "G4LA"
+    ],
+    "category": "ECU",
+    "brand": "Kia",
+    "model": "Rio UB / Picanto 1.25 CVVT Motor Beyni",
+    "yearRange": "2012-2017",
+    "engineCode": "G4LA",
+    "manufacturer": "Kefico / Bosch",
+    "referencePrice": 7300,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "39111-2A720",
+    "hwCode": "0281 016 742",
+    "swCode": "EDC17C08",
+    "crossRefCodes": [
+      "391112A720",
+      "0281016742",
+      "EDC17C08",
+      "D4FB"
+    ],
+    "category": "ECU",
+    "brand": "Kia",
+    "model": "Ceed / Cerato 1.6 CRDi Otomatik Motor Beyni",
+    "yearRange": "2010-2014",
+    "engineCode": "D4FB",
+    "manufacturer": "Bosch",
+    "referencePrice": 8900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "58920-3U100",
+    "hwCode": "MOBIS-ESC-3U",
+    "swCode": "58910-3U100",
+    "crossRefCodes": [
+      "589203U100",
+      "58910-3U100",
+      "58920-2S100",
+      "Mobis"
+    ],
+    "category": "ABS",
+    "brand": "Kia",
+    "model": "Sportage SL / Hyundai ix35 ABS ESP Hidrolik Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "G4FD / D4HA",
+    "manufacturer": "Hyundai Mobis",
+    "referencePrice": 7800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "95440-3B610",
+    "hwCode": "KEFICO-AT6-3B",
+    "swCode": "95440-3B61",
+    "crossRefCodes": [
+      "954403B610",
+      "95440-3B600",
+      "A6GF1",
+      "D4FB"
+    ],
+    "category": "TCU",
+    "brand": "Kia",
+    "model": "Ceed / Sportage / i30 6 İleri Otomatik Şanzıman Beyni",
+    "yearRange": "2012-2017",
+    "engineCode": "D4FB / G4FD",
+    "manufacturer": "Hyundai Kefico",
+    "referencePrice": 8500,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "23710-JD03A",
+    "hwCode": "MEC93-220",
+    "swCode": "MEC93-220-B1",
+    "crossRefCodes": [
+      "23710JD03A",
+      "MEC93220",
+      "23710-JD02A",
+      "HR16DE"
+    ],
+    "category": "ECU",
+    "brand": "Nissan",
+    "model": "Qashqai J10 1.6 Benzinli Motor Beyni",
+    "yearRange": "2007-2013",
+    "engineCode": "HR16DE",
+    "manufacturer": "Hitachi",
+    "referencePrice": 8200,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "23710-1KA0A",
+    "hwCode": "MEC94-510",
+    "swCode": "MEC94-510-C1",
+    "crossRefCodes": [
+      "237101KA0A",
+      "MEC94510",
+      "23710-1KA1A",
+      "HR16DE"
+    ],
+    "category": "ECU",
+    "brand": "Nissan",
+    "model": "Juke F15 1.6 Benzinli Motor Beyni",
+    "yearRange": "2010-2016",
+    "engineCode": "HR16DE",
+    "manufacturer": "Hitachi",
+    "referencePrice": 8500,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "23710-1HB0A",
+    "hwCode": "MEC90-910",
+    "swCode": "MEC90-910-A1",
+    "crossRefCodes": [
+      "237101HB0A",
+      "MEC90910",
+      "23710-1HB1A",
+      "HR12DE"
+    ],
+    "category": "ECU",
+    "brand": "Nissan",
+    "model": "Micra K13 1.2 Benzinli Motor Beyni",
+    "yearRange": "2011-2017",
+    "engineCode": "HR12DE",
+    "manufacturer": "Hitachi",
+    "referencePrice": 7400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "47660-4EA0A",
+    "hwCode": "0265 956 218",
+    "swCode": "47660-4EA0",
+    "crossRefCodes": [
+      "476604EA0A",
+      "0265956218",
+      "0265258042",
+      "47660-4EA1A"
+    ],
+    "category": "ABS",
+    "brand": "Nissan",
+    "model": "Qashqai J11 ABS ESP Hidrolik Pompa Beyni",
+    "yearRange": "2014-2020",
+    "engineCode": "K9K / R9M / HRA2",
+    "manufacturer": "Bosch",
+    "referencePrice": 8900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "1860B556",
+    "hwCode": "275800-8653",
+    "swCode": "DENSO-4D56",
+    "crossRefCodes": [
+      "1860B556",
+      "2758008653",
+      "1860B557",
+      "4D56",
+      "MA275800-8653"
+    ],
+    "category": "ECU",
+    "brand": "Mitsubishi",
+    "model": "L200 2.5 DI-D Pick-Up Motor Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "4D56",
+    "manufacturer": "Denso",
+    "referencePrice": 10200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "1860C728",
+    "hwCode": "275700-4982",
+    "swCode": "DENSO-4N15",
+    "crossRefCodes": [
+      "1860C728",
+      "2757004982",
+      "1860C729",
+      "4N15"
+    ],
+    "category": "ECU",
+    "brand": "Mitsubishi",
+    "model": "L200 V 2.4 DI-D MIVEC Motor Beyni",
+    "yearRange": "2015-2020",
+    "engineCode": "4N15",
+    "manufacturer": "Denso",
+    "referencePrice": 11800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "33910-68L00",
+    "hwCode": "0261 S06 761",
+    "swCode": "ME17.9.51",
+    "crossRefCodes": [
+      "3391068L00",
+      "0261S06761",
+      "ME17.9.51",
+      "K12B"
+    ],
+    "category": "ECU",
+    "brand": "Suzuki",
+    "model": "Swift IV 1.2 VVT Benzinli Motor Beyni",
+    "yearRange": "2011-2017",
+    "engineCode": "K12B",
+    "manufacturer": "Bosch",
+    "referencePrice": 7600,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "33920-61M00",
+    "hwCode": "0281 019 321",
+    "swCode": "EDC17C49",
+    "crossRefCodes": [
+      "3392061M00",
+      "0281019321",
+      "EDC17C49",
+      "D16AA"
+    ],
+    "category": "ECU",
+    "brand": "Suzuki",
+    "model": "SX4 S-Cross / Vitara 1.6 DDiS Motor Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "D16AA",
+    "manufacturer": "Bosch",
+    "referencePrice": 9600,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "Y650-18-881E",
+    "hwCode": "S180124001B",
+    "swCode": "SID807",
+    "crossRefCodes": [
+      "Y65018881E",
+      "S180124001B",
+      "SID807",
+      "Y650",
+      "DV6C"
+    ],
+    "category": "ECU",
+    "brand": "Mazda",
+    "model": "Mazda 3 BL 1.6 MZ-CD Dizel Motor Beyni",
+    "yearRange": "2010-2013",
+    "engineCode": "Y6 / DV6C",
+    "manufacturer": "Continental",
+    "referencePrice": 8400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "S550-18-881H",
+    "hwCode": "279700-9680",
+    "swCode": "DENSO-S5DP",
+    "crossRefCodes": [
+      "S55018881H",
+      "2797009680",
+      "S550-18-881G",
+      "S5Y5"
+    ],
+    "category": "ECU",
+    "brand": "Mazda",
+    "model": "Mazda 3 BM / CX-3 1.5 Skyactiv-D Motor Beyni",
+    "yearRange": "2015-2019",
+    "engineCode": "S5-DPTS",
+    "manufacturer": "Denso",
+    "referencePrice": 10900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "9659580780",
+    "hwCode": "0261 208 908",
+    "swCode": "ME7.4.5",
+    "crossRefCodes": [
+      "9659580780",
+      "0261208908",
+      "9652552380",
+      "ME745",
+      "TU5JP4"
+    ],
+    "category": "ECU",
+    "brand": "Peugeot",
+    "model": "206 / 207 / 307 1.6 16V Benzinli Motor Beyni",
+    "yearRange": "2005-2011",
+    "engineCode": "TU5JP4 / NFU",
+    "manufacturer": "Bosch",
+    "referencePrice": 5900,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "9666235680",
+    "hwCode": "0261 S04 008",
+    "swCode": "MEV17.4",
+    "crossRefCodes": [
+      "9666235680",
+      "0261S04008",
+      "9664738780",
+      "MEV174",
+      "EP6"
+    ],
+    "category": "ECU",
+    "brand": "Peugeot",
+    "model": "207 / 308 / 3008 1.6 VTi Benzinli Motor Beyni",
+    "yearRange": "2008-2013",
+    "engineCode": "EP6 / 5FW",
+    "manufacturer": "Bosch",
+    "referencePrice": 8200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "9664844180",
+    "hwCode": "VALEO J34P-AAE",
+    "swCode": "21586239-9A",
+    "crossRefCodes": [
+      "9664844180",
+      "J34P",
+      "215862399A",
+      "9651696680",
+      "TU3JP"
+    ],
+    "category": "ECU",
+    "brand": "Peugeot",
+    "model": "206+ / 207 / Partner 1.4 Benzinli Motor Beyni",
+    "yearRange": "2006-2012",
+    "engineCode": "TU3A / KFW",
+    "manufacturer": "Valeo",
+    "referencePrice": 5600,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "9807407480",
+    "hwCode": "VALEO V34.1",
+    "swCode": "V34P-HM0",
+    "crossRefCodes": [
+      "9807407480",
+      "V34.1",
+      "9801980180",
+      "EB2",
+      "HMZ"
+    ],
+    "category": "ECU",
+    "brand": "Peugeot",
+    "model": "301 / 208 1.2 VTi PureTech Motor Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "EB2F / HMZ",
+    "manufacturer": "Valeo",
+    "referencePrice": 7800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "9666912580",
+    "hwCode": "28315591",
+    "swCode": "DCM3.5",
+    "crossRefCodes": [
+      "9666912580",
+      "28315591",
+      "9663241480",
+      "DCM3.5",
+      "DW10CTED4"
+    ],
+    "category": "ECU",
+    "brand": "Peugeot",
+    "model": "508 / 3008 / 5008 2.0 HDi Dizel Motor Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "RHH / DW10CTED4",
+    "manufacturer": "Delphi",
+    "referencePrice": 9400,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "9663761080",
+    "hwCode": "0261 201 609",
+    "swCode": "ME7.4.5",
+    "crossRefCodes": [
+      "9663761080",
+      "0261201609",
+      "9659580780",
+      "ME7.4.5",
+      "NFU"
+    ],
+    "category": "ECU",
+    "brand": "Citroën",
+    "model": "C3 / C4 1.6 16V Benzinli Motor Beyni",
+    "yearRange": "2006-2010",
+    "engineCode": "TU5JP4 / NFU",
+    "manufacturer": "Bosch",
+    "referencePrice": 5800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "9676298880",
+    "hwCode": "0261 S06 472",
+    "swCode": "MEV17.4.2",
+    "crossRefCodes": [
+      "9676298880",
+      "0261S06472",
+      "MEV17.4.2",
+      "5FS",
+      "EP6C"
+    ],
+    "category": "ECU",
+    "brand": "Citroën",
+    "model": "C4 B7 / DS3 1.6 VTi Euro 5 Motor Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "EP6C / 5FS",
+    "manufacturer": "Bosch",
+    "referencePrice": 8400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "9667098880",
+    "hwCode": "28325410",
+    "swCode": "DCM3.5",
+    "crossRefCodes": [
+      "9667098880",
+      "28325410",
+      "DCM3.5",
+      "RHE",
+      "DW10CTED4"
+    ],
+    "category": "ECU",
+    "brand": "Citroën",
+    "model": "C5 X7 / DS4 / DS5 2.0 HDi Motor Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "RHE / RHH",
+    "manufacturer": "Delphi",
+    "referencePrice": 9300,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "9806127080",
+    "hwCode": "VALEO V46.11",
+    "swCode": "28456781",
+    "crossRefCodes": [
+      "9806127080",
+      "V46.11",
+      "9807407480",
+      "EB2F"
+    ],
+    "category": "ECU",
+    "brand": "Citroën",
+    "model": "C-Elysée / C3 1.2 PureTech Benzinli Motor Beyni",
+    "yearRange": "2014-2019",
+    "engineCode": "HMZ / EB2F",
+    "manufacturer": "Valeo",
+    "referencePrice": 7900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "55568383",
+    "hwCode": "MJD 6O3.S6",
+    "swCode": "HW03A",
+    "crossRefCodes": [
+      "55568383",
+      "55198929",
+      "MJD6O3",
+      "MJD6O3S6",
+      "Z13DTH"
+    ],
+    "category": "ECU",
+    "brand": "Opel",
+    "model": "Corsa D / Astra H 1.3 CDTI Motor Beyni",
+    "yearRange": "2007-2011",
+    "engineCode": "Z13DTH / Z13DTJ",
+    "manufacturer": "Magneti Marelli",
+    "referencePrice": 6600,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "55582552",
+    "hwCode": "0281 018 078",
+    "swCode": "EDC17C18",
+    "crossRefCodes": [
+      "55582552",
+      "0281018078",
+      "55579413",
+      "EDC17C18",
+      "A13DTE"
+    ],
+    "category": "ECU",
+    "brand": "Opel",
+    "model": "Astra J / Corsa D 1.3 CDTI Euro 5 Motor Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "A13DTE / A13DTC",
+    "manufacturer": "Bosch",
+    "referencePrice": 8500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "12644082",
+    "hwCode": "ACDelco E78",
+    "swCode": "12654172",
+    "crossRefCodes": [
+      "12644082",
+      "12654172",
+      "12639270",
+      "E78",
+      "A14NET"
+    ],
+    "category": "ECU",
+    "brand": "Opel",
+    "model": "Astra J / Mokka / Insignia 1.4 Turbo Motor Beyni",
+    "yearRange": "2011-2016",
+    "engineCode": "A14NET / B14NET",
+    "manufacturer": "ACDelco / GM",
+    "referencePrice": 8900,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "12667761",
+    "hwCode": "ACDelco E80",
+    "swCode": "12669973",
+    "crossRefCodes": [
+      "12667761",
+      "12669973",
+      "55495232",
+      "E80",
+      "B14XFT"
+    ],
+    "category": "ECU",
+    "brand": "Opel",
+    "model": "Astra K 1.4 Turbo / Corsa E Motor Beyni",
+    "yearRange": "2015-2020",
+    "engineCode": "B14XFT / B14XFL",
+    "manufacturer": "ACDelco / GM",
+    "referencePrice": 10200,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "13356488",
+    "hwCode": "0265 951 642",
+    "swCode": "13356488-ESP",
+    "crossRefCodes": [
+      "13356488",
+      "0265951642",
+      "0265239118",
+      "13381421"
+    ],
+    "category": "ABS",
+    "brand": "Opel",
+    "model": "Astra J / Meriva B ABS ESP Pompa Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "A14NET / A16XER",
+    "manufacturer": "Bosch",
+    "referencePrice": 7200,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "12642927",
+    "hwCode": "ACDelco E83",
+    "swCode": "55579642",
+    "crossRefCodes": [
+      "12642927",
+      "55579642",
+      "12636386",
+      "E83",
+      "F16D4"
+    ],
+    "category": "ECU",
+    "brand": "Chevrolet",
+    "model": "Cruze / Aveo 1.6 & 1.4 Benzinli Motor Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "F16D4 / LDE",
+    "manufacturer": "ACDelco / GM",
+    "referencePrice": 8300,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "12653998",
+    "hwCode": "ACDelco E78",
+    "swCode": "12654173",
+    "crossRefCodes": [
+      "12653998",
+      "12654173",
+      "12644082",
+      "E78",
+      "LUJ"
+    ],
+    "category": "ECU",
+    "brand": "Chevrolet",
+    "model": "Cruze / Trax 1.4 Turbo Benzinli Motor Beyni",
+    "yearRange": "2012-2016",
+    "engineCode": "A14NET / LUJ",
+    "manufacturer": "ACDelco / GM",
+    "referencePrice": 8800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "25184715",
+    "hwCode": "28290642",
+    "swCode": "DCM3.7AP",
+    "crossRefCodes": [
+      "25184715",
+      "28290642",
+      "25184716",
+      "DCM3.7",
+      "Z20D1"
+    ],
+    "category": "ECU",
+    "brand": "Chevrolet",
+    "model": "Cruze / Captiva 2.0 VCDi Dizel Motor Beyni",
+    "yearRange": "2011-2015",
+    "engineCode": "Z20D1 / LNP",
+    "manufacturer": "Delphi",
+    "referencePrice": 9500,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "13580698",
+    "hwCode": "GM-BCM-1358",
+    "swCode": "13580698-SW",
+    "crossRefCodes": [
+      "13580698",
+      "13579060",
+      "13586522",
+      "GM BCM"
+    ],
+    "category": "BCM",
+    "brand": "Chevrolet",
+    "model": "Cruze / Aveo T300 BCM Gövde Kontrol Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "F16D4 / LDE",
+    "manufacturer": "Bosch / GM",
+    "referencePrice": 5900,
+    "isFeatured": false
+  }
+]
