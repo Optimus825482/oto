@@ -29,6 +29,7 @@ export async function GET(req: Request) {
       { swCode: { contains: q, mode: "insensitive" } },
       { brand: { contains: q, mode: "insensitive" } },
       { model: { contains: q, mode: "insensitive" } },
+      { engineCode: { contains: q, mode: "insensitive" } },
       { manufacturer: { contains: q, mode: "insensitive" } },
     ];
 
