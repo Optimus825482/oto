@@ -39,6 +39,7 @@ const { mockRequireRole, mockPrisma } = vi.hoisted(() => ({
       create: vi.fn(),
     },
     catalogPart: {
+      findFirst: vi.fn(),
       findMany: vi.fn(),
       create: vi.fn(),
     },
@@ -270,7 +271,7 @@ describe("Admin Operations APIs", () => {
   });
 
   describe("Test Lab Quality Gate", () => {
-    it("PASS generates CERT-... certificate and credits supplier ledger", async () => {
+    it("PASS generates CERT-... certificate, credits supplier ledger, and auto-learns catalog part", async () => {
       mockRequireRole.mockResolvedValue({
         user: {
           userId: "tech-1",
@@ -286,7 +287,14 @@ describe("Admin Operations APIs", () => {
         inquiryId: "inq-4",
         supplierId: "sup-2",
         purchasePrice: 6200,
-        inquiry: { id: "inq-4", code: "OBP-202604" },
+        customerPrice: 8200,
+        inquiry: {
+          id: "inq-4",
+          code: "OBP-202604",
+          partCode: "SID307 237101234R",
+          category: "ECU",
+          brand: "Renault",
+        },
         supplier: { id: "sup-2", rating: 4.7 },
       });
 
@@ -298,6 +306,8 @@ describe("Admin Operations APIs", () => {
       mockPrisma.inquiry.update.mockResolvedValue({ id: "inq-4", status: "TEST_PASSED" });
       mockPrisma.supplierLedgerEntry.create.mockResolvedValue({ id: "led-1" });
       mockPrisma.supplierProfile.update.mockResolvedValue({ id: "sup-2" });
+      mockPrisma.catalogPart.findFirst.mockResolvedValue(null);
+      mockPrisma.catalogPart.create.mockResolvedValue({ id: "part-auto-1" });
 
       const req = new Request("http://localhost/api/admin/orders/ord-1/test-lab", {
         method: "POST",
@@ -321,6 +331,7 @@ describe("Admin Operations APIs", () => {
       const data = await res.json();
       expect(data.orderStatus).toBe("TEST_PASSED");
       expect(data.testRecord.certificateCode).toBe("CERT-OBP-202604");
+      expect(data.autoLearnedPart).toBe(true);
 
       expect(mockPrisma.supplierLedgerEntry.create).toHaveBeenCalledWith({
         data: expect.objectContaining({
@@ -339,9 +350,86 @@ describe("Admin Operations APIs", () => {
           totalDelivered: { increment: 1 },
         },
       });
+
+      expect(mockPrisma.catalogPart.findFirst).toHaveBeenCalledWith({
+        where: { normalizedCode: "SID307237101234R" },
+      });
+      expect(mockPrisma.catalogPart.create).toHaveBeenCalledWith({
+        data: {
+          oemCode: "SID307 237101234R",
+          normalizedCode: "SID307237101234R",
+          crossRefCodes: ["SID307237101234R"],
+          category: "ECU",
+          brand: "Renault",
+          model: "Test Onaylı Tedarik Arşivi",
+          manufacturer: "OEM / Test Onaylı",
+          referencePrice: 8200,
+          isFeatured: false,
+        },
+      });
     });
 
-    it("FAIL does NOT generate certificate and does NOT credit supplier ledger (increments defectCount)", async () => {
+    it("PASS does NOT duplicate catalog part when normalizedCode already exists", async () => {
+      mockRequireRole.mockResolvedValue({
+        user: {
+          userId: "tech-1",
+          email: "lab@otobeyinpazari.com",
+          fullName: "Mehmet Demir",
+          role: "TECHNICIAN",
+        },
+      });
+
+      mockPrisma.order.findUnique.mockResolvedValue({
+        id: "ord-2",
+        orderNo: "SIP-202605",
+        inquiryId: "inq-5",
+        supplierId: "sup-2",
+        purchasePrice: 6200,
+        customerPrice: 8200,
+        inquiry: {
+          id: "inq-5",
+          code: "OBP-202605",
+          partCode: "SID307 237101234R",
+          category: "ECU",
+          brand: "Renault",
+        },
+        supplier: { id: "sup-2", rating: 4.7 },
+      });
+
+      mockPrisma.testLabRecord.upsert.mockImplementation(async ({ create }) => ({
+        id: "test-2",
+        ...create,
+      }));
+      mockPrisma.order.update.mockResolvedValue({ id: "ord-2", status: "TEST_PASSED" });
+      mockPrisma.inquiry.update.mockResolvedValue({ id: "inq-5", status: "TEST_PASSED" });
+      mockPrisma.supplierLedgerEntry.create.mockResolvedValue({ id: "led-2" });
+      mockPrisma.supplierProfile.update.mockResolvedValue({ id: "sup-2" });
+      mockPrisma.catalogPart.findFirst.mockResolvedValue({ id: "existing-part-1" });
+
+      const req = new Request("http://localhost/api/admin/orders/ord-2/test-lab", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          serialNo: "SID307-99103",
+          hologramSealCode: "OBP-SEAL-99103",
+          physicalCheckOk: true,
+          pinCheckOk: true,
+          canObdCheckOk: true,
+          result: "PASS",
+        }),
+      });
+
+      const res = await submitTestLab(req, {
+        params: Promise.resolve({ id: "ord-2" }),
+      });
+
+      expect(res.status).toBe(200);
+      const data = await res.json();
+      expect(data.autoLearnedPart).toBe(false);
+      expect(mockPrisma.catalogPart.create).not.toHaveBeenCalled();
+    });
+
+    it("FAIL does NOT generate certificate, does NOT credit supplier ledger, and does NOT create catalog part", async () => {
       mockRequireRole.mockResolvedValue({
         user: {
           userId: "tech-1",
@@ -357,7 +445,14 @@ describe("Admin Operations APIs", () => {
         inquiryId: "inq-4",
         supplierId: "sup-2",
         purchasePrice: 6200,
-        inquiry: { id: "inq-4", code: "OBP-202604" },
+        customerPrice: 8200,
+        inquiry: {
+          id: "inq-4",
+          code: "OBP-202604",
+          partCode: "SID307 237101234R",
+          category: "ECU",
+          brand: "Renault",
+        },
         supplier: { id: "sup-2", rating: 4.7 },
       });
 
@@ -391,8 +486,10 @@ describe("Admin Operations APIs", () => {
       const data = await res.json();
       expect(data.orderStatus).toBe("TEST_FAILED");
       expect(data.testRecord.certificateCode).toBeNull();
+      expect(data.autoLearnedPart).toBe(false);
 
       expect(mockPrisma.supplierLedgerEntry.create).not.toHaveBeenCalled();
+      expect(mockPrisma.catalogPart.create).not.toHaveBeenCalled();
       expect(mockPrisma.supplierProfile.update).toHaveBeenCalledWith({
         where: { id: "sup-2" },
         data: {

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireRole } from "@/lib/auth";
 import { prisma } from "@/lib/db";
+import { normalizePartCode } from "@/lib/vin";
 
 const testLabSchema = z.object({
   serialNo: z.string().min(1, "Seri numarası zorunludur."),
@@ -93,6 +94,8 @@ export async function POST(
     data: { status: orderStatus },
   });
 
+  let autoLearnedPart = false;
+
   if (isPass) {
     await prisma.supplierLedgerEntry.create({
       data: {
@@ -112,6 +115,36 @@ export async function POST(
         totalDelivered: { increment: 1 },
       },
     });
+
+    if (order.inquiry?.partCode) {
+      const normalizedCode = normalizePartCode(order.inquiry.partCode);
+      if (normalizedCode) {
+        try {
+          const existingPart = await prisma.catalogPart?.findFirst({
+            where: { normalizedCode },
+          });
+
+          if (!existingPart) {
+            await prisma.catalogPart?.create({
+              data: {
+                oemCode: order.inquiry.partCode,
+                normalizedCode,
+                crossRefCodes: [normalizedCode],
+                category: order.inquiry.category,
+                brand: order.inquiry.brand || "Diğer",
+                model: "Test Onaylı Tedarik Arşivi",
+                manufacturer: "OEM / Test Onaylı",
+                referencePrice: order.customerPrice,
+                isFeatured: false,
+              },
+            });
+            autoLearnedPart = true;
+          }
+        } catch {
+          autoLearnedPart = false;
+        }
+      }
+    }
   } else {
     const nextRating = Math.max(
       1,
@@ -127,5 +160,5 @@ export async function POST(
     });
   }
 
-  return NextResponse.json({ testRecord, orderStatus });
+  return NextResponse.json({ testRecord, orderStatus, autoLearnedPart });
 }

@@ -21,9 +21,18 @@ interface ArchiveRow {
 }
 
 async function main() {
-  const filePath = path.resolve(__dirname, "data", "real-ecu-archive.json");
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const rows: ArchiveRow[] = JSON.parse(raw);
+  const dataDir = path.resolve(__dirname, "data");
+  const jsonFiles = fs
+    .readdirSync(dataDir)
+    .filter((file) => file.toLowerCase().endsWith(".json"))
+    .sort((a, b) => a.localeCompare(b));
+
+  const rows: ArchiveRow[] = jsonFiles.flatMap((file) => {
+    const filePath = path.join(dataDir, file);
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const parsed = JSON.parse(raw) as ArchiveRow[];
+    return Array.isArray(parsed) ? parsed : [];
+  });
 
   let inserted = 0;
   let updated = 0;
@@ -84,7 +93,9 @@ async function main() {
   }
 
   const total = await prisma.catalogPart.count();
-  console.log(`Gerçek OEM/ECU Arşivi aktarıldı: ${inserted} yeni eklendi, ${updated} güncellendi. Toplam katalog: ${total} parça.`);
+  console.log(
+    `Gerçek OEM/ECU Arşivi (${jsonFiles.length} dosya, ${rows.length} kayıt) aktarıldı: ${inserted} yeni eklendi, ${updated} güncellendi. Toplam katalog: ${total} parça.`
+  );
 }
 
 main()
