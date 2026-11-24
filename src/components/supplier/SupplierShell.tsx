@@ -4,6 +4,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { PwaInstallButton } from "@/components/pwa/PwaInstallButton";
+import { BrandLoadingScreen } from "@/components/ui/BrandLoadingScreen";
 import {
   ExternalLink,
   Inbox,
@@ -95,12 +96,11 @@ export default function SupplierShell({ children }: { children: ReactNode }) {
 
   if (checkingAuth) {
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center gap-3 px-4">
-        <Loader2 className="w-8 h-8 animate-spin text-orange-500" />
-        <p className="text-sm font-medium text-navy-900">
-          Tedarikçi oturumu doğrulanıyor...
-        </p>
-      </div>
+      <BrandLoadingScreen
+        title="Tedarikçi Portalı (Kapalı Ağ)"
+        subtitle="Tedarikçi oturumu doğrulanıyor..."
+        badge="ONAYLI TEDARİKÇİ AĞI"
+      />
     );
   }
 

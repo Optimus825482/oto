@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { PwaInstallButton } from "@/components/pwa/PwaInstallButton";
+import { BrandLoadingScreen } from "@/components/ui/BrandLoadingScreen";
 import {
   Activity,
   Building2,
@@ -129,21 +130,11 @@ export default function AdminShell({
 
   if (checkingAuth || !user) {
     return (
-      <div className="min-h-screen bg-navy-950 text-white flex items-center justify-center p-6">
-        <div className="flex flex-col items-center gap-4 text-center">
-          <div className="w-12 h-12 rounded-2xl bg-navy-900 border border-white/10 flex items-center justify-center animate-pulse">
-            <ShieldCheck className="w-6 h-6 text-orange-500" />
-          </div>
-          <div>
-            <p className="font-semibold text-base">
-              Operasyon Merkezi Yükleniyor...
-            </p>
-            <p className="text-xs text-slate-400 mt-1">
-              Yetki ve oturum bilgileri doğrulanıyor
-            </p>
-          </div>
-        </div>
-      </div>
+      <BrandLoadingScreen
+        title="Admin & Test Operasyon Merkezi"
+        subtitle="Yetki ve oturum bilgileri doğrulanıyor..."
+        badge="OTOBEYİNPAZARI YÖNETİM PANELİ"
+      />
     );
   }
 

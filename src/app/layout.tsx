@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { PwaProvider } from "@/components/pwa/PwaProvider";
+import { BrandSplash } from "@/components/ui/BrandSplash";
 import "./globals.css";
 
 const inter = Inter({
@@ -67,7 +68,10 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-screen bg-slate-50 text-slate-900 antialiased"
       >
-        <PwaProvider>{children}</PwaProvider>
+        <PwaProvider>
+          <BrandSplash />
+          {children}
+        </PwaProvider>
       </body>
     </html>
   );

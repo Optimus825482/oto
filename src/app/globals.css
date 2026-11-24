@@ -41,3 +41,58 @@
     display: none !important;
   }
 }
+
+@keyframes obpSplashIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes obpProgressFill {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes obpOrbitSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes obpShimmerBar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+.animate-obp-splash-in {
+  animation: obpSplashIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-obp-progress {
+  transform-origin: left center;
+  animation: obpProgressFill 2.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-obp-orbit {
+  animation: obpOrbitSpin 2.4s linear infinite;
+}
+
+.animate-obp-shimmer {
+  animation: obpShimmerBar 1.4s ease-in-out infinite;
+}
