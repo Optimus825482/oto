@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { PART_CATEGORIES, formatTRY } from "@/types/domain";
 import type { VinDecodeResult } from "@/lib/vin";
+import { BrandLoadingScreen } from "@/components/ui/BrandLoadingScreen";
 
 export interface QuickInquiryFormProps {
   prefillPartCode?: string;
@@ -176,19 +177,22 @@ export function QuickInquiryForm({
 
     setSubmitting(true);
     try {
-      const res = await fetch("/api/inquiries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          customerPhone: customerPhone.trim(),
-          customerName: customerName.trim() || undefined,
-          partCode: partCode.trim() || undefined,
-          vin: vin.trim() || undefined,
-          category: category || "ECU",
-          brand: vinResult?.brand || selectedBrand || undefined,
-          note: note.trim() || undefined,
+      const [res] = await Promise.all([
+        fetch("/api/inquiries", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            customerPhone: customerPhone.trim(),
+            customerName: customerName.trim() || undefined,
+            partCode: partCode.trim() || undefined,
+            vin: vin.trim() || undefined,
+            category: category || "ECU",
+            brand: vinResult?.brand || selectedBrand || undefined,
+            note: note.trim() || undefined,
+          }),
         }),
-      });
+        new Promise((resolve) => window.setTimeout(resolve, 2000)),
+      ]);
 
       const data = await res.json();
       if (!res.ok) {
@@ -215,6 +219,16 @@ export function QuickInquiryForm({
     setCompatibleParts([]);
     setVinError(null);
     setSubmitError(null);
+  }
+
+  if (submitting) {
+    return (
+      <BrandLoadingScreen
+        title="Talebiniz Oluşturuluyor"
+        subtitle="50+ onaylı tedarikçimiz ve OEM arşivimizle eşleştiriliyor..."
+        badge="OTOBEYİNPAZARI AKILLI TEDARİK AĞI"
+      />
+    );
   }
 
   if (createdInquiry) {

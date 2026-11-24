@@ -70,9 +70,10 @@ export default function TrackingDetailPage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(
-        `/api/inquiries?code=${encodeURIComponent(targetCode)}`
-      );
+      const [res] = await Promise.all([
+        fetch(`/api/inquiries?code=${encodeURIComponent(targetCode)}`),
+        new Promise((resolve) => window.setTimeout(resolve, 1800)),
+      ]);
       const json = await res.json();
       if (!res.ok) {
         setError(json.error || "Takip kaydı bulunamadı.");

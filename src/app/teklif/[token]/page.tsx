@@ -23,6 +23,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { Header } from "@/components/storefront/Header";
+import { BrandLoadingScreen } from "@/components/ui/BrandLoadingScreen";
 import { PART_CATEGORIES, formatTRY } from "@/types/domain";
 import type { SystemSettingsDTO } from "@/lib/settings";
 
@@ -162,21 +163,24 @@ export default function OfferPaymentPage() {
             }
           : undefined;
 
-      const res = await fetch(`/api/offers/${encodeURIComponent(token)}/pay`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          cardHolderName: cardHolderName.trim(),
-          cardNumber: cardNumber.trim(),
-          deliveryAddress: deliveryAddress.trim(),
-          invoiceType,
-          taxInfo,
-          coreExchangeRequested:
-            Boolean(settings?.enableCoreExchange) && coreExchangeRequested,
-          vinProgrammingRequested:
-            Boolean(settings?.enableVinProgramming) && vinProgrammingRequested,
+      const [res] = await Promise.all([
+        fetch(`/api/offers/${encodeURIComponent(token)}/pay`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            cardHolderName: cardHolderName.trim(),
+            cardNumber: cardNumber.trim(),
+            deliveryAddress: deliveryAddress.trim(),
+            invoiceType,
+            taxInfo,
+            coreExchangeRequested:
+              Boolean(settings?.enableCoreExchange) && coreExchangeRequested,
+            vinProgrammingRequested:
+              Boolean(settings?.enableVinProgramming) && vinProgrammingRequested,
+          }),
         }),
-      });
+        new Promise((resolve) => window.setTimeout(resolve, 2000)),
+      ]);
 
       const json = await res.json();
       if (!res.ok) {
@@ -205,6 +209,16 @@ export default function OfferPaymentPage() {
     offer?.customerOfferPrice != null
       ? Math.max(500, basePrice + activeVinFee - activeCoreDiscount)
       : 0;
+
+  if (paying) {
+    return (
+      <BrandLoadingScreen
+        title="Güvenli Ödeme Doğrulanıyor"
+        subtitle="3D Secure Güvence Hesabı (Escrow) ve tedarikçi kargo kodu hazırlanıyor..."
+        badge="14 GÜN KOŞULSUZ İADE GÜVENCESİ"
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
