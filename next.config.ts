@@ -23,6 +23,14 @@ const nextConfig: NextConfig = {
         source: "/sunum-global/",
         destination: "/sunum/global-analiz.html",
       },
+      {
+        source: "/sunum-yatirim",
+        destination: "/sunum/yatirim-cihazlar.html",
+      },
+      {
+        source: "/sunum-yatirim/",
+        destination: "/sunum/yatirim-cihazlar.html",
+      },
     ];
   },
   async headers() {

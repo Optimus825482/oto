@@ -238,6 +238,15 @@ export default function AdminShell({
             <span>Global Analiz Sunumu</span>
             <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
           </Link>
+          <Link
+            href="/sunum-yatirim"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between px-3.5 py-2 rounded-xl text-sm text-slate-300 hover:bg-white/10 hover:text-white transition-colors"
+          >
+            <span>Cihaz &amp; Yatırım Sunumu</span>
+            <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+          </Link>
         </div>
       </nav>
 

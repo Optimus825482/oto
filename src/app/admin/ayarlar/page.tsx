@@ -566,7 +566,7 @@ export default function AdminSettingsPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <a
             href="/sunum"
             target="_blank"
@@ -581,7 +581,7 @@ export default function AdminSettingsPage() {
                 Proje &amp; İş Modeli Sunumu
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                OtoBeyinPazari pazar yeri mimarisi, Escrow güvencesi, Test Lab doğrulama süreci ve birim ekonomi sunumu.
+                OtoBeyinPazari merkezi tedarik mimarisi, Güvence Hesabı, Test Lab doğrulama süreci ve kâr simülatörü.
               </p>
             </div>
             <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-orange-400 shrink-0 mt-1" />
@@ -601,7 +601,27 @@ export default function AdminSettingsPage() {
                 Global Rakipler &amp; Artı/Eksi Analizi
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Flagship One, Module Experts, ECU Testing ve AutoDoc karşılaştırması ile Türkiye pazarı konumlandırma raporu.
+                ACtronics, ECU Testing, Flagship One, Ovoko ve B-Parts karşılaştırması ile SWOT strateji raporu.
+              </p>
+            </div>
+            <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-orange-400 shrink-0 mt-1" />
+          </a>
+
+          <a
+            href="/sunum-yatirim"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-2xl bg-gradient-to-br from-navy-950 to-navy-800 text-white p-6 border border-orange-500/30 shadow-sm hover:border-orange-400 transition-all flex items-start justify-between gap-4"
+          >
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
+                <Presentation className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold group-hover:text-orange-400 transition-colors">
+                Cihaz Listesi &amp; Yatırım (ROI) Sunumu
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Test merkezi cihazları (AutoTuner, Flex, MST-9000+, Autel), 3 kademeli kurulum bütçesi ve geri dönüş hesaplayıcısı.
               </p>
             </div>
             <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-orange-400 shrink-0 mt-1" />
