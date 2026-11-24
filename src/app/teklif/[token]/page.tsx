@@ -19,9 +19,12 @@ import {
   Truck,
   Microscope,
   ReceiptText,
+  Sparkles,
+  RefreshCw,
 } from "lucide-react";
 import { Header } from "@/components/storefront/Header";
 import { PART_CATEGORIES, formatTRY } from "@/types/domain";
+import type { SystemSettingsDTO } from "@/lib/settings";
 
 interface OfferDetails {
   code: string;
@@ -34,6 +37,7 @@ interface OfferDetails {
   createdAt: string;
   orderNo: string | null;
   paymentStatus: string | null;
+  paidCustomerPrice?: number | null;
 }
 
 interface PaidOrderResult {
@@ -53,8 +57,12 @@ export default function OfferPaymentPage() {
   const token = params?.token ? decodeURIComponent(params.token) : "";
 
   const [offer, setOffer] = useState<OfferDetails | null>(null);
+  const [settings, setSettings] = useState<SystemSettingsDTO | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
+
+  const [vinProgrammingRequested, setVinProgrammingRequested] = useState(false);
+  const [coreExchangeRequested, setCoreExchangeRequested] = useState(false);
 
   const [deliveryAddress, setDeliveryAddress] = useState("");
   const [invoiceType, setInvoiceType] = useState<"INDIVIDUAL" | "CORPORATE">(
@@ -90,6 +98,9 @@ export default function OfferPaymentPage() {
         }
         if (!cancelled) {
           setOffer(json.offer);
+          if (json.settings) {
+            setSettings(json.settings);
+          }
         }
       } catch {
         if (!cancelled) {
@@ -160,6 +171,10 @@ export default function OfferPaymentPage() {
           deliveryAddress: deliveryAddress.trim(),
           invoiceType,
           taxInfo,
+          coreExchangeRequested:
+            Boolean(settings?.enableCoreExchange) && coreExchangeRequested,
+          vinProgrammingRequested:
+            Boolean(settings?.enableVinProgramming) && vinProgrammingRequested,
         }),
       });
 
@@ -176,6 +191,20 @@ export default function OfferPaymentPage() {
       setPaying(false);
     }
   }
+
+  const basePrice = offer?.customerOfferPrice ?? 0;
+  const activeVinFee =
+    settings?.enableVinProgramming && vinProgrammingRequested
+      ? settings.vinProgrammingFee
+      : 0;
+  const activeCoreDiscount =
+    settings?.enableCoreExchange && coreExchangeRequested
+      ? settings.coreDepositAmount
+      : 0;
+  const finalPayableAmount =
+    offer?.customerOfferPrice != null
+      ? Math.max(500, basePrice + activeVinFee - activeCoreDiscount)
+      : 0;
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
@@ -250,7 +279,10 @@ export default function OfferPaymentPage() {
                 </div>
                 <div className="font-extrabold text-emerald-700">
                   {formatTRY(
-                    paidOrder?.customerPrice ?? offer.customerOfferPrice ?? 0
+                    paidOrder?.customerPrice ??
+                      offer.paidCustomerPrice ??
+                      offer.customerOfferPrice ??
+                      0
                   )}
                 </div>
               </div>
@@ -332,16 +364,47 @@ export default function OfferPaymentPage() {
                   </div>
 
                   {/* Price Box */}
-                  <div className="bg-orange-50 border border-orange-200 rounded-2xl p-4">
+                  <div className="bg-orange-50 border border-orange-200 rounded-2xl p-4 space-y-2">
                     <div className="text-xs font-bold text-orange-800 uppercase">
-                      Toplam Müşteri Fiyatı
+                      Toplam Ödenecek Tutar
                     </div>
-                    <div className="text-3xl font-extrabold text-navy-900 mt-1">
+                    <div className="text-3xl font-extrabold text-navy-900">
                       {offer.customerOfferPrice != null
-                        ? formatTRY(offer.customerOfferPrice)
+                        ? formatTRY(finalPayableAmount)
                         : "-"}
                     </div>
-                    <p className="text-xs font-semibold text-emerald-700 mt-1">
+
+                    {(activeVinFee > 0 || activeCoreDiscount > 0) &&
+                      offer.customerOfferPrice != null && (
+                        <div className="pt-2 border-t border-orange-200/80 space-y-1 text-xs">
+                          <div className="flex items-center justify-between text-slate-700">
+                            <span>Temel Parça Teklifi</span>
+                            <span className="font-bold">
+                              {formatTRY(basePrice)}
+                            </span>
+                          </div>
+                          {activeVinFee > 0 && (
+                            <div className="flex items-center justify-between text-navy-900">
+                              <span>+ Şaseye Göre Programlama (Tak-Çalıştır)</span>
+                              <span className="font-bold">
+                                +{formatTRY(activeVinFee)}
+                              </span>
+                            </div>
+                          )}
+                          {activeCoreDiscount > 0 && (
+                            <div className="flex items-center justify-between text-emerald-700">
+                              <span>
+                                - Eski Arızalı Beyin İadesi (Core Exchange)
+                              </span>
+                              <span className="font-bold">
+                                -{formatTRY(activeCoreDiscount)}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                    <p className="text-xs font-semibold text-emerald-700">
                       KDV Dahil • Laboratuvar Testi Dahil • Tek Tip Anti-Statik
                       Kargo Dahil
                     </p>
@@ -381,11 +444,102 @@ export default function OfferPaymentPage() {
               </div>
             </div>
 
-            {/* Right: Checkout Form */}
-            <form
-              onSubmit={handleSubmitPayment}
-              className="lg:col-span-7 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-7 space-y-6"
-            >
+            {/* Right: Optional Add-ons + Checkout Form */}
+            <div className="lg:col-span-7 space-y-4">
+              {(settings?.enableVinProgramming ||
+                settings?.enableCoreExchange) && (
+                <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-3">
+                  <div className="text-xs font-bold uppercase tracking-wider text-navy-900">
+                    Opsiyonel Teknik Hizmetler &amp; Core İade İndirimi
+                  </div>
+
+                  {settings?.enableVinProgramming && (
+                    <label
+                      className={`flex items-start gap-3 p-3.5 rounded-xl border transition-all cursor-pointer ${
+                        vinProgrammingRequested
+                          ? "border-orange-500 bg-orange-50/70 ring-1 ring-orange-500/20"
+                          : "border-slate-200 bg-slate-50/60 hover:bg-slate-50"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={vinProgrammingRequested}
+                        onChange={(e) =>
+                          setVinProgrammingRequested(e.target.checked)
+                        }
+                        className="mt-1 w-4 h-4 accent-orange-500 rounded shrink-0"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <span className="text-sm font-extrabold text-navy-900 inline-flex items-center gap-1.5">
+                            <Sparkles className="w-4 h-4 text-orange-500 shrink-0" />
+                            <span>
+                              Şaseye Göre Programlama / Klonlama (Tak-Çalıştır)
+                            </span>
+                          </span>
+                          <span className="px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-800 text-xs font-extrabold">
+                            +{formatTRY(settings.vinProgrammingFee)}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                          Aracınızın şase (VIN) bilgisine göre immobilizer ve
+                          yazılım eşleştirmesi laboratuvarımızda ön-programlanır;
+                          serviste ekstra kodlama beklemeden{" "}
+                          <strong className="text-navy-900">tak-çalıştır</strong>{" "}
+                          olarak kullanabilirsiniz.
+                        </p>
+                      </div>
+                    </label>
+                  )}
+
+                  {settings?.enableCoreExchange && (
+                    <label
+                      className={`flex items-start gap-3 p-3.5 rounded-xl border transition-all cursor-pointer ${
+                        coreExchangeRequested
+                          ? "border-emerald-500 bg-emerald-50/70 ring-1 ring-emerald-500/20"
+                          : "border-slate-200 bg-slate-50/60 hover:bg-slate-50"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={coreExchangeRequested}
+                        onChange={(e) =>
+                          setCoreExchangeRequested(e.target.checked)
+                        }
+                        className="mt-1 w-4 h-4 accent-emerald-600 rounded shrink-0"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <span className="text-sm font-extrabold text-navy-900 inline-flex items-center gap-1.5">
+                            <RefreshCw className="w-4 h-4 text-emerald-600 shrink-0" />
+                            <span>
+                              Eski Arızalı Beynimi İade Edeceğim (Core Exchange)
+                            </span>
+                          </span>
+                          <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold">
+                            -{formatTRY(settings.coreDepositAmount)} İndirim /
+                            Depozito
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                          Yeni modülünüzle birlikte{" "}
+                          <strong className="text-navy-900">
+                            ücretsiz iade kargo barkodu
+                          </strong>{" "}
+                          gönderilir. Eski arızalı beyninizi 14 gün içinde
+                          merkezimize göndererek tutar indiriminden anında
+                          yararlanabilirsiniz.
+                        </p>
+                      </div>
+                    </label>
+                  )}
+                </div>
+              )}
+
+              <form
+                onSubmit={handleSubmitPayment}
+                className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-7 space-y-6"
+              >
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-4">
                 <div>
                   <h2 className="text-lg font-extrabold text-navy-900 flex items-center gap-2">
@@ -631,7 +785,7 @@ export default function OfferPaymentPage() {
                     <span>
                       Güvence Hesabına Güvenli Öde (
                       {offer.customerOfferPrice != null
-                        ? formatTRY(offer.customerOfferPrice)
+                        ? formatTRY(finalPayableAmount)
                         : ""}
                       )
                     </span>
@@ -639,6 +793,7 @@ export default function OfferPaymentPage() {
                 )}
               </button>
             </form>
+            </div>
           </div>
         )}
       </main>

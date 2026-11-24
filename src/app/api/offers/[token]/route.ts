@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { getSystemSettings } from "@/lib/settings";
 
 export async function GET(
   _req: Request,
@@ -28,6 +29,7 @@ export async function GET(
         select: {
           orderNo: true,
           paymentStatus: true,
+          customerPrice: true,
         },
       },
     },
@@ -39,6 +41,8 @@ export async function GET(
       { status: 404 }
     );
   }
+
+  const settings = await getSystemSettings();
 
   return NextResponse.json({
     offer: {
@@ -52,6 +56,8 @@ export async function GET(
       createdAt: inquiry.createdAt,
       orderNo: inquiry.order?.orderNo ?? null,
       paymentStatus: inquiry.order?.paymentStatus ?? null,
+      paidCustomerPrice: inquiry.order?.customerPrice ?? null,
     },
+    settings,
   });
 }

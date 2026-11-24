@@ -211,11 +211,15 @@ model Order {
   outboundCargoCode  String?
   outboundTrackingNo String?
   deliveryAddress    String?
-  invoiceNo          String?               @unique
-  invoiceType        InvoiceType           @default(INDIVIDUAL)
-  taxInfoJson        Json?
-  returnDeadlineAt   DateTime?
-  status             InquiryStatus         @default(PAID)
+  invoiceNo               String?               @unique
+  invoiceType             InvoiceType           @default(INDIVIDUAL)
+  taxInfoJson             Json?
+  coreExchangeRequested   Boolean               @default(false)
+  coreDepositAmount       Float                 @default(0)
+  vinProgrammingRequested Boolean               @default(false)
+  vinProgrammingFee       Float                 @default(0)
+  returnDeadlineAt        DateTime?
+  status                  InquiryStatus         @default(PAID)
   createdAt          DateTime              @default(now())
   updatedAt          DateTime              @updatedAt
 
@@ -268,4 +272,44 @@ model NotificationLog {
   relatedInquiryId String?
   relatedInquiry   Inquiry?            @relation(fields: [relatedInquiryId], references: [id], onDelete: SetNull)
   createdAt        DateTime            @default(now())
+}
+
+model SystemSetting {
+  id                   String   @id @default("default")
+  enableCoreExchange   Boolean  @default(true)
+  coreDepositAmount    Float    @default(1500)
+  enableVinProgramming Boolean  @default(true)
+  vinProgrammingFee    Float    @default(1500)
+  enableB2bDealers     Boolean  @default(true)
+  b2bDiscountPercent   Float    @default(8)
+  updatedAt            DateTime @updatedAt
+}
+
+model SupplierApplication {
+  id              String   @id @default(cuid())
+  companyName     String
+  contactName     String
+  phone           String
+  email           String?
+  city            String
+  district        String?
+  specialtyBrands String[] @default([])
+  monthlyStock    String?
+  note            String?
+  status          String   @default("PENDING")
+  createdAt       DateTime @default(now())
+}
+
+model B2BApplication {
+  id               String   @id @default(cuid())
+  serviceName      String
+  contactName      String
+  phone            String
+  email            String?
+  city             String
+  taxNumber        String?
+  monthlyVolume    String?
+  specialtyBrands  String[] @default([])
+  status           String   @default("PENDING")
+  createdAt        DateTime @default(now())
 }

@@ -6,7 +6,8 @@ import {
   ShieldCheck,
   Search,
   PackageSearch,
-  Presentation,
+  HelpCircle,
+  Handshake,
   LogIn,
   Cpu,
 } from "lucide-react";
@@ -50,11 +51,18 @@ export function Header({
               <span>Sipariş Takip</span>
             </Link>
             <Link
-              href="/sunum"
+              href="/#nasil-calisir"
               className="hidden sm:inline-flex items-center gap-1.5 hover:text-orange-400 transition-colors font-medium"
             >
-              <Presentation className="w-3.5 h-3.5 text-slate-400" />
-              <span>Proje Sunumu</span>
+              <HelpCircle className="w-3.5 h-3.5 text-slate-400" />
+              <span>Nasıl Çalışır?</span>
+            </Link>
+            <Link
+              href="/tedarikci-basvuru"
+              className="hidden md:inline-flex items-center gap-1.5 hover:text-orange-400 transition-colors font-medium"
+            >
+              <Handshake className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Tedarikçi Ol</span>
             </Link>
             <Link
               href="/giris"

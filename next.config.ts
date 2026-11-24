@@ -15,6 +15,14 @@ const nextConfig: NextConfig = {
         source: "/sunum/",
         destination: "/sunum/index.html",
       },
+      {
+        source: "/sunum-global",
+        destination: "/sunum/global-analiz.html",
+      },
+      {
+        source: "/sunum-global/",
+        destination: "/sunum/global-analiz.html",
+      },
     ];
   },
   async headers() {

@@ -13,6 +13,7 @@ import {
   LogOut,
   Menu,
   PackageCheck,
+  Settings,
   ShieldCheck,
   X,
 } from "lucide-react";
@@ -61,6 +62,12 @@ const NAV_ITEMS = [
     href: "/admin/tedarikciler",
     label: "Tedarikçiler & Katalog",
     icon: Building2,
+    exact: false,
+  },
+  {
+    href: "/admin/ayarlar",
+    label: "Sistem Ayarları",
+    icon: Settings,
     exact: false,
   },
 ];
@@ -204,7 +211,7 @@ export default function AdminShell({
 
         <div className="pt-5 mt-5 border-t border-white/10 space-y-1.5">
           <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-            Hızlı Bağlantılar
+            Hızlı Bağlantılar &amp; Yönetim Sunumları
           </p>
           <Link
             href="/"
@@ -215,9 +222,20 @@ export default function AdminShell({
           </Link>
           <Link
             href="/sunum"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-between px-3.5 py-2 rounded-xl text-sm text-slate-300 hover:bg-white/10 hover:text-white transition-colors"
           >
-            <span>Proje Sunumu</span>
+            <span>İş Modeli Sunumu</span>
+            <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+          </Link>
+          <Link
+            href="/sunum-global"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-between px-3.5 py-2 rounded-xl text-sm text-slate-300 hover:bg-white/10 hover:text-white transition-colors"
+          >
+            <span>Global Analiz Sunumu</span>
             <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
           </Link>
         </div>

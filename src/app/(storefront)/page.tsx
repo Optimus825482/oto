@@ -4,10 +4,6 @@ import React, { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
-  Microscope,
-  PackageCheck,
-  ReceiptText,
-  ShieldCheck,
   ArrowRight,
   Cpu,
   PackageSearch,
@@ -21,37 +17,8 @@ import {
   CatalogSection,
   type CatalogPartItem,
 } from "@/components/storefront/CatalogSection";
-
-const TRUST_CARDS = [
-  {
-    title: "Tezgâh Testi & QR Sertifika",
-    description:
-      "Her beyin müşteriye çıkmadan merkez laboratuvarımızda CAN/OBD haberleşme, pin ve fiziksel testten geçer; QR sertifikasıyla mühürlenir.",
-    icon: Microscope,
-    accent: "bg-orange-500 text-white",
-  },
-  {
-    title: "Tek Tip Anti-Statik Kargo",
-    description:
-      "Tüm gönderiler ESD korumalı özel oto beyin kutusunda, darbe emici sünger ve hologramlı güvenlik bandıyla merkezden sevk edilir.",
-    icon: PackageCheck,
-    accent: "bg-navy-900 text-white",
-  },
-  {
-    title: "Kurumsal E-Fatura & E-Arşiv",
-    description:
-      "Bireysel müşteriler için E-Arşiv, servisler ve işletmeler için KDV dahil resmi Kurumsal E-Fatura otomatik olarak düzenlenir.",
-    icon: ReceiptText,
-    accent: "bg-emerald-600 text-white",
-  },
-  {
-    title: "14 Gün Koşulsuz Güvence",
-    description:
-      "Ödemeniz güvence hesabında korunur. Uyumsuz çıkması veya arıza durumunda 14 gün içinde kesintisiz iade garantisi sunulur.",
-    icon: ShieldCheck,
-    accent: "bg-orange-600 text-white",
-  },
-];
+import { HowItWorksSection } from "@/components/storefront/HowItWorksSection";
+import { Footer } from "@/components/storefront/Footer";
 
 const EIGHT_STEP_HIGHLIGHTS = [
   "1. Beyin / Şase Sorgusu",
@@ -186,76 +153,12 @@ function StorefrontContent() {
           onAskMissingPart={handleAskMissingPart}
         />
 
-        {/* Neden OtoBeyinPazari? 4-Card Trust Bar */}
-        <section className="space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-            <div>
-              <h2 className="text-xl sm:text-2xl font-extrabold text-navy-900">
-                Neden OtoBeyinPazari.com?
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
-                Belirsiz çıkma parça alışverişini şeffaf, testli ve kurumsal
-                standartlara taşıyoruz.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {TRUST_CARDS.map((card) => {
-              const Icon = card.icon;
-              return (
-                <div
-                  key={card.title}
-                  className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-3"
-                >
-                  <div
-                    className={`w-11 h-11 rounded-xl flex items-center justify-center shadow-xs ${card.accent}`}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-base font-bold text-navy-900">
-                    {card.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {card.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
+        {/* How It Works, Standards & Dynamic Value-Add Services */}
+        <HowItWorksSection />
       </main>
 
-      {/* Footer */}
-      <footer className="bg-navy-950 text-slate-300 border-t border-navy-800 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <img
-              src="/assets/logo-main.jpg"
-              alt="OtoBeyinPazari.com"
-              className="h-10 w-auto rounded-lg bg-white p-1 object-contain"
-            />
-            <div className="text-xs">
-              <div className="font-bold text-white">OtoBeyinPazari.com</div>
-              <div className="text-slate-400">
-                Test Garantili &amp; Merkezi Tedarikli Oto Elektronik Platformu
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-5 text-xs font-semibold">
-            <Link href="/takip" className="hover:text-orange-400 transition-colors">
-              Sipariş Takip
-            </Link>
-            <Link href="/sunum" className="hover:text-orange-400 transition-colors">
-              Proje Sunumu
-            </Link>
-            <Link href="/giris" className="hover:text-orange-400 transition-colors">
-              Tedarikçi / Admin Giriş
-            </Link>
-          </div>
-        </div>
-      </footer>
+      {/* Corporate Footer */}
+      <Footer />
 
       {/* Mobile Sticky Bottom Bar */}
       <div className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-t border-slate-200 px-3 py-2 flex items-center justify-around gap-2 shadow-lg">

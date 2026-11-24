@@ -8,11 +8,11 @@ import {
   ArrowLeft,
   Eye,
   EyeOff,
+  Handshake,
   KeyRound,
   Loader2,
   Lock,
   Mail,
-  Presentation,
   ShieldCheck,
   Sparkles,
   UserCheck,
@@ -135,15 +135,15 @@ export default function GirisPage() {
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium text-slate-700 hover:text-navy-900 hover:bg-slate-100 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span>Vitrin</span>
+              <span>Müşteri Vitrini</span>
             </Link>
-            <a
-              href="/sunum"
+            <Link
+              href="/tedarikci-basvuru"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-navy-900 text-white hover:bg-navy-800 transition-colors"
             >
-              <Presentation className="w-4 h-4 text-orange-400" />
-              <span>Sunum</span>
-            </a>
+              <Handshake className="w-4 h-4 text-orange-400" />
+              <span>Tedarikçi Başvurusu</span>
+            </Link>
           </nav>
         </div>
       </header>
@@ -265,15 +265,15 @@ export default function GirisPage() {
                     href="/"
                     className="font-medium text-navy-900 hover:text-orange-500 transition-colors"
                   >
-                    Vitrine Dön
+                    Müşteri Vitrini
                   </Link>
                   <span className="text-slate-300">•</span>
-                  <a
-                    href="/sunum"
+                  <Link
+                    href="/tedarikci-basvuru"
                     className="font-medium text-navy-900 hover:text-orange-500 transition-colors"
                   >
-                    Platform Sunumu
-                  </a>
+                    Tedarikçi Başvurusu
+                  </Link>
                 </div>
               </div>
             </form>
