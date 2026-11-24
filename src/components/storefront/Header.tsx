@@ -147,35 +147,35 @@ export function Header({
         </div>
       </div>
 
-      {/* Orange Full-Width Horizontal Scrollable Category Navigation Bar */}
+      {/* Orange Full-Width Category Navigation Bar (No Horizontal Scroll) */}
       <nav
         aria-label="Parça kategorileri"
         className="w-full bg-orange-500 text-white border-t border-orange-600/30"
       >
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-1 overflow-x-auto py-1.5 no-scrollbar">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="flex flex-wrap items-center justify-center xl:justify-between gap-1 py-1.5">
             {onSelectCategory ? (
               <button
                 type="button"
                 onClick={() => onSelectCategory("ALL")}
-                className={`whitespace-nowrap px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wide transition-colors cursor-pointer shrink-0 ${
+                className={`whitespace-nowrap px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold tracking-wide transition-colors cursor-pointer ${
                   activeCategory === "ALL"
                     ? "bg-navy-900 text-white shadow-sm"
                     : "text-white hover:bg-orange-600"
                 }`}
               >
-                TÜM KATEGORİLER
+                TÜMÜ
               </button>
             ) : (
               <Link
                 href="/"
-                className={`whitespace-nowrap px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wide transition-colors shrink-0 ${
+                className={`whitespace-nowrap px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold tracking-wide transition-colors ${
                   activeCategory === "ALL"
                     ? "bg-navy-900 text-white shadow-sm"
                     : "text-white hover:bg-orange-600"
                 }`}
               >
-                TÜM KATEGORİLER
+                TÜMÜ
               </Link>
             )}
 
@@ -187,7 +187,7 @@ export function Header({
                     key={cat.code}
                     type="button"
                     onClick={() => onSelectCategory(cat.code)}
-                    className={`whitespace-nowrap px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wide transition-colors cursor-pointer shrink-0 ${
+                    className={`whitespace-nowrap px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold tracking-wide transition-colors cursor-pointer ${
                       isActive
                         ? "bg-navy-900 text-white shadow-sm"
                         : "text-white hover:bg-orange-600"
@@ -201,7 +201,7 @@ export function Header({
                 <Link
                   key={cat.code}
                   href={`/?category=${cat.code}#katalog`}
-                  className={`whitespace-nowrap px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wide transition-colors shrink-0 ${
+                  className={`whitespace-nowrap px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold tracking-wide transition-colors ${
                     isActive
                       ? "bg-navy-900 text-white shadow-sm"
                       : "text-white hover:bg-orange-600"
