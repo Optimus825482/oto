@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/storefront/Header";
 import { OrderTimeline } from "@/components/storefront/OrderTimeline";
+import { BrandLoadingScreen } from "@/components/ui/BrandLoadingScreen";
 import {
   INQUIRY_STATUS_LABELS,
   PART_CATEGORIES,
@@ -93,6 +94,16 @@ export default function TrackingDetailPage() {
   const statusLabel = data
     ? INQUIRY_STATUS_LABELS[data.status] ?? data.status
     : "";
+
+  if (loading && !data) {
+    return (
+      <BrandLoadingScreen
+        title={rawCode ? `Takip Kodu: ${rawCode}` : "Canlı Sipariş Takibi"}
+        subtitle="Sipariş ve test laboratuvarı kayıtları getiriliyor..."
+        badge="CANLI SİPARİŞ TAKİBİ"
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">

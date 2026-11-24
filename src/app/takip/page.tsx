@@ -11,6 +11,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { Header } from "@/components/storefront/Header";
+import { BrandLoadingScreen } from "@/components/ui/BrandLoadingScreen";
 
 const DEMO_CODES = [
   {
@@ -34,6 +35,13 @@ export default function TrackingLookupPage() {
   const router = useRouter();
   const [code, setCode] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [searchingCode, setSearchingCode] = useState<string | null>(null);
+
+  function goToTracking(target: string) {
+    setError(null);
+    setSearchingCode(target);
+    router.push(`/takip/${encodeURIComponent(target)}`);
+  }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -42,8 +50,17 @@ export default function TrackingLookupPage() {
       setError("Lütfen talep veya sipariş takip kodunuzu giriniz (ör. OBP-202603).");
       return;
     }
-    setError(null);
-    router.push(`/takip/${encodeURIComponent(trimmed)}`);
+    goToTracking(trimmed);
+  }
+
+  if (searchingCode) {
+    return (
+      <BrandLoadingScreen
+        title={`Takip Kodu: ${searchingCode}`}
+        subtitle="8 adımlı sipariş ve test laboratuvarı durumu sorgulanıyor..."
+        badge="CANLI SİPARİŞ TAKİBİ"
+      />
+    );
   }
 
   return (
@@ -116,7 +133,7 @@ export default function TrackingLookupPage() {
                   <button
                     key={demo.code}
                     type="button"
-                    onClick={() => router.push(`/takip/${demo.code}`)}
+                    onClick={() => goToTracking(demo.code)}
                     className="text-left p-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-orange-50 hover:border-orange-300 transition-colors cursor-pointer group"
                   >
                     <div className="font-mono text-sm font-extrabold text-navy-900 group-hover:text-orange-600">
