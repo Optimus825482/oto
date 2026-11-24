@@ -566,7 +566,7 @@ export default function AdminSettingsPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
           <a
             href="/sunum"
             target="_blank"
@@ -625,6 +625,26 @@ export default function AdminSettingsPage() {
               </p>
             </div>
             <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-orange-400 shrink-0 mt-1" />
+          </a>
+
+          <a
+            href="/sunum-strateji"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-2xl bg-gradient-to-br from-emerald-950 to-navy-950 text-white p-6 border border-emerald-400/30 shadow-sm hover:border-emerald-400 transition-all flex items-start justify-between gap-4"
+          >
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300">
+                <Globe2 className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold group-hover:text-emerald-300 transition-colors">
+                Bağımsız Stratejik Değerlendirme
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Türkiye fizibilitesi, Aksaray Merkez &amp; Caner Doğan liderliği, başarı/risk otopsisi ve Google SEO / Reklam yol haritası.
+              </p>
+            </div>
+            <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-emerald-300 shrink-0 mt-1" />
           </a>
         </div>
       </section>

@@ -31,6 +31,14 @@ const nextConfig: NextConfig = {
         source: "/sunum-yatirim/",
         destination: "/sunum/yatirim-cihazlar.html",
       },
+      {
+        source: "/sunum-strateji",
+        destination: "/sunum/stratejik-degerlendirme.html",
+      },
+      {
+        source: "/sunum-strateji/",
+        destination: "/sunum/stratejik-degerlendirme.html",
+      },
     ];
   },
   async headers() {
