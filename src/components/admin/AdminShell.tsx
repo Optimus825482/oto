@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import {
   Activity,
   Building2,
+  Database,
   ExternalLink,
   FlaskConical,
   LogOut,
@@ -47,6 +48,12 @@ const NAV_ITEMS = [
     href: "/admin/siparisler",
     label: "Sipariş, Kargo & E-Fatura",
     icon: PackageCheck,
+    exact: false,
+  },
+  {
+    href: "/admin/arsiv",
+    label: "OEM & Beyin Arşivi",
+    icon: Database,
     exact: false,
   },
   {
