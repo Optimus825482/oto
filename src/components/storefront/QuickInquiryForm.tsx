@@ -65,10 +65,50 @@ export function QuickInquiryForm({
   const [compatibleParts, setCompatibleParts] = useState<CompatiblePartPreview[]>([]);
   const [vinError, setVinError] = useState<string | null>(null);
 
+  const [partSuggestions, setPartSuggestions] = useState<CompatiblePartPreview[]>([]);
+  const [loadingSuggestions, setLoadingSuggestions] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedBrand, setSelectedBrand] = useState<string | undefined>(undefined);
+
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [createdInquiry, setCreatedInquiry] =
     useState<CreatedInquiryResponse | null>(null);
+
+  useEffect(() => {
+    const query = partCode.trim();
+    if (query.length < 2 || !showSuggestions) {
+      setPartSuggestions([]);
+      setLoadingSuggestions(false);
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      setLoadingSuggestions(true);
+      try {
+        const res = await fetch(
+          `/api/catalog?q=${encodeURIComponent(query)}`,
+          { signal: controller.signal }
+        );
+        if (!res.ok) return;
+        const data = await res.json();
+        const items = Array.isArray(data.items)
+          ? (data.items as CompatiblePartPreview[]).slice(0, 8)
+          : [];
+        setPartSuggestions(items);
+      } catch {
+        // ignore abort or transient error
+      } finally {
+        setLoadingSuggestions(false);
+      }
+    }, 200);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [partCode, showSuggestions]);
 
   useEffect(() => {
     if (prefillPartCode) {
@@ -145,7 +185,7 @@ export function QuickInquiryForm({
           partCode: partCode.trim() || undefined,
           vin: vin.trim() || undefined,
           category: category || "ECU",
-          brand: vinResult?.brand || undefined,
+          brand: vinResult?.brand || selectedBrand || undefined,
           note: note.trim() || undefined,
         }),
       });
@@ -263,10 +303,10 @@ export function QuickInquiryForm({
   return (
     <div
       id="hizli-talep"
-      className="bg-white rounded-2xl border border-slate-200 shadow-lg overflow-hidden"
+      className="bg-white rounded-2xl border border-slate-200 shadow-lg"
     >
       {/* Top Card Accent */}
-      <div className="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 px-5 sm:px-7 py-4 flex flex-wrap items-center justify-between gap-2">
+      <div className="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 rounded-t-2xl px-5 sm:px-7 py-4 flex flex-wrap items-center justify-between gap-2">
         <div>
           <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
             <Cpu className="w-5 h-5 text-orange-400" />
@@ -291,51 +331,7 @@ export function QuickInquiryForm({
           </div>
         )}
 
-        {/* Primary 2 Mockup Fields + VIN */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label
-              htmlFor="inquiry-phone"
-              className="block text-xs font-bold text-navy-900 uppercase tracking-wide mb-1.5"
-            >
-              Cep Telefonu Numaranız <span className="text-orange-600">*</span>
-            </label>
-            <div className="relative">
-              <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-              <input
-                id="inquiry-phone"
-                type="tel"
-                required
-                value={customerPhone}
-                onChange={(e) => setCustomerPhone(e.target.value)}
-                placeholder="05XX XXX XX XX"
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none text-sm font-medium text-slate-900 placeholder:text-slate-400"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label
-              htmlFor="inquiry-partcode"
-              className="block text-xs font-bold text-navy-900 uppercase tracking-wide mb-1.5"
-            >
-              Aradığınız Beyin Numarası / Ürün Adı
-            </label>
-            <div className="relative">
-              <Cpu className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-              <input
-                id="inquiry-partcode"
-                type="text"
-                value={partCode}
-                onChange={(e) => setPartCode(e.target.value)}
-                placeholder="Örn: A646 150 00 00, 0AM927769D, EDC17"
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none text-sm font-mono font-medium text-slate-900 placeholder:font-sans placeholder:text-slate-400"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* 17-Char VIN + Live Auto-Decode */}
+        {/* 1. EN ÜSTTE: 17-Char VIN + Live Auto-Decode */}
         <div className="bg-slate-50 border border-slate-200/90 rounded-xl p-4 space-y-2.5">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <label
@@ -467,9 +463,11 @@ export function QuickInquiryForm({
                           type="button"
                           onClick={() => {
                             setPartCode(part.oemCode);
+                            setSelectedBrand(part.brand);
                             if (part.category) {
                               setCategory(part.category);
                             }
+                            setShowSuggestions(false);
                             setSubmitError(null);
                           }}
                           className={`text-left p-2.5 rounded-lg border transition-all cursor-pointer ${
@@ -504,6 +502,119 @@ export function QuickInquiryForm({
               )}
             </div>
           )}
+        </div>
+
+        {/* 2. Cep Telefonu + Canlı Önerili Beyin Numarası / Ürün Adı */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label
+              htmlFor="inquiry-phone"
+              className="block text-xs font-bold text-navy-900 uppercase tracking-wide mb-1.5"
+            >
+              Cep Telefonu Numaranız <span className="text-orange-600">*</span>
+            </label>
+            <div className="relative">
+              <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <input
+                id="inquiry-phone"
+                type="tel"
+                required
+                value={customerPhone}
+                onChange={(e) => setCustomerPhone(e.target.value)}
+                placeholder="05XX XXX XX XX"
+                className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none text-sm font-medium text-slate-900 placeholder:text-slate-400"
+              />
+            </div>
+          </div>
+
+          <div className="relative">
+            <label
+              htmlFor="inquiry-partcode"
+              className="block text-xs font-bold text-navy-900 uppercase tracking-wide mb-1.5"
+            >
+              Aradığınız Beyin Numarası / Ürün Adı
+            </label>
+            <div className="relative">
+              <Cpu className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <input
+                id="inquiry-partcode"
+                type="text"
+                autoComplete="off"
+                value={partCode}
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => {
+                  window.setTimeout(() => setShowSuggestions(false), 180);
+                }}
+                onChange={(e) => {
+                  setPartCode(e.target.value);
+                  setShowSuggestions(true);
+                }}
+                placeholder="Örn: A646 150 00 00, 0AM927769D, Vito, DSG"
+                className="w-full pl-10 pr-9 py-3 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none text-sm font-mono font-medium text-slate-900 placeholder:font-sans placeholder:text-slate-400"
+              />
+              {loadingSuggestions && (
+                <Loader2 className="w-4 h-4 text-orange-500 animate-spin absolute right-3 top-1/2 -translate-y-1/2" />
+              )}
+            </div>
+
+            {/* Live Archive Autocomplete Dropdown */}
+            {showSuggestions && partCode.trim().length >= 2 && (
+              <div className="absolute left-0 right-0 top-full mt-1.5 z-50 rounded-xl border border-slate-200 bg-white shadow-xl overflow-hidden">
+                {partSuggestions.length > 0 ? (
+                  <div className="max-h-72 overflow-y-auto divide-y divide-slate-100">
+                    <div className="px-3 py-1.5 bg-slate-50 text-[11px] font-bold text-slate-500 flex items-center justify-between">
+                      <span>Arşivden Uyumlu Seçenekler ({partSuggestions.length})</span>
+                      <span className="text-orange-600">Seçmek için tıklayın</span>
+                    </div>
+                    {partSuggestions.map((item) => (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onMouseDown={(e) => {
+                          e.preventDefault();
+                          setPartCode(item.oemCode);
+                          setSelectedBrand(item.brand);
+                          if (item.category) setCategory(item.category);
+                          setShowSuggestions(false);
+                          setSubmitError(null);
+                        }}
+                        className="w-full text-left px-3.5 py-2.5 hover:bg-orange-50/70 transition-colors cursor-pointer"
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="font-mono text-xs font-bold text-navy-900">
+                            {item.oemCode}
+                          </span>
+                          <div className="flex items-center gap-1.5 shrink-0">
+                            <span className="px-1.5 py-0.5 rounded bg-slate-100 text-[10px] font-bold text-slate-700">
+                              {item.category}
+                            </span>
+                            {item.referencePrice != null && (
+                              <span className="text-xs font-bold text-orange-600">
+                                {formatTRY(item.referencePrice)}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        <p className="text-[11.5px] text-slate-600 truncate mt-0.5">
+                          <strong className="text-navy-900">{item.brand}</strong>{" "}
+                          {item.model} • {item.manufacturer}
+                          {item.engineCode ? ` (${item.engineCode})` : ""}
+                        </p>
+                      </button>
+                    ))}
+                  </div>
+                ) : !loadingSuggestions ? (
+                  <div className="px-3.5 py-3 text-xs text-slate-600 bg-orange-50/40">
+                    <strong className="text-navy-900 block">
+                      Arşivde birebir eşleşme görünmüyor — sorun değil!
+                    </strong>
+                    Yazdığınız kodla gönderdiğinizde 50+ onaylı tedarikçimizden
+                    anında sorgulayıp SMS ile fiyat döneriz.
+                  </div>
+                ) : null}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Optional Fields: Name, Category, Note */}
