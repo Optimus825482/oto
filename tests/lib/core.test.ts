@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { normalizePartCode, decodeVin } from "@/lib/vin";
+import { describe, it, expect, vi, afterEach } from "vitest";
+import { normalizePartCode, decodeVin, decodeVinLive } from "@/lib/vin";
 import { calculateCustomerPrice } from "@/lib/pricing";
 
 describe("Part Code Normalization", () => {
@@ -46,5 +46,94 @@ describe("Pricing & Margin Calculator", () => {
     expect(res.customerPrice).toBe(9750);
     expect(res.grossMargin).toBe(1750);
     expect(res.netProfit).toBe(1400);
+  });
+});
+
+describe("Live NHTSA vPIC VIN Decoder", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it("enriches valid VIN with live NHTSA vPIC fields and normalizes brand names", async () => {
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        Results: [
+          {
+            Make: "VOLKSWAGEN",
+            Model: "Passat",
+            ModelYear: "2014",
+            FuelTypePrimary: "Diesel",
+            DisplacementL: "2.0",
+            BodyClass: "Sedan/Saloon",
+            PlantCountry: "GERMANY",
+          },
+        ],
+      }),
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    const res = await decodeVinLive("WVWZZZ3CZEE104829");
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(res.valid).toBe(true);
+    expect(res.source).toBe("nhtsa_live");
+    expect(res.brand).toBe("Volkswagen");
+    expect(res.model).toBe("Passat");
+    expect(res.modelYear).toBe(2014);
+    expect(res.fuelType).toBe("Diesel");
+    expect(res.engineDisplacement).toBe("2.0L");
+    expect(res.bodyClass).toBe("Sedan/Saloon");
+    expect(res.plantCountry).toBe("GERMANY");
+  });
+
+  it("ignores 'Not Applicable' or empty NHTSA fields and keeps local WMI brand", async () => {
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        Results: [
+          {
+            Make: "",
+            Model: "Not Applicable",
+            ModelYear: "Not Applicable",
+            FuelTypePrimary: "Not Applicable",
+            DisplacementL: "",
+            BodyClass: "Not Applicable",
+            PlantCountry: "TURKEY",
+          },
+        ],
+      }),
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    const res = await decodeVinLive("NM0EXXTTRG1234567");
+    expect(res.valid).toBe(true);
+    expect(res.source).toBe("nhtsa_live");
+    expect(res.brand).toBe("Ford Otosan");
+    expect(res.model).toBeUndefined();
+    expect(res.fuelType).toBeUndefined();
+    expect(res.engineDisplacement).toBeUndefined();
+    expect(res.bodyClass).toBeUndefined();
+    expect(res.plantCountry).toBe("TURKEY");
+  });
+
+  it("falls back to local WMI on network error", async () => {
+    const fetchMock = vi.fn().mockRejectedValue(new Error("Network timeout"));
+    vi.stubGlobal("fetch", fetchMock);
+
+    const res = await decodeVinLive("WDF63960313482910");
+    expect(res.valid).toBe(true);
+    expect(res.source).toBe("local_wmi");
+    expect(res.brand).toBe("Mercedes-Benz (Ticari)");
+    expect(res.region).toBe("Almanya");
+    expect(res.suggestedEcuFamilies?.length).toBeGreaterThan(0);
+  });
+
+  it("returns invalid VIN immediately without calling external fetch", async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+
+    const res = await decodeVinLive("WDF6396031O482910");
+    expect(res.valid).toBe(false);
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 });

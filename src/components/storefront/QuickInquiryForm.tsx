@@ -16,13 +16,26 @@ import {
   Layers,
   RotateCcw,
 } from "lucide-react";
-import { PART_CATEGORIES } from "@/types/domain";
+import { PART_CATEGORIES, formatTRY } from "@/types/domain";
 import type { VinDecodeResult } from "@/lib/vin";
 
 export interface QuickInquiryFormProps {
   prefillPartCode?: string;
   prefillCategory?: string;
   prefillNonce?: number;
+}
+
+interface CompatiblePartPreview {
+  id: string;
+  oemCode: string;
+  normalizedCode: string;
+  category: string;
+  brand: string;
+  model: string;
+  yearRange?: string | null;
+  engineCode?: string | null;
+  manufacturer: string;
+  referencePrice?: number | null;
 }
 
 interface CreatedInquiryResponse {
@@ -49,6 +62,7 @@ export function QuickInquiryForm({
 
   const [vinDecoding, setVinDecoding] = useState(false);
   const [vinResult, setVinResult] = useState<VinDecodeResult | null>(null);
+  const [compatibleParts, setCompatibleParts] = useState<CompatiblePartPreview[]>([]);
   const [vinError, setVinError] = useState<string | null>(null);
 
   const [submitting, setSubmitting] = useState(false);
@@ -71,6 +85,7 @@ export function QuickInquiryForm({
     const cleanVin = (targetVin ?? vin).trim().toUpperCase().replace(/\s+/g, "");
     setVinError(null);
     setVinResult(null);
+    setCompatibleParts([]);
 
     if (!cleanVin) {
       setVinError("Lütfen önce 17 haneli şase numaranızı (VIN) yazın.");
@@ -91,6 +106,9 @@ export function QuickInquiryForm({
       }
       setVin(data.vin);
       setVinResult(data);
+      setCompatibleParts(
+        Array.isArray(data.compatibleParts) ? data.compatibleParts : []
+      );
     } catch {
       setVinError("Şase çözümleme sırasında bağlantı hatası oluştu.");
     } finally {
@@ -154,6 +172,7 @@ export function QuickInquiryForm({
     setVin("");
     setNote("");
     setVinResult(null);
+    setCompatibleParts([]);
     setVinError(null);
     setSubmitError(null);
   }
@@ -343,6 +362,7 @@ export function QuickInquiryForm({
                 if (vinError) setVinError(null);
                 if (vinResult && next.trim() !== vinResult.vin) {
                   setVinResult(null);
+                  setCompatibleParts([]);
                 }
               }}
               placeholder="Örn: WDF63960313482910 veya WVWZZZ3CZEE104829"
@@ -376,25 +396,112 @@ export function QuickInquiryForm({
           )}
 
           {vinResult && vinResult.valid && (
-            <div className="flex flex-wrap items-center gap-2 pt-1">
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
-                <CheckCircle2 className="w-3.5 h-3.5" />
-                {vinResult.brand}
-                {vinResult.modelYear ? ` • ${vinResult.modelYear}` : ""}
-              </span>
-              {vinResult.region && (
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-navy-900/10 text-navy-900 text-xs font-semibold">
-                  Menşei: {vinResult.region}
-                </span>
-              )}
-              {vinResult.suggestedEcuFamilies?.map((fam) => (
+            <div className="space-y-2.5 pt-1">
+              <div className="flex flex-wrap items-center gap-2">
                 <span
-                  key={fam}
-                  className="inline-flex items-center px-2.5 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-semibold"
+                  className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold border ${
+                    vinResult.source === "nhtsa_live"
+                      ? "bg-sky-50 text-sky-800 border-sky-200"
+                      : vinResult.source === "external_oem"
+                      ? "bg-violet-50 text-violet-800 border-violet-200"
+                      : "bg-slate-200/80 text-slate-700 border-slate-300"
+                  }`}
                 >
-                  {fam}
+                  <Sparkles className="w-3 h-3" />
+                  {vinResult.source === "nhtsa_live"
+                    ? "Canlı VIN API"
+                    : vinResult.source === "external_oem"
+                    ? "OEM VIN API"
+                    : "Avrupa WMI"}
                 </span>
-              ))}
+
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  {vinResult.brand}
+                  {vinResult.model ? ` ${vinResult.model}` : ""}
+                  {vinResult.modelYear ? ` • ${vinResult.modelYear}` : ""}
+                </span>
+
+                {(vinResult.engineDisplacement || vinResult.fuelType) && (
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-semibold">
+                    {[vinResult.engineDisplacement, vinResult.fuelType]
+                      .filter(Boolean)
+                      .join(" • ")}
+                  </span>
+                )}
+
+                {(vinResult.plantCountry || vinResult.region) && (
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-navy-900/10 text-navy-900 text-xs font-semibold">
+                    Menşei: {vinResult.plantCountry || vinResult.region}
+                  </span>
+                )}
+
+                {vinResult.suggestedEcuFamilies?.map((fam) => (
+                  <span
+                    key={fam}
+                    className="inline-flex items-center px-2.5 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-semibold"
+                  >
+                    {fam}
+                  </span>
+                ))}
+              </div>
+
+              {compatibleParts.length > 0 && (
+                <div className="bg-white border border-slate-200 rounded-xl p-3 space-y-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-xs font-bold text-navy-900 flex items-center gap-1.5">
+                      <Cpu className="w-3.5 h-3.5 text-orange-500" />
+                      Bu Şaseye Uyumlu Arşivdeki Beyinler ({compatibleParts.length})
+                    </span>
+                    <span className="text-[11px] text-slate-500">
+                      Seçmek için parçaya tıklayın
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-52 overflow-y-auto pr-0.5">
+                    {compatibleParts.map((part) => {
+                      const isSelected = partCode === part.oemCode;
+                      return (
+                        <button
+                          key={part.id}
+                          type="button"
+                          onClick={() => {
+                            setPartCode(part.oemCode);
+                            if (part.category) {
+                              setCategory(part.category);
+                            }
+                            setSubmitError(null);
+                          }}
+                          className={`text-left p-2.5 rounded-lg border transition-all cursor-pointer ${
+                            isSelected
+                              ? "border-orange-500 bg-orange-50/70 ring-1 ring-orange-500/30"
+                              : "border-slate-200 hover:border-orange-400 hover:bg-slate-50"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="font-mono text-xs font-bold text-navy-900 truncate">
+                              {part.oemCode}
+                            </span>
+                            <span className="text-[11px] font-bold text-orange-600 shrink-0">
+                              {part.referencePrice != null
+                                ? formatTRY(part.referencePrice)
+                                : "Teklif Al"}
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between gap-2 mt-1 text-[11px] text-slate-600">
+                            <span className="truncate">
+                              {part.manufacturer} • {part.model}
+                            </span>
+                            <span className="px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 font-semibold shrink-0">
+                              {part.category}
+                            </span>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>

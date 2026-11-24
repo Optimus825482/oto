@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 
 const { mockPrisma } = vi.hoisted(() => ({
   mockPrisma: {
@@ -38,6 +38,10 @@ import { GET as certificateGET } from "@/app/api/certificates/[code]/route";
 describe("Public, Catalog, VIN, Inquiry, Offer & Certificate APIs", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
   });
 
   describe("GET /api/catalog", () => {
@@ -82,7 +86,42 @@ describe("Public, Catalog, VIN, Inquiry, Offer & Certificate APIs", () => {
   });
 
   describe("POST /api/vin/decode", () => {
-    it("returns 200 with decoded vehicle data for valid 17-char VIN", async () => {
+    it("returns 200 with live decoded vehicle data and compatible catalog parts", async () => {
+      vi.stubGlobal(
+        "fetch",
+        vi.fn().mockResolvedValue({
+          ok: true,
+          json: async () => ({
+            Results: [
+              {
+                Make: "VOLKSWAGEN",
+                Model: "Passat",
+                ModelYear: "2014",
+                FuelTypePrimary: "Diesel",
+                DisplacementL: "2.0",
+                BodyClass: "Sedan/Saloon",
+                PlantCountry: "GERMANY",
+              },
+            ],
+          }),
+        })
+      );
+
+      const matchedParts = [
+        {
+          id: "part-vw-1",
+          oemCode: "0AM 927 769 D",
+          normalizedCode: "0AM927769D",
+          category: "TCU",
+          brand: "Volkswagen",
+          model: "Passat / Golf DSG",
+          manufacturer: "LuK / Continental",
+          referencePrice: 13500,
+          isFeatured: true,
+        },
+      ];
+      mockPrisma.catalogPart.findMany.mockResolvedValue(matchedParts);
+
       const req = new Request("http://localhost:3000/api/vin/decode", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -95,7 +134,44 @@ describe("Public, Catalog, VIN, Inquiry, Offer & Certificate APIs", () => {
       const json = await res.json();
       expect(json.valid).toBe(true);
       expect(json.brand).toBe("Volkswagen");
+      expect(json.model).toBe("Passat");
       expect(json.modelYear).toBe(2014);
+      expect(json.source).toBe("nhtsa_live");
+      expect(json.compatibleParts).toHaveLength(1);
+      expect(json.compatibleParts[0].oemCode).toBe("0AM 927 769 D");
+
+      expect(mockPrisma.catalogPart.findMany).toHaveBeenCalledWith({
+        where: {
+          brand: { contains: "Volkswagen", mode: "insensitive" },
+        },
+        orderBy: [{ isFeatured: "desc" }, { createdAt: "desc" }],
+        take: 8,
+      });
+    });
+
+    it("falls back cleanly when NHTSA fails and catalog query throws", async () => {
+      vi.stubGlobal(
+        "fetch",
+        vi.fn().mockRejectedValue(new Error("NHTSA unavailable"))
+      );
+      mockPrisma.catalogPart.findMany.mockRejectedValue(
+        new Error("DB unavailable")
+      );
+
+      const req = new Request("http://localhost:3000/api/vin/decode", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ vin: "WVWZZZ3CZEE104829" }),
+      });
+
+      const res = await vinDecodePOST(req);
+      expect(res.status).toBe(200);
+
+      const json = await res.json();
+      expect(json.valid).toBe(true);
+      expect(json.brand).toBe("Volkswagen");
+      expect(json.source).toBe("local_wmi");
+      expect(json.compatibleParts).toEqual([]);
     });
 
     it("returns 400 for VIN containing forbidden character O", async () => {

@@ -1,3 +1,7 @@
+import { lookupExternalVinOem } from "@/lib/adapters/vin-oem";
+
+export type VinDecodeSource = "nhtsa_live" | "local_wmi" | "external_oem";
+
 export interface VinDecodeResult {
   valid: boolean;
   vin: string;
@@ -7,6 +11,12 @@ export interface VinDecodeResult {
   region?: string;
   modelYear?: number;
   suggestedEcuFamilies?: string[];
+  model?: string;
+  fuelType?: string;
+  engineDisplacement?: string;
+  bodyClass?: string;
+  plantCountry?: string;
+  source?: VinDecodeSource;
 }
 
 const WMI_MAP: Record<
@@ -94,4 +104,137 @@ export function decodeVin(rawVin: string): VinDecodeResult {
     modelYear: YEAR_CODE_MAP[yearChar],
     suggestedEcuFamilies: wmiInfo?.ecuFamilies ?? ["OEM Beyin Ailesi — Manuel Doğrulama"],
   };
+}
+
+const BRAND_DISPLAY_OVERRIDES: Record<string, string> = {
+  "MERCEDES-BENZ": "Mercedes-Benz",
+  "MERCEDES BENZ": "Mercedes-Benz",
+  VOLKSWAGEN: "Volkswagen",
+  BMW: "BMW",
+  AUDI: "Audi",
+  OPEL: "Opel",
+  RENAULT: "Renault",
+  PEUGEOT: "Peugeot",
+  CITROEN: "Citroën",
+  "CITROËN": "Citroën",
+  FORD: "Ford",
+  FIAT: "Fiat",
+  HYUNDAI: "Hyundai",
+  TOYOTA: "Toyota",
+  SKODA: "Škoda",
+  "ŠKODA": "Škoda",
+  SEAT: "SEAT",
+  DACIA: "Dacia",
+  GMC: "GMC",
+  MINI: "MINI",
+  MG: "MG",
+  BYD: "BYD",
+  TOGG: "TOGG",
+};
+
+function cleanNhtsaField(value: unknown): string | undefined {
+  if (typeof value !== "string") return undefined;
+  const trimmed = value.trim();
+  if (!trimmed || trimmed.toLowerCase() === "not applicable") {
+    return undefined;
+  }
+  return trimmed;
+}
+
+function normalizeBrandName(rawMake: string): string {
+  const upper = rawMake.trim().toUpperCase();
+  if (BRAND_DISPLAY_OVERRIDES[upper]) {
+    return BRAND_DISPLAY_OVERRIDES[upper];
+  }
+  return upper
+    .split(/(\s+|-)/)
+    .map((part) => {
+      if (!part || /^\s+$/.test(part) || part === "-") return part;
+      return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
+    })
+    .join("");
+}
+
+function formatDisplacement(raw: string | undefined): string | undefined {
+  if (!raw) return undefined;
+  const parsed = Number.parseFloat(raw);
+  if (!Number.isFinite(parsed) || parsed <= 0) return undefined;
+  return raw.toUpperCase().endsWith("L") ? raw : `${raw}L`;
+}
+
+/**
+ * Decodes a 17-char VIN using local WMI rules enriched via external commercial OEM
+ * adapters (if configured) or the live NHTSA vPIC API, falling back to local WMI on failure.
+ */
+export async function decodeVinLive(rawVin: string): Promise<VinDecodeResult> {
+  const base = decodeVin(rawVin);
+  if (!base.valid) {
+    return base;
+  }
+
+  const oemMatch = await lookupExternalVinOem(base.vin);
+  if (oemMatch) {
+    return {
+      ...base,
+      brand: oemMatch.brand || base.brand,
+      model: oemMatch.model,
+      modelYear: oemMatch.modelYear ?? base.modelYear,
+      fuelType: oemMatch.fuelType,
+      engineDisplacement: formatDisplacement(oemMatch.engineDisplacement),
+      bodyClass: oemMatch.bodyClass,
+      plantCountry: oemMatch.plantCountry,
+      source: "external_oem",
+    };
+  }
+
+  try {
+    const url = `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/${encodeURIComponent(
+      base.vin
+    )}?format=json`;
+    const res = await fetch(url, {
+      headers: { Accept: "application/json" },
+      signal: AbortSignal.timeout(3000),
+    });
+
+    if (!res.ok) {
+      return { ...base, source: "local_wmi" };
+    }
+
+    const payload = (await res.json()) as {
+      Results?: Array<Record<string, unknown>>;
+    };
+    const row = payload?.Results?.[0];
+    if (!row) {
+      return { ...base, source: "local_wmi" };
+    }
+
+    const nhtsaMake = cleanNhtsaField(row.Make);
+    const model = cleanNhtsaField(row.Model);
+    const modelYearRaw = cleanNhtsaField(row.ModelYear);
+    const parsedYear = modelYearRaw ? Number.parseInt(modelYearRaw, 10) : NaN;
+    const modelYear =
+      Number.isFinite(parsedYear) && parsedYear >= 1980 && parsedYear <= 2100
+        ? parsedYear
+        : base.modelYear;
+    const fuelType = cleanNhtsaField(row.FuelTypePrimary);
+    const engineDisplacement = formatDisplacement(
+      cleanNhtsaField(row.DisplacementL)
+    );
+    const bodyClass = cleanNhtsaField(row.BodyClass);
+    const plantCountry = cleanNhtsaField(row.PlantCountry);
+
+    return {
+      ...base,
+      brand: nhtsaMake ? normalizeBrandName(nhtsaMake) : base.brand,
+      model,
+      modelYear,
+      fuelType,
+      engineDisplacement,
+      bodyClass,
+      plantCountry,
+      source: "nhtsa_live",
+    };
+  } catch {
+    return { ...base, source: "local_wmi" };
+  }
 }

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { decodeVin } from "@/lib/vin";
+import { prisma } from "@/lib/db";
+import { decodeVinLive } from "@/lib/vin";
 
 const vinSchema = z.object({
   vin: z.string().trim().min(1, "Şase numarası (VIN) alanı zorunludur."),
@@ -28,10 +29,29 @@ export async function POST(req: Request) {
     );
   }
 
-  const decoded = decodeVin(parsed.data.vin);
+  const decoded = await decodeVinLive(parsed.data.vin);
   if (!decoded.valid) {
     return NextResponse.json(decoded, { status: 400 });
   }
 
-  return NextResponse.json(decoded, { status: 200 });
+  let compatibleParts: unknown[] = [];
+  const brandKeyword = decoded.brand?.trim().split(/[\s/]+/)[0];
+  if (brandKeyword && brandKeyword !== "Diğer") {
+    try {
+      const matched = await prisma.catalogPart.findMany({
+        where: {
+          brand: { contains: brandKeyword, mode: "insensitive" },
+        },
+        orderBy: [{ isFeatured: "desc" }, { createdAt: "desc" }],
+        take: 8,
+      });
+      if (Array.isArray(matched)) {
+        compatibleParts = matched;
+      }
+    } catch {
+      compatibleParts = [];
+    }
+  }
+
+  return NextResponse.json({ ...decoded, compatibleParts }, { status: 200 });
 }
