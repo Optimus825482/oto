@@ -1,4 +1,7 @@
-const CACHE_NAME = "obp-pwa-v1";
+const CACHE_NAME = "obp-pwa-v2";
+const IS_LOCALHOST =
+  self.location.hostname === "localhost" ||
+  self.location.hostname === "127.0.0.1";
 const STATIC_ASSETS = [
   "/offline",
   "/assets/logo-main.jpg",
@@ -85,7 +88,17 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Static assets (_next/static, icons, assets): Stale-While-Revalidate
+  // On localhost development, skip caching Next.js dev chunks & pages so hot-reload never serves stale bundles
+  if (IS_LOCALHOST) {
+    if (request.mode === "navigate") {
+      event.respondWith(
+        fetch(request).catch(() => caches.match("/offline"))
+      );
+    }
+    return;
+  }
+
+  // Static assets (_next/static, icons, assets): Stale-While-Revalidate (production)
   if (
     url.pathname.startsWith("/_next/static/") ||
     url.pathname.startsWith("/icons/") ||
