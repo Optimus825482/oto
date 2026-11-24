@@ -1,0 +1,56 @@
+{
+  "id": "/tedarikci?pwa=supplier",
+  "name": "OtoBeyin Tedarikçi Portalı (Kapalı Ağ)",
+  "short_name": "OBP Tedarikçi",
+  "description": "Onaylı tedarikçiler için anlık toplu beyin talepleri (RFQ), hızlı teklif, merkez kargo kodu ve cari hesap takip uygulaması.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "/tedarikci",
+  "scope": "/tedarikci",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#F8FAFC",
+  "theme_color": "#0A2240",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Gelen Talepler (RFQ)",
+      "short_name": "Talepler",
+      "url": "/tedarikci",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Siparişler & Kargo",
+      "short_name": "Siparişler",
+      "url": "/tedarikci/siparisler",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Cari Hesap & Hakediş",
+      "short_name": "Cari Hesap",
+      "url": "/tedarikci/cari",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

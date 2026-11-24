@@ -1,0 +1,62 @@
+{
+  "id": "/?pwa=storefront",
+  "name": "OtoBeyinPazari.com — Oto Beyin Platformu",
+  "short_name": "OtoBeyin",
+  "description": "Test garantili, merkezi tedarikli, faturalı ve tek tip kargolamalı oto beyin (ECU, TCU, ABS, BCM, Airbag) platformu.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0A2240",
+  "categories": ["shopping", "business", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Hızlı Beyin / Şase Sorgu",
+      "short_name": "Hızlı Sorgu",
+      "url": "/#hizli-talep",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Canlı Sipariş Takip",
+      "short_name": "Sipariş Takip",
+      "url": "/takip",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Tedarikçi Portalı",
+      "short_name": "Tedarikçi",
+      "url": "/tedarikci",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Admin Operasyon Merkezi",
+      "short_name": "Admin Panel",
+      "url": "/admin",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

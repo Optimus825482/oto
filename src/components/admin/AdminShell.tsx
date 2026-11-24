@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { PwaInstallButton } from "@/components/pwa/PwaInstallButton";
 import {
   Activity,
   Building2,
@@ -149,9 +150,9 @@ export default function AdminShell({
           onClick={() => setMobileMenuOpen(false)}
         >
           <img
-            src="/assets/logo-main.jpg"
+            src="/assets/logo-square.jpg"
             alt="OtoBeyinPazari.com"
-            className="h-9 w-9 rounded-lg object-cover border border-white/15 shrink-0"
+            className="h-9 w-9 rounded-lg object-contain bg-white p-0.5 border border-white/15 shrink-0"
           />
           <div className="min-w-0">
             <p className="font-bold text-sm tracking-tight text-white truncate">
@@ -223,8 +224,13 @@ export default function AdminShell({
       </nav>
 
       {/* User footer */}
-      <div className="p-4 border-t border-white/10 bg-navy-900/60">
-        <div className="flex items-center justify-between gap-2 mb-3">
+      <div className="p-4 border-t border-white/10 bg-navy-900/60 space-y-3">
+        <PwaInstallButton
+          label="Admin Uygulamasını Kur"
+          appTitle="OtoBeyin Admin & Test Merkezi"
+          variant="dark"
+        />
+        <div className="flex items-center justify-between gap-2">
           <div className="min-w-0">
             <p className="text-sm font-semibold text-white truncate">
               {user.fullName || user.email}
@@ -258,9 +264,9 @@ export default function AdminShell({
       <header className="lg:hidden sticky top-0 z-30 bg-navy-950 text-white px-4 py-3 flex items-center justify-between border-b border-white/10">
         <Link href="/admin" className="flex items-center gap-2.5 min-w-0">
           <img
-            src="/assets/logo-main.jpg"
+            src="/assets/logo-square.jpg"
             alt="OtoBeyinPazari.com"
-            className="h-8 w-8 rounded-lg object-cover border border-white/15 shrink-0"
+            className="h-8 w-8 rounded-lg object-contain bg-white p-0.5 border border-white/15 shrink-0"
           />
           <div className="min-w-0">
             <p className="font-bold text-sm leading-tight truncate">

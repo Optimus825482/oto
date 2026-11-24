@@ -3,6 +3,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { PwaInstallButton } from "@/components/pwa/PwaInstallButton";
 import {
   ExternalLink,
   Inbox,
@@ -152,6 +153,11 @@ export default function SupplierShell({ children }: { children: ReactNode }) {
         </nav>
 
         <div className="p-4 border-t border-white/10 space-y-3">
+          <PwaInstallButton
+            label="Tedarikçi Uygulamasını Kur"
+            appTitle="OtoBeyin Tedarikçi Portalı"
+            variant="dark"
+          />
           <div className="flex items-center gap-2.5 rounded-xl bg-white/5 px-3 py-2.5">
             <UserCircle2 className="w-8 h-8 text-orange-400 shrink-0" />
             <div className="min-w-0">

@@ -11,6 +11,7 @@ import {
   Cpu,
 } from "lucide-react";
 import { PART_CATEGORIES } from "@/types/domain";
+import { PwaInstallButton } from "@/components/pwa/PwaInstallButton";
 
 export interface HeaderProps {
   activeCategory?: string;
@@ -63,6 +64,11 @@ export function Header({
               <span className="hidden xs:inline">Tedarikçi / Admin Giriş</span>
               <span className="xs:hidden">Giriş</span>
             </Link>
+            <PwaInstallButton
+              label="Uygulamayı Kur"
+              appTitle="OtoBeyinPazari.com"
+              variant="compact"
+            />
           </nav>
         </div>
       </div>
