@@ -6,7 +6,7 @@
   "lang": "tr",
   "dir": "ltr",
   "start_url": "/tedarikci",
-  "scope": "/tedarikci",
+  "scope": "/",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "orientation": "portrait-primary",
