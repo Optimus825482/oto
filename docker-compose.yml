@@ -1,20 +1,20 @@
+# Coolify Multi-Container Stack (Next.js App + PostgreSQL 17)
+# Coolify otomatik olarak SERVICE_PASSWORD_POSTGRES, SERVICE_PASSWORD_JWT ve SERVICE_FQDN_APP_3000 değerlerini üretir/yönetir.
 services:
   postgres:
     image: postgres:17-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-otobeyin}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-otobeyin_dev_pass}
+      POSTGRES_USER: ${SERVICE_USER_POSTGRES:-otobeyin}
+      POSTGRES_PASSWORD: ${SERVICE_PASSWORD_POSTGRES}
       POSTGRES_DB: ${POSTGRES_DB:-otobeyin}
-    ports:
-      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - otobeyin_pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-otobeyin} -d ${POSTGRES_DB:-otobeyin}"]
-      interval: 10s
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 15
 
   app:
     build:
@@ -24,12 +24,24 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    ports:
-      - "${APP_PORT:-3000}:3000"
+    expose:
+      - "3000"
     environment:
-      DATABASE_URL: postgresql://${POSTGRES_USER:-otobeyin}:${POSTGRES_PASSWORD:-otobeyin_dev_pass}@postgres:5432/${POSTGRES_DB:-otobeyin}?schema=public
-      JWT_SECRET: ${JWT_SECRET:-change-this-in-production-min-32-chars}
-      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+      - SERVICE_FQDN_APP_3000=${SERVICE_FQDN_APP_3000:-https://oto.erkanerdem.online}
+      - NODE_ENV=production
+      - DATABASE_URL=postgresql://${SERVICE_USER_POSTGRES:-otobeyin}:${SERVICE_PASSWORD_POSTGRES}@postgres:5432/${POSTGRES_DB:-otobeyin}?schema=public
+      - JWT_SECRET=${SERVICE_PASSWORD_JWT}
+      - NEXT_PUBLIC_APP_URL=${SERVICE_URL_APP:-https://oto.erkanerdem.online}
+      - SMS_PROVIDER=${SMS_PROVIDER:-sandbox}
+      - PAYMENT_PROVIDER=${PAYMENT_PROVIDER:-sandbox}
+      - CARGO_PROVIDER=${CARGO_PROVIDER:-sandbox}
+      - EINVOICE_PROVIDER=${EINVOICE_PROVIDER:-sandbox}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      start_period: 45s
+      retries: 3
 
 volumes:
   otobeyin_pgdata:

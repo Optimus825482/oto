@@ -8,3 +8,5 @@ Thumbs.db
 *.log
 .superpowers/
 coverage/
+*.tsbuildinfo
+prisma/dist/

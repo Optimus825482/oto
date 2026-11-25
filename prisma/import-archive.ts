@@ -21,7 +21,10 @@ interface ArchiveRow {
 }
 
 async function main() {
-  const dataDir = path.resolve(__dirname, "data");
+  const cwdDataDir = path.resolve(process.cwd(), "prisma", "data");
+  const dataDir = fs.existsSync(cwdDataDir)
+    ? cwdDataDir
+    : path.resolve(__dirname, "data");
   const jsonFiles = fs
     .readdirSync(dataDir)
     .filter((file) => file.toLowerCase().endsWith(".json"))
