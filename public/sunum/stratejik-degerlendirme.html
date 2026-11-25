@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OtoBeyinPazari.com — Bağımsız Stratejik Değerlendirme, Türkiye Fizibilitesi &amp; SEO/Reklam Planı</title>
+  <meta name="description" content="OtoBeyinPazari.com Türkiye pazarı fizibilite analizi, Aksaray Merkez & Caner Doğan liderliği, 12 aylık saha planı, başarı/risk otopsisi ve Google SEO / Reklam / Sosyal Medya büyüme yol haritası." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy-950: #061529;
+      --navy-900: #0A2240;
+      --navy-800: #11325C;
+      --orange-600: #E06B00;
+      --orange-500: #F57C00;
+      --orange-400: #FF9829;
+      --orange-100: #FFF3E0;
+      --orange-50: #FFF8F0;
+      --emerald-600: #059669;
+      --emerald-500: #10B981;
+      --emerald-50: #ECFDF5;
+      --rose-600: #E11D48;
+      --rose-50: #FFF1F2;
+      --slate-900: #0F172A;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748B;
+      --slate-300: #CBD5E1;
+      --slate-200: #E2E8F0;
+      --slate-100: #F1F5F9;
+      --slate-50: #F8FAFC;
+      --white: #FFFFFF;
+      --shadow-sm: 0 2px 8px rgba(10, 34, 64, 0.06);
+      --shadow-md: 0 12px 32px rgba(10, 34, 64, 0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--slate-900);
+      background-color: var(--slate-50);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      line-height: 1.24;
+      letter-spacing: -0.02em;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: #F1F5F9;
+      color: #0A2240;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 0.88em;
+      font-weight: 600;
+    }
+    button { font-family: inherit; cursor: pointer; }
+
+    .progress-bar {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--orange-500), var(--orange-400));
+      z-index: 1001; transition: width 0.1s linear;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .header-inner {
+      max-width: 1240px; margin: 0 auto; padding: 10px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    }
+    .brand-link { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+    .brand-logo-img { height: 38px; width: auto; object-fit: contain; }
+    .brand-tag {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--orange-600); background: var(--orange-100); padding: 3px 9px; border-radius: 999px;
+      display: none;
+    }
+    @media (min-width: 640px) { .brand-tag { display: inline-block; } }
+
+    .nav-links { display: none; align-items: center; gap: 4px; list-style: none; }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a {
+      text-decoration: none; color: var(--slate-700); font-size: 13px; font-weight: 600;
+      padding: 7px 10px; border-radius: 8px; transition: all 0.2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy-900); background: var(--orange-100); }
+
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+      font-weight: 600; font-size: 13px; padding: 8px 14px; border-radius: 10px;
+      border: none; text-decoration: none; transition: all 0.2s ease;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--orange-500), var(--orange-600)); color: #fff; }
+    .btn-navy { background: var(--navy-900); color: #fff; }
+    .btn-outline { background: #fff; color: var(--navy-900); border: 1.5px solid var(--slate-300); }
+    .btn-outline:hover { border-color: var(--navy-900); background: var(--slate-50); }
+    .ext-link { display: none; }
+    @media (min-width: 768px) { .ext-link { display: inline-flex; } }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 64px 0; scroll-margin-top: 68px; }
+
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--orange-600); background: var(--orange-100);
+      padding: 5px 12px; border-radius: 999px; margin-bottom: 12px;
+    }
+    .section-title { font-size: clamp(24px, 3.6vw, 34px); font-weight: 800; color: var(--navy-900); margin-bottom: 10px; }
+    .section-subtitle { font-size: 15px; color: var(--slate-600); max-width: 780px; }
+    .section-header { margin-bottom: 32px; }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at 86% 18%, rgba(245,124,0,0.22), transparent 45%),
+                  linear-gradient(155deg, var(--navy-950) 0%, var(--navy-900) 62%, #0E315C 100%);
+      color: #fff; padding: 56px 0 64px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(16,185,129,0.16); color: #6EE7B7; border: 1px solid rgba(16,185,129,0.4);
+      font-size: 12px; font-weight: 800; padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .hero h1 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; color: #fff; margin-bottom: 16px; max-width: 900px; }
+    .hero h1 span { color: var(--orange-400); }
+    .hero-desc { font-size: 15.5px; color: #CBD5E1; max-width: 820px; margin-bottom: 28px; line-height: 1.72; }
+    .hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+    .hero-stat {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px; padding: 16px 18px;
+    }
+    .hero-stat-val { font-size: 22px; font-weight: 800; color: var(--orange-400); }
+    .hero-stat-lbl { font-size: 12.5px; color: #CBD5E1; margin-top: 3px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; }
+
+    .card {
+      background: #fff; border: 1px solid var(--slate-200); border-radius: 18px;
+      padding: 22px; box-shadow: var(--shadow-sm);
+    }
+    .card ul, .card ol { font-size: 13.5px; color: var(--slate-700); padding-left: 18px; line-height: 1.72; }
+    .card li { margin-bottom: 6px; }
+
+    .trap-box {
+      background: var(--slate-50); border-radius: 12px; padding: 15px;
+      border-left: 3.5px solid var(--orange-500);
+    }
+    .trap-box.good { border-left-color: var(--emerald-500); background: #F0FDF4; }
+    .trap-box strong { display: block; font-size: 14px; color: var(--navy-900); margin-bottom: 5px; }
+    .trap-box p { font-size: 13px; color: var(--slate-600); }
+
+    .site-footer {
+      background: var(--navy-950); color: #CBD5E1; padding: 44px 0 34px; text-align: center;
+    }
+    .footer-logo-wrap {
+      display: inline-block; background: #fff; padding: 8px 16px; border-radius: 12px; margin-bottom: 14px;
+    }
+    .footer-logo-wrap img { height: 36px; width: auto; display: block; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 18px 0; }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #fff !important; }
+      .hero { background: #fff !important; color: #0F172A !important; border-bottom: 2px solid #0A2240; padding: 24px 0 !important; }
+      .hero h1 { color: #0A2240 !important; }
+      .hero-desc, .hero-stat-lbl { color: #334155 !important; }
+      .hero-stat { background: #F8FAFC !important; border: 1px solid #CBD5E1 !important; }
+      section { padding: 24px 0 !important; }
+      .card, .trap-box { break-inside: avoid; box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#karar" class="brand-link">
+        <img src="/assets/logo-main.jpg" alt="OtoBeyinPazari.com" class="brand-logo-img" />
+        <span class="brand-tag">Stratejik Değerlendirme</span>
+      </a>
+
+      <ul class="nav-links" id="desktopNav">
+        <li><a href="#karar">Türkiye Kararı</a></li>
+        <li><a href="#saha-plani">12 Aylık Plan</a></li>
+        <li><a href="#tuzaklar">6 Kritik Tuzak</a></li>
+        <li><a href="#otopsi">Başarı / Risk</a></li>
+        <li><a href="#pazarlama-seo">SEO &amp; Reklam</a></li>
+        <li><a href="#top-10-aile">İlk 10 Beyin</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="/sunum" class="btn btn-outline ext-link no-print">İş Modeli</a>
+        <a href="/sunum-global" class="btn btn-outline ext-link no-print">Global Analiz</a>
+        <a href="/sunum-yatirim" class="btn btn-outline ext-link no-print">Cihaz &amp; ROI</a>
+        <a href="/admin" class="btn btn-navy ext-link no-print">Admin</a>
+        <button type="button" class="btn btn-primary no-print" onclick="window.print()">PDF / Yazdır</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. HERO / NET KARAR -->
+  <section class="hero" id="karar">
+    <div class="container">
+      <div class="hero-badge">✓ NET KARAR: TÜRKİYE'DE KESİNLİKLE YAPILIR — AKSARAY MERKEZ &amp; KURUCU LİDERLİĞİYLE YÜKSEK AVANTAJ</div>
+      <h1>
+        OtoBeyinPazari.com Türkiye'de <span>Yapılır mı?</span><br />
+        Dürüst Saha Değerlendirmesi &amp; Büyüme Planı
+      </h1>
+      <p class="hero-desc">
+        Türkiye'de trafikteki <strong>15 milyonu aşan yaşlanan araç parkı</strong> (~14 yaş ortalama), yetkili servislerde <strong>40.000 – 120.000 ₺</strong> bandına çıkan sıfır beyin fiyatları ve çıkma piyasasındaki yüksek güvensizlik ("taktım çalışmadı, fatura yok, iade almıyor") çok büyük bir pazar boşluğu yaratıyor. Üstelik <strong>Aksaray Merkez'deki mevcut şirket ofisi (0 ₺ ek kira)</strong> ve projenin fikir babası/uygulayıcısı <strong>Caner Doğan'ın oto beyin elektroniği tecrübesi (0 ₺ ek baş teknisyen maaşı)</strong>, bu modeli Türkiye'de sıfır riskle başlanabilecek en kârlı dikey işlerden biri haline getiriyor.
+      </p>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-val">9 / 10</div>
+          <div class="hero-stat-lbl">Türkiye Pazar &amp; Zamanlama Uyumu</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">~20.000 ₺</div>
+          <div class="hero-stat-lbl">Gerçek Aylık Sabit Gider (0 ₺ Kira &amp; Teknisyen)</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">~10 Sipariş</div>
+          <div class="hero-stat-lbl">Aylık Başabaş (Break-Even) Eşiği</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">1 Gün Kargo</div>
+          <div class="hero-stat-lbl">Aksaray Merkez'den 81 İle Coğrafi Avantaj</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 12 AYLIK SAHA YOL HARİTASI -->
+  <section id="saha-plani" style="background:#fff; border-bottom:1px solid var(--slate-200);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">1. Uygulama Stratejisi</span>
+        <h2 class="section-title">Yapılırsa Nasıl Bir Yol İzlenmeli? (Sıfır Riskli 12 Aylık Saha Planı)</h2>
+        <p class="section-subtitle">
+          Aynı anda her markaya dağılmak yerine Türkiye'de en çok arıza veren beyin ailelerinden başlayıp önce güveni, ardından tekrarlı B2B oto servis gelirini kilitlemek gerekir.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="border-top:4px solid var(--orange-500);">
+          <span style="font-size:11px; font-weight:800; color:var(--orange-600); text-transform:uppercase; letter-spacing:0.06em;">1. Aşama • İlk 90 Gün (Dar Odak &amp; Hızlı Nakit)</span>
+          <h3 style="font-size:17px; color:var(--navy-900); margin:6px 0 10px;">En Çok Dönen 10 Beyin Ailesine Odaklan</h3>
+          <ul>
+            <li><strong>Hedef Aileler:</strong> Fiat 1.3 MJet (MJD 8F3/9DF), Renault 1.5 dCi (SID305/307/310), VW 1.6 TDI (PCR2.1 &amp; DSG DQ200), Ford Transit (SID208), Mercedes Vito/Sprinter ve BMW ABS/FRM3.</li>
+            <li><strong>Sıcak Tedarikçi Ağı:</strong> İkitelli, Ostim, İzmir 3. Sanayi, Bursa ve Adana'dan <strong>20–30 güvenilir tedarikçiyle yüz yüze</strong> anlaş; sisteme kaydet.</li>
+            <li><strong>Mevcut Ofis Avantajı:</strong> Aksaray Merkez'de mevcut şirket ofisinde Paket 1–2 cihaz kurulumuyla sıfır kira yüküyle anında operasyona başla.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top:4px solid var(--navy-900);">
+          <span style="font-size:11px; font-weight:800; color:var(--navy-900); text-transform:uppercase; letter-spacing:0.06em;">2. Aşama • 3–6. Ay (B2B Servis &amp; Ek Gelir)</span>
+          <h3 style="font-size:17px; color:var(--navy-900); margin:6px 0 10px;">Asıl Altın Madeni: Özel Oto Servisleri (B2B)</h3>
+          <ul>
+            <li>Bireysel araç sahibi 5 yılda 1 beyin alır; <strong>özel oto servisi ayda 3–10 beyin alır</strong>. Reklam ve saha odağının yarısını özel servislere (%8 B2B iskonto + resmi fatura) ayır.</li>
+            <li><strong>Şaseye Göre Klonlama (+1.500 ₺)</strong> ve <strong>Eski Beyin İadesi (Core Exchange)</strong> modüllerini açıp sipariş başı net kârı %40 artır.</li>
+            <li>Caner Doğan'ın tezgâh testi videolarını ve QR sertifikalı paketlemeyi Instagram/TikTok Reels'te yayınla.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top:4px solid var(--emerald-600);">
+          <span style="font-size:11px; font-weight:800; color:var(--emerald-600); text-transform:uppercase; letter-spacing:0.06em;">3. Aşama • 6–12. Ay (Ölçek &amp; Yüksek Marj)</span>
+          <h3 style="font-size:17px; color:var(--navy-900); margin:6px 0 10px;">Core Tamir Stoğu &amp; Ağır Vasıta Segmenti</h3>
+          <ul>
+            <li>Core Exchange ile geri gelen arızalı beyinleri laboratuvarda onarıp <strong>%50–70 brüt kârla</strong> kendi stoğundan aynı gün kargola.</li>
+            <li>584+ OEM veritabanında en çok sorgulanan 15–20 kodda küçük ön stok oluştur.</li>
+            <li>Birim kârı 5.000–15.000 ₺ olan <strong>Ağır Vasıta / Tır (MAN, Scania, Ford F-MAX, Actros)</strong> beyinlerine açıl.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DİKKAT EDİLMESİ GEREKEN 6 KRİTİK TUZAK -->
+  <section id="tuzaklar">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">2. Operasyonel Disiplin</span>
+        <h2 class="section-title">Sahada Kritik Dikkat Edilmesi Gereken 6 Nokta</h2>
+        <p class="section-subtitle">
+          Bu işte para kazanmak kadar kârı korumak da önemlidir. Sektörde en sık para kaybettiren 6 tuzak ve çözüm mekanizması:
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="trap-box">
+          <strong>1. Fatura &amp; KDV (Gider Pusulası) Dengesi</strong>
+          <p>Küçük çıkmacıların bir kısmı fatura kesmez. Müşteriye resmi %20 KDV'li E-Fatura keseceğiniz için tedarikçiden alış faturası veya yasal gider pusulası/maliyet dengesi muhasebeciyle ilk günden kurgulanmalı ve marja yansıtılmalıdır.</p>
+        </div>
+        <div class="trap-box">
+          <strong>2. İade Suistimali (Kasa İçi Kart Değişimi)</strong>
+          <p>Sektörün en bilinen hilesi: sağlam beyin alınıp içi arızalı kartla değiştirilerek iade edilmeye çalışılır. <strong>Yırtılınca iz bırakan hologram güvenlik mührü + yüksek çözünürlüklü vida/pin/seri no fotoğrafı</strong> asla atlanmamalıdır.</p>
+        </div>
+        <div class="trap-box">
+          <strong>3. İmmobilizer &amp; Kodlama Ön Bilgilendirmesi</strong>
+          <p>Modern beyinler araca takılınca direkt marş basmaz; immobilizer tanıtma/kodlama gerekir. Bu bilgi satış öncesi net verilmezse (veya klonlama ek hizmeti satılmazsa) sağlam beyin "bozuk" diye iade döner.</p>
+        </div>
+        <div class="trap-box">
+          <strong>4. 15–30 Dakika Teklif Hızı Kuralı</strong>
+          <p>Aracı lifte kaldırılmış usta 3 saat fiyat beklemez. İlk aylarda tedarikçi dönüşleri WhatsApp/telefon ile aktif takip edilerek müşteriye 15–30 dakika içinde net SMS teklifi gitmelidir.</p>
+        </div>
+        <div class="trap-box">
+          <strong>5. Cari Hakediş &amp; 14 Gün İade Nakit Akışı</strong>
+          <p>Müşteriye 14 gün iade garantisi verilirken tedarikçiye ödeme takvimi (ör. test onayı + 7/14 gün veya haftalık cari mahsup) disiplinli yönetilmelidir; aksi halde iadeler kasayı sıkıştırır.</p>
+        </div>
+        <div class="trap-box good">
+          <strong>6. Caner Doğan Liderliği &amp; Bilgiyi Sistemleştirme</strong>
+          <p>Kurucu ve uygulayıcı <strong>Caner Doğan</strong>'ın beyin elektroniği tecrübesi sayesinde başlangıçta teknisyen arama ve maaş riski sıfırdır. Büyüme aşamasında pinout, test kayıtları ve OEM eşleşmeleri yazılıma işlenerek 2. teknisyen kolayca yetiştirilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. AVANTAJLAR / DEZAVANTAJLAR & BAŞARI / BAŞARISIZLIK OTOPSİSİ -->
+  <section id="otopsi" style="background:#fff; border-top:1px solid var(--slate-200); border-bottom:1px solid var(--slate-200);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">3. Gerçekçi Denge &amp; Risk Otopsisi</span>
+        <h2 class="section-title">Avantajlar, Dezavantajlar ve Başarı / Başarısızlık Nedenleri</h2>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:22px;">
+        <div class="card" style="background:#ECFDF5; border:1.5px solid #A7F3D0;">
+          <h3 style="font-size:17px; color:#065F46; margin-bottom:12px;">✓ Modelin En Büyük Avantajları</h3>
+          <ul style="color:#064E3B;">
+            <li><strong>Aksaray Merkez &amp; 0 ₺ Ek Kira:</strong> Mevcut şirket ofisi ekstra kira yükünü sıfırlar ve Türkiye'nin tam ortasından İstanbul, Ankara, İzmir, Adana, Konya ve Antalya'ya 1 günde kargo erişimi sağlar.</li>
+            <li><strong>Kurucu Teknik Liderliği (Caner Doğan):</strong> Aylık ~65.000 ₺ teknisyen maaşı olmadan ilk günden en yüksek test kalitesi ve hızlı karar alma gücü.</li>
+            <li><strong>Sıfır Stok Sermayesi &amp; Yüksek Marj (%22–35):</strong> Milyonluk stok bağlamadan 584+ OEM koduyla satış; ayda sadece <strong>~10 sipariş</strong> ile başabaş!</li>
+            <li><strong>Sıfır Bypass &amp; Oto-Öğrenen Veri:</strong> Müşteri tedarikçiyi bilmez; her başarılı sipariş OEM arşivinizi rakiplerin kopyalayamayacağı şekilde büyütür.</li>
+            <li><strong>Ek Gelir Çarpanları:</strong> Klonlama (+1.500 ₺) ve Core Exchange ile aynı müşteriden ikinci kâr katmanı.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="background:#FFF8F0; border:1.5px solid #FED7AA;">
+          <h3 style="font-size:17px; color:#9A3412; margin-bottom:12px;">⚠ Modelin Gerçekçi Dezavantajları</h3>
+          <ul style="color:#7C2D12;">
+            <li><strong>+1–2 Gün Ekstra Kargo Süresi:</strong> Ürün önce Aksaray merkeze sonra alıcıya gittiği için çok acil yerel alıcılar beklemek istemeyebilir (ancak Aksaray'ın merkezi konumu bu süreyi minimize eder).</li>
+            <li><strong>Çift Yönlü Kargo Maliyeti:</strong> Sipariş başı ~350 ₺ ekstra lojistik yükü (%22+ marj bunu rahatça karşılar).</li>
+            <li><strong>Test Onayı Sorumluluğu:</strong> Test onayı verilen parçada arıza çıkarsa tüm itibar ve iade yükü doğrudan OtoBeyinPazari'na aittir.</li>
+            <li><strong>Tedarikçi Alışkanlığı:</strong> Geleneksel çıkmacıları panel/WhatsApp RFQ disiplinine alıştırmak ilk 2–3 ay birebir emek gerektirir.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card" style="border:2px solid var(--emerald-500);">
+          <span style="display:inline-block; background:#ECFDF5; color:#059669; font-size:11px; font-weight:800; padding:4px 10px; border-radius:999px; text-transform:uppercase; margin-bottom:10px;">Kazanan Senaryo</span>
+          <h3 style="font-size:18px; color:var(--navy-900); margin-bottom:12px;">Proje Başarılı Olursa Neden Başarılı Olur?</h3>
+          <ol>
+            <li><strong>Piyasadaki En Büyük Acıyı ("Taktım Çalışmadı") Çözdüğü İçin:</strong> Test garantisi, hologram mühür ve QR sertifika güven bariyerini kırar.</li>
+            <li><strong>Özel Oto Servislerini B2B Müşteriye Çevirdiği İçin:</strong> 50 sadık servis bile tek başına ayda 150+ düzenli, düşük reklam maliyetli sipariş üretir.</li>
+            <li><strong>Aksaray Merkez + Caner Doğan Yapısıyla Nakit Yakmadığı İçin:</strong> Aylık ~20.000 ₺ sabit giderle zarar etme eşiği neredeyse yok denecek kadar düşüktür.</li>
+            <li><strong>Hızlı Dönüş + Şeffaf Takip Deneyimi Sunduğu İçin:</strong> 20 dakikada SMS teklif + 8 adım canlı takip, geleneksel çıkmacılarla arada uçurum yaratır.</li>
+            <li><strong>Klonlama &amp; Core Exchange ile Marjı Katladığı İçin:</strong> Sadece al-sat değil, teknik katma değer üreten ulusal bir oto elektroniği markasına dönüştüğü için.</li>
+          </ol>
+        </div>
+
+        <div class="card" style="border:2px solid var(--rose-600);">
+          <span style="display:inline-block; background:#FFF1F2; color:#E11D48; font-size:11px; font-weight:800; padding:4px 10px; border-radius:999px; text-transform:uppercase; margin-bottom:10px;">Risk Otopsisi</span>
+          <h3 style="font-size:18px; color:var(--navy-900); margin-bottom:12px;">Proje Başarısız Olursa Neden Başarısız Olur?</h3>
+          <ol>
+            <li><strong>"Siteyi Kurduk, Müşteri Gelsin" Yanılgısına Düşülürse:</strong> Google parça-kodu reklamları, SEO ve B2B servis iletişimi yapılmazsa sistem boş döner.</li>
+            <li><strong>Tedarikçi Dönüşü Yavaş Kalırsa:</strong> Müşteri talebine 3 saat sonra fiyat dönülürse satışın %80'i kaçar; tedarikçi ağı ilk günden sıcak tutulmalıdır.</li>
+            <li><strong>Test Standartlarından Taviz Verilirse:</strong> Yoğunlukta cihaz testi yapmadan beyin sevk edilirse, 3–4 şikâyet tüm güven markasını yakar.</li>
+            <li><strong>Yanlış HW/SW Eşleşmesiyle Yüksek İade Çıkarsa:</strong> Donanım/yazılım numarası teyit edilmeden sevk edilen beyinler kargo + iade maliyetiyle kârı eritir.</li>
+            <li><strong>Fatura &amp; KDV Makası Plansız Bırakılırsa:</strong> Faturasız çıkma alış + faturalı satış arasındaki KDV farkı fiyatlamaya yansıtılmazsa kârlı sanılan sipariş zarar yazar.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. GOOGLE SEO, ADS & SOSYAL MEDYA BÜYÜME YOL HARİTASI -->
+  <section id="pazarlama-seo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">4. Müşteri Edinme &amp; Dijital Büyüme</span>
+        <h2 class="section-title">Google SEO, Reklam &amp; Sosyal Medya Büyüme Yol Haritası</h2>
+        <p class="section-subtitle">
+          Oto beyin müşterisi "gezinirken" değil, <strong>aracı yolda kaldığında veya tamirhanede lifte kalktığında</strong> arama yapar. Doğru SEO ve hedeflemeyle bütçe yakmadan ilk aydan yüksek dönüşüm alınır.
+        </p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:22px;">
+        <div class="card" style="border-top:4px solid var(--emerald-600);">
+          <span style="display:inline-block; background:#ECFDF5; color:#059669; font-size:11px; font-weight:800; padding:4px 10px; border-radius:999px; text-transform:uppercase; margin-bottom:10px;">1. Organik Trafik • Google SEO</span>
+          <h3 style="font-size:17px; color:var(--navy-900); margin-bottom:10px;">Programatik OEM Kodu Sayfaları</h3>
+          <ul>
+            <li><strong>Parça Kodu Odaklı SEO:</strong> Ustalar doğrudan <code>A646 150 00 00</code>, <code>0AM 927 769 D</code>, <code>55271527 MJD 9DF</code> arar. Mevcut <strong>584+ OEM arşivinin</strong> her biri için otomatik SEO sayfası (<code>/parca/[oem-kodu]</code>) + HW/SW çapraz kodları + <code>JSON-LD Product/FAQ</code> şeması üretilmeli.</li>
+            <li><strong>Google Haritalar (Local SEO):</strong> <em>"OtoBeyinPazari Test Merkezi — Aksaray"</em> profili açılıp QR sertifikalı müşterilerden fotoğraflı 5 yıldızlı yorum toplanmalı.</li>
+            <li><strong>Arıza Kodu (DTC) Rehberleri:</strong> <em>"P0606 ECU arızası", "DSG P17BF mekatronik", "BMW FRM3 arızası"</em> içerikleri doğrudan sıcak alıcı çeker.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top:4px solid var(--orange-500);">
+          <span style="display:inline-block; background:var(--orange-100); color:var(--orange-600); font-size:11px; font-weight:800; padding:4px 10px; border-radius:999px; text-transform:uppercase; margin-bottom:10px;">2. Anında Satış • Google Ads</span>
+          <h3 style="font-size:17px; color:var(--navy-900); margin-bottom:10px;">Sıfır İsraflı Arama Ağı Stratejisi</h3>
+          <ul>
+            <li><strong>Yüksek Niyetli Gruplar:</strong> Genel <em>"oto beyin"</em> yerine; <code>[vito motor beyni]</code>, <code>[passat dsg beyni fiyatı]</code>, <code>[egea 1.3 beyin]</code>, <code>[clio 4 beyin]</code> ve doğrudan OEM kodları hedeflenmeli.</li>
+            <li><strong>Negatif Kelime Kalkanı:</strong> <em>"ücretsiz", "program indir", "pinout", "nasıl tamir edilir", "pdf"</em> kelimeleri ilk günden negatiflenerek bütçe korunmalı.</li>
+            <li><strong>Bütçe &amp; ROAS Hedefi:</strong> Başlangıç aylık <strong>25.000 – 45.000 ₺</strong> • Talep (lead) maliyeti <strong>120 – 250 ₺</strong> • Satış başı edinme (CAC) <strong>450 – 800 ₺</strong> (~2.100 ₺ birim kârda <strong>3x–4x ROAS</strong>).</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top:4px solid var(--navy-900);">
+          <span style="display:inline-block; background:#E2E8F0; color:var(--navy-900); font-size:11px; font-weight:800; padding:4px 10px; border-radius:999px; text-transform:uppercase; margin-bottom:10px;">3. Güven &amp; B2B • Sosyal Medya</span>
+          <h3 style="font-size:17px; color:var(--navy-900); margin-bottom:10px;">Reels Test Videoları &amp; Meta Retargeting</h3>
+          <ul>
+            <li><strong>30 sn Tezgâh Testi Reels:</strong> Caner Doğan'ın cihazda canlı test yaptığı ve arızalı çıkan beyni elediği videolar (<em>"İşte bu yüzden test etmeden göndermiyoruz!"</em>) en güçlü güven reklamıdır.</li>
+            <li><strong>Mikroskop &amp; Termal Kamera:</strong> Gizli su hasarı, oksit ve yanık entegre tespiti videoları oto sanayi kitlesinde yüksek organik paylaşım alır.</li>
+            <li><strong>Meta Retargeting + B2B Lead:</strong> Site ziyaretçilerine 14 gün test videoları + özel oto servislerine <em>"%8 B2B Bayi İskontosu"</em> Lead Form reklamı (aylık <strong>10.000 – 15.000 ₺</strong>).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 90-Day Calendar -->
+      <div class="card">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-bottom:16px;">
+          <h3 style="font-size:17px; color:var(--navy-900);">90 Günlük Dijital Pazarlama &amp; Reklam Uygulama Takvimi</h3>
+          <span style="font-size:12px; font-weight:700; color:var(--orange-600); background:var(--orange-100); padding:5px 12px; border-radius:999px;">Önerilen Toplam Başlangıç Reklam Bütçesi: 35.000 – 60.000 ₺ / Ay</span>
+        </div>
+        <div class="grid-3">
+          <div class="trap-box">
+            <strong>1. AY • Hızlı Talep &amp; Güven İnşası</strong>
+            <p>Google Ads (en çok aranan 10 ECU/TCU/ABS ailesi) + Google Maps, Search Console, Meta Pixel kurulumu + haftada 3 adet 30 sn gerçek tezgâh testi &amp; paketleme Reels yayını.</p>
+          </div>
+          <div class="trap-box" style="border-left-color:var(--navy-900);">
+            <strong>2. AY • Programatik SEO &amp; Retargeting</strong>
+            <p>584+ OEM parça kodunun tamamı için dinamik SEO sayfalarının indekslenmesi + site ziyaretçilerine Instagram/Facebook Retargeting + ilk 30 memnun müşteriden Google Haritalar yorumu.</p>
+          </div>
+          <div class="trap-box good">
+            <strong>3. AY • B2B Servis Ölçekleme &amp; Otorite</strong>
+            <p>Özel oto servislerine yönelik Meta B2B Bayi (%8 iskonto) Lead kampanyası + YouTube Shorts arıza rehberleri + Google Ads verisine göre en kârlı 20 OEM koduna bütçe yoğunlaştırma.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GÜNCEL ARAŞTIRMA: EN ÇOK ARANAN 10 ECU / TCU / ABS AİLESİ -->
+      <div id="top-10-aile" class="card" style="margin-top:24px; padding:24px; scroll-margin-top:76px; border:1.5px solid var(--navy-900);">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; margin-bottom:16px;">
+          <div>
+            <span class="section-eyebrow" style="margin-bottom:6px;">Güncel Araştırma • 2025/2026 Türkiye Pazarı (ODMD / TÜİK &amp; Servis Verileri)</span>
+            <h3 style="font-size:20px; color:var(--navy-900);">Google Ads &amp; İlk 90 Gün İçin En Çok Aranan 10 ECU / TCU / ABS Ailesi</h3>
+            <p style="font-size:13.5px; color:var(--slate-600); margin-top:4px;">
+              Türkiye araç parkı yoğunluğu, kronik elektronik arıza sıklığı ve Google arama hacmine göre ilk reklam kampanyalarının ve tedarikçi ağının odaklanması gereken 10 şampiyon aile (tümü 584 parçalık arşivimizde aktif):
+            </p>
+          </div>
+          <span style="font-size:12px; font-weight:800; color:#059669; background:#ECFDF5; border:1px solid #A7F3D0; padding:6px 12px; border-radius:999px;">✓ 10/10 Arşivde Mevcut</span>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:13px; text-align:left;">
+            <thead>
+              <tr style="background:var(--navy-950); color:#fff;">
+                <th style="padding:10px 12px; border-radius:10px 0 0 0;">#</th>
+                <th style="padding:10px 12px;">Kategori &amp; Beyin Ailesi</th>
+                <th style="padding:10px 12px;">Başlıca Araç Modelleri (TR Parkı)</th>
+                <th style="padding:10px 12px;">Örnek OEM Kodları</th>
+                <th style="padding:10px 12px;">Kronik Arıza Sebebi</th>
+                <th style="padding:10px 12px; border-radius:0 10px 0 0;">Öncelik</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--slate-200); background:#FFF8F0;">
+                <td style="padding:10px 12px; font-weight:800; color:var(--orange-600);">01</td>
+                <td style="padding:10px 12px;"><strong>DSG DQ200 (TCU)</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">Temic / Continental</span></td>
+                <td style="padding:10px 12px;">VW Golf, Passat, Polo, Jetta, Škoda Octavia, SEAT Leon</td>
+                <td style="padding:10px 12px;"><code>0AM 927 769 D/K</code></td>
+                <td style="padding:10px 12px;">Akümülatör basınç/gövde çatlağı, PRNDS yanıp sönme, sigorta attırma</td>
+                <td style="padding:10px 12px;"><span style="background:#FEE2E2; color:#B91C1C; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Çok Yüksek</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--slate-200);">
+                <td style="padding:10px 12px; font-weight:800; color:var(--navy-900);">02</td>
+                <td style="padding:10px 12px;"><strong>MJD 8F3 / MJD 9DF (ECU)</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">Magneti Marelli</span></td>
+                <td style="padding:10px 12px;">Fiat Egea, Doblo, Fiorino, Linea, Punto 1.3 Multijet</td>
+                <td style="padding:10px 12px;"><code>55250637</code> <code>55271527</code> <code>52127151</code></td>
+                <td style="padding:10px 12px;">Enjektör sürücü entegresi yanması (3 silindir çalışma), 5V besleme hatası</td>
+                <td style="padding:10px 12px;"><span style="background:#FEE2E2; color:#B91C1C; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Çok Yüksek</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--slate-200); background:var(--slate-50);">
+                <td style="padding:10px 12px; font-weight:800; color:var(--navy-900);">03</td>
+                <td style="padding:10px 12px;"><strong>SID305 / SID307 / SID310 (ECU)</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">Continental</span></td>
+                <td style="padding:10px 12px;">Renault Clio, Megane 3/4, Fluence, Dacia Duster 1.5 dCi</td>
+                <td style="padding:10px 12px;"><code>237100307R</code> <code>237101908R</code> <code>237105943R</code></td>
+                <td style="padding:10px 12px;">Su/nem alma sonucu oksitlenme, enjektör kodlama kaybı, marş kesme</td>
+                <td style="padding:10px 12px;"><span style="background:#FEE2E2; color:#B91C1C; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Çok Yüksek</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--slate-200);">
+                <td style="padding:10px 12px; font-weight:800; color:var(--navy-900);">04</td>
+                <td style="padding:10px 12px;"><strong>Simos PCR2.1 &amp; EDC17C46/C64 (ECU)</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">Continental / Bosch</span></td>
+                <td style="padding:10px 12px;">VW Passat B7/B8, Golf 6/7, Caddy, Audi A3 1.6/2.0 TDI</td>
+                <td style="padding:10px 12px;"><code>03L 906 023 B/JJ</code> <code>04L 906 021 AB</code></td>
+                <td style="padding:10px 12px;">Voltaj dalgalanması, soket su sızması, EEPROM/flash kilitlenmesi</td>
+                <td style="padding:10px 12px;"><span style="background:#FEE2E2; color:#B91C1C; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Çok Yüksek</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--slate-200); background:var(--slate-50);">
+                <td style="padding:10px 12px; font-weight:800; color:var(--navy-900);">05</td>
+                <td style="padding:10px 12px;"><strong>Renault EDC DC4 (TCU)</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">Getrag / Continental</span></td>
+                <td style="padding:10px 12px;">Renault Megane 3/4, Fluence, Clio 4, Captur EDC</td>
+                <td style="padding:10px 12px;"><code>310320749R</code> <code>310320254R</code></td>
+                <td style="padding:10px 12px;">Kavrama/vites seçici sürücü arızası, "Vites Kutusu Kontrol Ettirin" hatası</td>
+                <td style="padding:10px 12px;"><span style="background:#FFEDD5; color:#C2410C; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Yüksek</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--slate-200);">
+                <td style="padding:10px 12px; font-weight:800; color:var(--navy-900);">06</td>
+                <td style="padding:10px 12px;"><strong>ATE MK60/EC1 &amp; Bosch 8.0/9.0 (ABS)</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">ATE / Bosch</span></td>
+                <td style="padding:10px 12px;">VW Golf/Passat, Ford Focus/Fiesta, Fiat Linea, Renault Clio</td>
+                <td style="padding:10px 12px;"><code>1K0 907 379 K/AD</code> <code>8V51-2C405-AE</code></td>
+                <td style="padding:10px 12px;">İç basınç sensörü arızası (MK60), altın tel kopması &amp; iç beyin hatası</td>
+                <td style="padding:10px 12px;"><span style="background:#FFEDD5; color:#C2410C; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Yüksek</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--slate-200); background:var(--slate-50);">
+                <td style="padding:10px 12px; font-weight:800; color:var(--navy-900);">07</td>
+                <td style="padding:10px 12px;"><strong>Ford Transit SID208 (ECU)</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">Continental / Siemens</span></td>
+                <td style="padding:10px 12px;">Ford Transit V347/V363, Transit Custom 2.2 TDCi</td>
+                <td style="padding:10px 12px;"><code>CC1A-12A650-KA</code> <code>BK2A-12A650-PC</code></td>
+                <td style="padding:10px 12px;">Nem/korozyon, enjektör sürücü devresi ve CAN haberleşme kesintisi</td>
+                <td style="padding:10px 12px;"><span style="background:#FFEDD5; color:#C2410C; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Yüksek</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--slate-200);">
+                <td style="padding:10px 12px; font-weight:800; color:var(--navy-900);">08</td>
+                <td style="padding:10px 12px;"><strong>PSA EDC17C10 / EDC17C60 (ECU)</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">Bosch</span></td>
+                <td style="padding:10px 12px;">Peugeot 308/3008/Partner, Citroën Berlingo/C-Elysee 1.6 HDi</td>
+                <td style="padding:10px 12px;"><code>9678391880</code> <code>9808535880</code></td>
+                <td style="padding:10px 12px;">AdBlue/SCR arızaları, su/nem teması, TPIC besleme entegresi yanması</td>
+                <td style="padding:10px 12px;"><span style="background:#FFEDD5; color:#C2410C; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Yüksek</span></td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--slate-200); background:var(--slate-50);">
+                <td style="padding:10px 12px; font-weight:800; color:var(--navy-900);">09</td>
+                <td style="padding:10px 12px;"><strong>Mercedes EDC16/17 &amp; 7G VGS3</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">Bosch / Siemens</span></td>
+                <td style="padding:10px 12px;">Mercedes Vito, Sprinter, C/E Serisi 722.9 (VIP &amp; Filo)</td>
+                <td style="padding:10px 12px;"><code>A646 150 00 00</code> <code>A 003 446 03 10</code></td>
+                <td style="padding:10px 12px;">VGS3 hız sensörü/iletken plaka arızası, soket oksidi (Yüksek kâr marjı)</td>
+                <td style="padding:10px 12px;"><span style="background:#E0F2FE; color:#0369A1; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Yüksek Marj</span></td>
+              </tr>
+              <tr>
+                <td style="padding:10px 12px; font-weight:800; color:var(--navy-900);">10</td>
+                <td style="padding:10px 12px;"><strong>Opel ACDelco E83/E98 &amp; BMW FRM3/MK100</strong><br /><span style="font-size:11.5px; color:var(--slate-500);">ACDelco / ATE / Lear</span></td>
+                <td style="padding:10px 12px;">Opel Astra J/Corsa D/Insignia, BMW E90/F30/F10</td>
+                <td style="padding:10px 12px;"><code>12636386</code> <code>3451 6864 677</code> <code>6135 9249083</code></td>
+                <td style="padding:10px 12px;">ACDelco bobin sürücü/ısı arızası; BMW düşük aküde FRM3 EEPROM çökmesi</td>
+                <td style="padding:10px 12px;"><span style="background:#E0F2FE; color:#0369A1; font-weight:800; font-size:11px; padding:3px 8px; border-radius:999px;">Yüksek Marj</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Final Takeaway -->
+      <div style="margin-top:22px; background:linear-gradient(135deg, #FFF8F0 0%, #FFFFFF 100%); border:1.5px solid var(--orange-400); border-radius:16px; padding:22px 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px;">
+        <div style="max-width:780px;">
+          <span style="font-size:11.5px; font-weight:800; color:var(--orange-600); text-transform:uppercase; letter-spacing:0.06em;">Yönetici Özeti</span>
+          <p style="font-size:14.5px; color:var(--navy-900); font-weight:600; margin-top:4px; line-height:1.65;">
+            Aksaray Merkez ofisiniz (0 ₺ ek kira), Caner Doğan'ın teknik liderliği (0 ₺ ek teknisyen maaşı), 584 parçalık gerçek OEM arşiviniz, canlı VIN çözümleyiciniz ve 3 panelli PWA sisteminiz hazır. Başarıyı kilitleyecek tek kaldıraç: <strong>İlk 25 güvenilir tedarikçiyi bağlamak, Google parça-kodu reklamlarıyla ilk 50 siparişi kusursuz testle teslim etmek ve bu güvenle özel oto servislerini B2B abone yapmaktır.</strong>
+          </p>
+        </div>
+        <a href="#karar" class="btn btn-navy no-print">Başa Dön ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-logo-wrap">
+        <img src="/assets/logo-main.jpg" alt="OtoBeyinPazari.com" />
+      </div>
+      <p style="font-size:14px; max-width:660px; margin:0 auto;">
+        OtoBeyinPazari.com — Bağımsız Stratejik Değerlendirme, Türkiye Fizibilitesi &amp; Dijital Büyüme Sunumu (Yönetim Kurulu / Kurucu Özel)
+      </p>
+      <div class="footer-links no-print">
+        <a href="/sunum" class="btn btn-outline" style="background:rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.22);">1. İş Modeli (/sunum)</a>
+        <a href="/sunum-global" class="btn btn-outline" style="background:rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.22);">2. Global Analiz (/sunum-global)</a>
+        <a href="/sunum-yatirim" class="btn btn-outline" style="background:rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.22);">3. Cihaz &amp; ROI (/sunum-yatirim)</a>
+        <a href="/admin" class="btn btn-primary">Admin Paneli (/admin)</a>
+      </div>
+      <div style="font-size:12.5px; color:#64748B;">
+        © 2026 OtoBeyinPazari.com • Sunum 4: Bağımsız Stratejik Değerlendirme &amp; SEO/Reklam Yol Haritası
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const progressBar = document.getElementById('progressBar');
+    window.addEventListener('scroll', () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0) + '%';
+    });
+  </script>
+</body>
+</html>

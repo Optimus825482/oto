@@ -1,0 +1,1142 @@
+[
+  {
+    "oemCode": "1214 7634092",
+    "hwCode": "0 261 S07 746",
+    "swCode": "MEVD17.2.4",
+    "crossRefCodes": [
+      "12147634092",
+      "0261S07746",
+      "7634092",
+      "MEVD1724"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "F30 320i / 328i / F10 520i N20 Motor Beyni",
+    "yearRange": "2012-2016",
+    "engineCode": "N20B20",
+    "manufacturer": "Bosch",
+    "referencePrice": 16500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "1214 8617538",
+    "hwCode": "0 261 S10 046",
+    "swCode": "MEVD17.2.9",
+    "crossRefCodes": [
+      "12148617538",
+      "0261S10046",
+      "8617538",
+      "MEVD1729"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "F30 320i ED / F20 116i / 118i Motor Beyni",
+    "yearRange": "2012-2016",
+    "engineCode": "N13B16",
+    "manufacturer": "Bosch",
+    "referencePrice": 14800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "1214 7619329",
+    "hwCode": "0 261 S06 721",
+    "swCode": "MEVD17.2",
+    "crossRefCodes": [
+      "12147619329",
+      "0261S06721",
+      "7619329",
+      "MEVD172"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "E90 335i / F10 535i / E70 X5 xDrive35i Motor Beyni",
+    "yearRange": "2010-2013",
+    "engineCode": "N55B30",
+    "manufacturer": "Bosch",
+    "referencePrice": 17900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "1214 8627495",
+    "hwCode": "0 261 S10 564",
+    "swCode": "MEVD17.2.G",
+    "crossRefCodes": [
+      "12148627495",
+      "0261S10564",
+      "8627495",
+      "MEVD172G"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "F15 X5 35i / F30 335i / F10 535i Motor Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "N55B30",
+    "manufacturer": "Bosch",
+    "referencePrice": 18400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "1214 7583232",
+    "hwCode": "5WK93632",
+    "swCode": "MSD80",
+    "crossRefCodes": [
+      "12147583232",
+      "5WK93632",
+      "7583232",
+      "MSD80"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "E90 320i / 335i / E60 520i / 530i DME Motor Beyni",
+    "yearRange": "2007-2010",
+    "engineCode": "N43B20 / N54B30",
+    "manufacturer": "Siemens VDO",
+    "referencePrice": 13500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "1214 7612214",
+    "hwCode": "5WK93746",
+    "swCode": "MSD81",
+    "crossRefCodes": [
+      "12147612214",
+      "5WK93746",
+      "7612214",
+      "MSD81"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "E90 / E60 / F10 523i / E71 X6 35i MSD81 Motor Beyni",
+    "yearRange": "2008-2012",
+    "engineCode": "N53B30 / N54B30",
+    "manufacturer": "Continental / Siemens",
+    "referencePrice": 14600,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "1361 8506370",
+    "hwCode": "0 281 015 043",
+    "swCode": "EDC17CP02",
+    "crossRefCodes": [
+      "13618506370",
+      "0281015043",
+      "8506370",
+      "EDC17CP02"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "E90 320d / E60 520d / E87 120d DDE Motor Beyni",
+    "yearRange": "2007-2011",
+    "engineCode": "N47D20A",
+    "manufacturer": "Bosch",
+    "referencePrice": 11900,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "1361 8512498",
+    "hwCode": "0 281 016 639",
+    "swCode": "EDC17CP09",
+    "crossRefCodes": [
+      "13618512498",
+      "0281016639",
+      "8512498",
+      "EDC17CP09"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "E90 330d / E70 X5 30d / F10 530d DDE Motor Beyni",
+    "yearRange": "2009-2013",
+    "engineCode": "N57D30A",
+    "manufacturer": "Bosch",
+    "referencePrice": 14900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "1361 8572146",
+    "hwCode": "0 281 018 463",
+    "swCode": "EDC17CP45",
+    "crossRefCodes": [
+      "13618572146",
+      "0281018463",
+      "8572146",
+      "EDC17CP45"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "F10 530d / 535d / F15 X5 30d / 40d DDE Motor Beyni",
+    "yearRange": "2011-2017",
+    "engineCode": "N57D30",
+    "manufacturer": "Bosch",
+    "referencePrice": 16800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "1361 8576902",
+    "hwCode": "0 281 030 417",
+    "swCode": "EDC17C50",
+    "crossRefCodes": [
+      "13618576902",
+      "0281030417",
+      "8576902",
+      "EDC17C50"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "F30 320d / F20 116d / F10 520d B47/N47 Motor Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "N47D20 / B47D20",
+    "manufacturer": "Bosch",
+    "referencePrice": 15900,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "1214 8698530",
+    "hwCode": "0 261 S16 742",
+    "swCode": "MG1CS003",
+    "crossRefCodes": [
+      "12148698530",
+      "0261S16742",
+      "8698530",
+      "MG1CS003"
+    ],
+    "category": "ECU",
+    "brand": "BMW",
+    "model": "G20 320i / 330i / F30 LCI B48 DME Motor Beyni",
+    "yearRange": "2016-2022",
+    "engineCode": "B48B20",
+    "manufacturer": "Bosch",
+    "referencePrice": 21500,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "6135 6943830",
+    "hwCode": "5WK4 9511",
+    "swCode": "CAS2-E60",
+    "crossRefCodes": [
+      "61356943830",
+      "6943830",
+      "5WK49511",
+      "CAS2"
+    ],
+    "category": "IMMOBILIZER",
+    "brand": "BMW",
+    "model": "E60 520d / 525d / E90 CAS2 İmmobilizer Modülü",
+    "yearRange": "2004-2007",
+    "engineCode": "M47 / M57 / N52",
+    "manufacturer": "Siemens VDO",
+    "referencePrice": 6200,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "6135 9147222",
+    "hwCode": "5WK4 9512",
+    "swCode": "CAS3-E90",
+    "crossRefCodes": [
+      "61359147222",
+      "9147222",
+      "5WK49512",
+      "CAS3"
+    ],
+    "category": "IMMOBILIZER",
+    "brand": "BMW",
+    "model": "E90 / E60 / E87 CAS3 İmmobilizer & Marş Yetki Modülü",
+    "yearRange": "2006-2010",
+    "engineCode": "N47 / N46 / M57",
+    "manufacturer": "Siemens VDO",
+    "referencePrice": 6900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "6135 9395657",
+    "hwCode": "5WK50722",
+    "swCode": "CAS4-PLUS",
+    "crossRefCodes": [
+      "61359395657",
+      "9395657",
+      "5WK50722",
+      "CAS4PLUS"
+    ],
+    "category": "IMMOBILIZER",
+    "brand": "BMW",
+    "model": "F10 / F11 / F25 X3 / F01 CAS4+ İmmobilizer Modülü",
+    "yearRange": "2012-2017",
+    "engineCode": "N20 / N47 / N57",
+    "manufacturer": "Continental",
+    "referencePrice": 10200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "6135 9393357",
+    "hwCode": "FEM-F30-MAX",
+    "swCode": "SW-FEM-939",
+    "crossRefCodes": [
+      "61359393357",
+      "9393357",
+      "61356815349",
+      "FEM"
+    ],
+    "category": "BCM",
+    "brand": "BMW",
+    "model": "F30 / F20 / F22 / F32 FEM Ön Elektronik & Gövde Modülü",
+    "yearRange": "2012-2018",
+    "engineCode": "N13 / N20 / N47 / B47",
+    "manufacturer": "Lear / Continental",
+    "referencePrice": 12400,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "6135 6812266",
+    "hwCode": "BDC-F15-G30",
+    "swCode": "SW-BDC-681",
+    "crossRefCodes": [
+      "61356812266",
+      "6812266",
+      "61359499043",
+      "BDC"
+    ],
+    "category": "BCM",
+    "brand": "BMW",
+    "model": "F15 X5 / G20 320i / G30 520i BDC Gövde Kontrol Ünitesi",
+    "yearRange": "2014-2021",
+    "engineCode": "B48 / B47 / N57",
+    "manufacturer": "Lear",
+    "referencePrice": 15200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "2400 7571543",
+    "hwCode": "1071 010 042",
+    "swCode": "6HP19-6HP21",
+    "crossRefCodes": [
+      "24007571543",
+      "7571543",
+      "1071010042",
+      "6HP21"
+    ],
+    "category": "TCU",
+    "brand": "BMW",
+    "model": "E90 320d / E60 520d ZF 6HP19 / 6HP21 Şanzıman Mekatronik",
+    "yearRange": "2007-2011",
+    "engineCode": "N47 / N52",
+    "manufacturer": "ZF",
+    "referencePrice": 16200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "2400 7582461",
+    "hwCode": "1068 010 189",
+    "swCode": "6HP26-6HP28",
+    "crossRefCodes": [
+      "24007582461",
+      "7582461",
+      "1068010189",
+      "6HP28"
+    ],
+    "category": "TCU",
+    "brand": "BMW",
+    "model": "E70 X5 3.0d / E60 530d / 535d ZF 6HP26 / 6HP28 Mekatronik",
+    "yearRange": "2007-2012",
+    "engineCode": "M57 / N57",
+    "manufacturer": "ZF",
+    "referencePrice": 17800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "2400 8676419",
+    "hwCode": "1090 014 085",
+    "swCode": "8HP50-TCU",
+    "crossRefCodes": [
+      "24008676419",
+      "8676419",
+      "1090014085",
+      "8HP50"
+    ],
+    "category": "TCU",
+    "brand": "BMW",
+    "model": "G20 320i / F30 LCI / F15 X5 ZF 8HP50 Şanzıman Mekatronik",
+    "yearRange": "2015-2021",
+    "engineCode": "B48 / B47 / B58",
+    "manufacturer": "ZF",
+    "referencePrice": 21900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "3451 6778485",
+    "hwCode": "10.0961-0814.3",
+    "swCode": "MK60E5-DSC",
+    "crossRefCodes": [
+      "34516778485",
+      "6778485",
+      "10096108143",
+      "MK60E5"
+    ],
+    "category": "ABS",
+    "brand": "BMW",
+    "model": "E90 320d / E87 116i / E60 DSC ABS Hidrolik & Beyin",
+    "yearRange": "2006-2011",
+    "engineCode": "N47 / N46 / M47",
+    "manufacturer": "ATE",
+    "referencePrice": 9400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "A 272 153 32 91",
+    "hwCode": "0 261 209 282",
+    "swCode": "ME9.7-M272",
+    "crossRefCodes": [
+      "A2721533291",
+      "0261209282",
+      "A2721535291",
+      "ME97"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "W211 E280 / E350 / W204 C280 / C350 V6 Motor Beyni",
+    "yearRange": "2006-2011",
+    "engineCode": "M272",
+    "manufacturer": "Bosch",
+    "referencePrice": 14500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 273 153 50 79",
+    "hwCode": "0 261 209 306",
+    "swCode": "ME9.7-M273",
+    "crossRefCodes": [
+      "A2731535079",
+      "0261209306",
+      "A2731533679",
+      "ME97"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "W211 E500 / W221 S500 / ML500 V8 Motor Beyni",
+    "yearRange": "2006-2011",
+    "engineCode": "M273",
+    "manufacturer": "Bosch",
+    "referencePrice": 15800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "A 274 900 07 00",
+    "hwCode": "0 261 S08 421",
+    "swCode": "MED17.7.2",
+    "crossRefCodes": [
+      "A2749000700",
+      "0261S08421",
+      "A2749010500",
+      "MED1772"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "W205 C180 / C200 / W212 E180 / W213 E200 Motor Beyni",
+    "yearRange": "2013-2019",
+    "engineCode": "M274",
+    "manufacturer": "Bosch",
+    "referencePrice": 17200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 270 900 11 00",
+    "hwCode": "0 261 S08 671",
+    "swCode": "MED17.7.2-M270",
+    "crossRefCodes": [
+      "A2709001100",
+      "0261S08671",
+      "A2709010900",
+      "MED1772"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "CLA 180 / CLA 200 / GLA 200 / A180 W176 Motor Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "M270",
+    "manufacturer": "Bosch",
+    "referencePrice": 15900,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 276 900 13 00",
+    "hwCode": "0 261 S06 955",
+    "swCode": "MED17.7.1",
+    "crossRefCodes": [
+      "A2769001300",
+      "0261S06955",
+      "A2769010600",
+      "MED1771"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "W212 E350 / W221 S350 / CLS 350 CGI Motor Beyni",
+    "yearRange": "2011-2016",
+    "engineCode": "M276",
+    "manufacturer": "Bosch",
+    "referencePrice": 18200,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "A 271 150 03 91",
+    "hwCode": "5WK90980",
+    "swCode": "SIM271DE2.0",
+    "crossRefCodes": [
+      "A2711500391",
+      "5WK90980",
+      "A2719002900",
+      "SIM271DE"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "W204 C180 / C200 CGI / W212 E200 / E250 CGI Motor Beyni",
+    "yearRange": "2009-2014",
+    "engineCode": "M271.820 / M271.860",
+    "manufacturer": "Continental / Siemens",
+    "referencePrice": 13800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 271 150 67 79",
+    "hwCode": "5WK90553",
+    "swCode": "SIM271KE2.0",
+    "crossRefCodes": [
+      "A2711506779",
+      "5WK90553",
+      "A2711502779",
+      "SIM271KE"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "W204 C180 / C200 Kompressor / W211 E200 K Motor Beyni",
+    "yearRange": "2007-2011",
+    "engineCode": "M271.950",
+    "manufacturer": "Siemens VDO",
+    "referencePrice": 11600,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "A 651 900 06 03",
+    "hwCode": "A 651 901 06 01",
+    "swCode": "CRD3.E1-OM651",
+    "crossRefCodes": [
+      "A6519000603",
+      "A6519010601",
+      "28373647",
+      "CRD3"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "W205 C220d / W212 E220 / E250 BlueTEC Motor Beyni",
+    "yearRange": "2014-2018",
+    "engineCode": "OM651.921",
+    "manufacturer": "Delphi",
+    "referencePrice": 15400,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 651 900 79 02",
+    "hwCode": "A 651 901 20 02",
+    "swCode": "CRD3S2-MFA",
+    "crossRefCodes": [
+      "A6519007902",
+      "A6519012002",
+      "A6519004500",
+      "CRD3S2"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "CLA 200d / GLA 200d / A200 CDI OM651 Motor Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "OM651.930",
+    "manufacturer": "Delphi",
+    "referencePrice": 14900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "A 642 900 94 01",
+    "hwCode": "0 281 018 119",
+    "swCode": "EDC17CP46",
+    "crossRefCodes": [
+      "A6429009401",
+      "0281018119",
+      "A6429011500",
+      "EDC17CP46"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "W212 E350 CDI / W221 S350 / ML350 BlueTEC Motor Beyni",
+    "yearRange": "2011-2016",
+    "engineCode": "OM642.852",
+    "manufacturer": "Bosch",
+    "referencePrice": 16900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "A 654 900 56 00",
+    "hwCode": "0 281 032 620",
+    "swCode": "MD1CP001",
+    "crossRefCodes": [
+      "A6549005600",
+      "0281032620",
+      "A6549011900",
+      "MD1CP001"
+    ],
+    "category": "ECU",
+    "brand": "Mercedes-Benz",
+    "model": "W213 E220d / W205 C220d 2.0d OM654 Motor Beyni",
+    "yearRange": "2016-2021",
+    "engineCode": "OM654.920",
+    "manufacturer": "Bosch",
+    "referencePrice": 22800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 211 545 10 08",
+    "hwCode": "211 545 06 08",
+    "swCode": "EIS-EZS-W211",
+    "crossRefCodes": [
+      "A2115451008",
+      "A2115452308",
+      "2115450608",
+      "EZS211"
+    ],
+    "category": "IMMOBILIZER",
+    "brand": "Mercedes-Benz",
+    "model": "W211 E-Serisi / W219 CLS EZS Kontak İmmobilizer Modülü",
+    "yearRange": "2002-2009",
+    "engineCode": "OM646 / OM642 / M271",
+    "manufacturer": "Temic / Mercedes-Benz",
+    "referencePrice": 9200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 205 900 42 22",
+    "hwCode": "A 205 901 38 11",
+    "swCode": "EIS-EZS-W205",
+    "crossRefCodes": [
+      "A2059004222",
+      "A2059013811",
+      "A2229051809",
+      "EZS205"
+    ],
+    "category": "IMMOBILIZER",
+    "brand": "Mercedes-Benz",
+    "model": "W205 C-Serisi / W213 E-Serisi / GLC EIS Kontak Modülü",
+    "yearRange": "2014-2020",
+    "engineCode": "M274 / OM651 / OM654",
+    "manufacturer": "Mercedes-Benz / Kostal",
+    "referencePrice": 14500,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "A 246 900 57 12",
+    "hwCode": "A 246 901 64 03",
+    "swCode": "CBC-MFA-SAM",
+    "crossRefCodes": [
+      "A2469005712",
+      "A2469016403",
+      "A1769007302",
+      "SAM117"
+    ],
+    "category": "BCM",
+    "brand": "Mercedes-Benz",
+    "model": "CLA C117 / GLA X156 / W176 A-Serisi SAM Gövde Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "M270 / OM607 / OM651",
+    "manufacturer": "Continental",
+    "referencePrice": 11400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "A 205 900 65 26",
+    "hwCode": "A 205 901 47 13",
+    "swCode": "SAM-FRONT-W205",
+    "crossRefCodes": [
+      "A2059006526",
+      "A2059014713",
+      "A2059003235",
+      "SAMF205"
+    ],
+    "category": "BCM",
+    "brand": "Mercedes-Benz",
+    "model": "W205 C180 / C200d / W253 GLC Ön SAM Kontrol Ünitesi",
+    "yearRange": "2014-2020",
+    "engineCode": "M274 / OM626 / OM654",
+    "manufacturer": "Bosch / Hella",
+    "referencePrice": 13600,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 005 431 97 12",
+    "hwCode": "0 265 960 025",
+    "swCode": "SBC-W211",
+    "crossRefCodes": [
+      "A0054319712",
+      "0265960025",
+      "A0054317112",
+      "SBC211"
+    ],
+    "category": "ABS",
+    "brand": "Mercedes-Benz",
+    "model": "W211 E-Serisi / R230 SL SBC Fren Hidrolik & ABS Beyni",
+    "yearRange": "2002-2006",
+    "engineCode": "OM646 / M112 / M271",
+    "manufacturer": "Bosch",
+    "referencePrice": 19500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 204 545 53 32",
+    "hwCode": "10.0961-1431.3",
+    "swCode": "ESP-W204",
+    "crossRefCodes": [
+      "A2045455332",
+      "10096114313",
+      "A2044312512",
+      "ESP204"
+    ],
+    "category": "ABS",
+    "brand": "Mercedes-Benz",
+    "model": "W204 C180 / C220 / W212 E-Serisi ABS ESP Kontrol Ünitesi",
+    "yearRange": "2007-2013",
+    "engineCode": "M271 / OM646 / OM651",
+    "manufacturer": "ATE",
+    "referencePrice": 9900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "A 032 545 24 32",
+    "hwCode": "5WP2 0005",
+    "swCode": "EGS52-722.6",
+    "crossRefCodes": [
+      "A0325452432",
+      "5WP20005",
+      "A0345454532",
+      "7226"
+    ],
+    "category": "TCU",
+    "brand": "Mercedes-Benz",
+    "model": "W211 / W203 / W204 722.6 5-İleri EGS52 Şanzıman Beyni",
+    "yearRange": "2002-2010",
+    "engineCode": "OM646 / M271 / M112",
+    "manufacturer": "Siemens VDO",
+    "referencePrice": 7800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 033 545 73 32",
+    "hwCode": "5WP21902",
+    "swCode": "VGS2-722.9",
+    "crossRefCodes": [
+      "A0335457332",
+      "5WP21902",
+      "A0034460310",
+      "7229VGS2"
+    ],
+    "category": "TCU",
+    "brand": "Mercedes-Benz",
+    "model": "W211 / W204 / W164 ML 722.9 7G-Tronic VGS2 Şanzıman Beyni",
+    "yearRange": "2005-2010",
+    "engineCode": "M272 / OM642",
+    "manufacturer": "Siemens VDO",
+    "referencePrice": 14800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "A 000 901 80 08",
+    "hwCode": "A 000 901 71 00",
+    "swCode": "VGS3-VGS4-722.9",
+    "crossRefCodes": [
+      "A0009018008",
+      "A0009017100",
+      "A0034460310",
+      "7229VGS3"
+    ],
+    "category": "TCU",
+    "brand": "Mercedes-Benz",
+    "model": "W204 / W212 / W205 722.9 7G-Tronic Plus VGS3/VGS4 Beyni",
+    "yearRange": "2010-2017",
+    "engineCode": "M271 / M274 / OM651",
+    "manufacturer": "Continental",
+    "referencePrice": 17500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "06J 906 026 AB",
+    "hwCode": "0 261 S04 342",
+    "swCode": "MED17.5",
+    "crossRefCodes": [
+      "06J906026AB",
+      "0261S04342",
+      "06J906026D",
+      "MED175"
+    ],
+    "category": "ECU",
+    "brand": "Volkswagen",
+    "model": "Passat B6 / CC / Tiguan / Audi A4 1.8 & 2.0 TSI Motor Beyni",
+    "yearRange": "2008-2012",
+    "engineCode": "BZB / CAWB / CCZA",
+    "manufacturer": "Bosch",
+    "referencePrice": 11500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "03C 906 016 S",
+    "hwCode": "0 261 S05 726",
+    "swCode": "MED17.5.5",
+    "crossRefCodes": [
+      "03C906016S",
+      "0261S05726",
+      "03C906016AK",
+      "MED1755"
+    ],
+    "category": "ECU",
+    "brand": "Volkswagen",
+    "model": "Golf 6 / Jetta / Passat / Scirocco 1.4 TSI Motor Beyni",
+    "yearRange": "2009-2014",
+    "engineCode": "CAXA / CAVD",
+    "manufacturer": "Bosch",
+    "referencePrice": 10800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "06J 906 027 D",
+    "hwCode": "0 261 S06 042",
+    "swCode": "MED17.5.2",
+    "crossRefCodes": [
+      "06J906027D",
+      "0261S06042",
+      "06J906027FE",
+      "MED1752"
+    ],
+    "category": "ECU",
+    "brand": "Audi",
+    "model": "A3 8P / A4 B8 / VW Golf 6 GTI / Leon 1.8-2.0 TFSI Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "CDAA / CCZB",
+    "manufacturer": "Bosch",
+    "referencePrice": 12400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "03L 906 022 B",
+    "hwCode": "0 281 014 711",
+    "swCode": "EDC17CP14",
+    "crossRefCodes": [
+      "03L906022B",
+      "0281014711",
+      "03L906022G",
+      "EDC17CP14"
+    ],
+    "category": "ECU",
+    "brand": "Volkswagen",
+    "model": "Passat B6 / Golf 6 / Tiguan / Audi A4 B8 2.0 TDI Beyni",
+    "yearRange": "2008-2011",
+    "engineCode": "CBAB / CBBB / CAGA",
+    "manufacturer": "Bosch",
+    "referencePrice": 11200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "4G0 907 401",
+    "hwCode": "0 281 017 104",
+    "swCode": "EDC17CP44",
+    "crossRefCodes": [
+      "4G0907401",
+      "0281017104",
+      "4G0907401F",
+      "EDC17CP44"
+    ],
+    "category": "ECU",
+    "brand": "Audi",
+    "model": "A6 C7 / A7 / Q7 / VW Touareg 3.0 TDI Motor Beyni",
+    "yearRange": "2011-2016",
+    "engineCode": "CDUC / CLAB / CRCA",
+    "manufacturer": "Bosch",
+    "referencePrice": 15900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "04L 906 026 ET",
+    "hwCode": "0 281 030 783",
+    "swCode": "EDC17C74",
+    "crossRefCodes": [
+      "04L906026ET",
+      "0281030783",
+      "04L906026FP",
+      "EDC17C74"
+    ],
+    "category": "ECU",
+    "brand": "Volkswagen",
+    "model": "Passat B8 / Golf 7 / Tiguan / Octavia A7 2.0 TDI Motor Beyni",
+    "yearRange": "2015-2020",
+    "engineCode": "CRLB / DFGA / CRLC",
+    "manufacturer": "Bosch",
+    "referencePrice": 15400,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "04L 906 021 M",
+    "hwCode": "0 281 019 112",
+    "swCode": "EDC17C64",
+    "crossRefCodes": [
+      "04L906021M",
+      "0281019112",
+      "04L906021AE",
+      "EDC17C64"
+    ],
+    "category": "ECU",
+    "brand": "Škoda",
+    "model": "Octavia A7 / VW Golf 7 / SEAT Leon 1.6 & 2.0 TDI Motor Beyni",
+    "yearRange": "2013-2017",
+    "engineCode": "CLHA / CRKB / CKFC",
+    "manufacturer": "Bosch",
+    "referencePrice": 13900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "03L 906 023 DQ",
+    "hwCode": "5WP42676",
+    "swCode": "SIMOS-PCR2.1",
+    "crossRefCodes": [
+      "03L906023DQ",
+      "5WP42676",
+      "03L906023FS",
+      "PCR21"
+    ],
+    "category": "ECU",
+    "brand": "SEAT",
+    "model": "Leon 1P / Ibiza / Skoda Octavia / VW Polo 1.6 TDI Motor Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "CAYC / CAYB",
+    "manufacturer": "Continental / Siemens",
+    "referencePrice": 10500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "06K 906 070",
+    "hwCode": "5G0 906 259 C",
+    "swCode": "SIMOS18.1",
+    "crossRefCodes": [
+      "06K906070",
+      "5G0906259C",
+      "8V0906259",
+      "SIMOS181"
+    ],
+    "category": "ECU",
+    "brand": "Volkswagen",
+    "model": "Golf 7 GTI / R / Audi A3 / S3 / Octavia RS / Leon Cupra Motor Beyni",
+    "yearRange": "2013-2019",
+    "engineCode": "CHHB / CJXC / CJSA",
+    "manufacturer": "Continental",
+    "referencePrice": 16800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "0B5 927 156 K",
+    "hwCode": "0B5 927 256 B",
+    "swCode": "DL501-GEN2",
+    "crossRefCodes": [
+      "0B5927156K",
+      "0B5927256B",
+      "0B5927156J",
+      "DL501"
+    ],
+    "category": "TCU",
+    "brand": "Audi",
+    "model": "A4 B8 / A5 / A6 C7 / Q5 0B5 DL501 Gen2 S-Tronic Mekatronik",
+    "yearRange": "2012-2018",
+    "engineCode": "CNCD / CGLC / CDUC",
+    "manufacturer": "Continental / BorgWarner",
+    "referencePrice": 21200,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "0GC 927 711 G",
+    "hwCode": "0GC 927 711 H",
+    "swCode": "DQ381-0GC",
+    "crossRefCodes": [
+      "0GC927711G",
+      "0GC927711H",
+      "0GC325025E",
+      "DQ381"
+    ],
+    "category": "TCU",
+    "brand": "Volkswagen",
+    "model": "Passat B8 / Tiguan / Golf 7.5 / Kodiaq / Ateca DQ381 7-İleri DSG",
+    "yearRange": "2017-2022",
+    "engineCode": "DFGA / CZPB / DNNA",
+    "manufacturer": "Continental / Bosch",
+    "referencePrice": 22500,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "02E 927 770 AL",
+    "hwCode": "02E 325 025 AM",
+    "swCode": "DQ250-02E",
+    "crossRefCodes": [
+      "02E927770AL",
+      "02E325025AM",
+      "02E927770AJ",
+      "DQ250"
+    ],
+    "category": "TCU",
+    "brand": "Volkswagen",
+    "model": "Golf 6 / Passat B7 / Octavia / Leon DQ250 6-İleri Islak DSG Beyni",
+    "yearRange": "2010-2016",
+    "engineCode": "CFFB / CFGB / CCZB",
+    "manufacturer": "Temic / Continental",
+    "referencePrice": 17400,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "0AM 927 769 K",
+    "hwCode": "0AM 325 025 M",
+    "swCode": "DQ200-GEN2",
+    "crossRefCodes": [
+      "0AM927769K",
+      "0AM325025M",
+      "0AM927769G",
+      "DQ200"
+    ],
+    "category": "TCU",
+    "brand": "SEAT",
+    "model": "Leon 5F / Golf 7 / Octavia A7 / A3 8V DQ200 7-İleri Kuru DSG Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "CLHA / CXSA / CJZA",
+    "manufacturer": "Continental / Schaeffler",
+    "referencePrice": 16900,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "5Q0 937 084 CF",
+    "hwCode": "5Q0 937 084 CQ",
+    "swCode": "MQB-BCM-HIGH",
+    "crossRefCodes": [
+      "5Q0937084CF",
+      "5Q0937084CQ",
+      "5Q0937086AK",
+      "J519MQB"
+    ],
+    "category": "BCM",
+    "brand": "Volkswagen",
+    "model": "Golf 7 / Passat B8 / Tiguan / Octavia A7 J519 MQB BCM Highline",
+    "yearRange": "2015-2020",
+    "engineCode": "MQB Platform",
+    "manufacturer": "Continental",
+    "referencePrice": 9600,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "1K0 937 087 Q",
+    "hwCode": "1K0 937 087 R",
+    "swCode": "PQ35-BCM-J519",
+    "crossRefCodes": [
+      "1K0937087Q",
+      "1K0937087R",
+      "1K0937086M",
+      "J519PQ35"
+    ],
+    "category": "BCM",
+    "brand": "Škoda",
+    "model": "Octavia A5 / Golf 6 / Jetta / Leon 1P J519 Konfor & BCM Beyni",
+    "yearRange": "2009-2014",
+    "engineCode": "PQ35 Platform",
+    "manufacturer": "Continental",
+    "referencePrice": 6800,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "4F0 905 852 B",
+    "hwCode": "4F0 909 131 D",
+    "swCode": "J518-ELV-C6",
+    "crossRefCodes": [
+      "4F0905852B",
+      "4F0905852F",
+      "4F0909131D",
+      "J518"
+    ],
+    "category": "IMMOBILIZER",
+    "brand": "Audi",
+    "model": "A6 C6 / Q7 4L J518 Direksiyon Kilidi & İmmobilizer Modülü",
+    "yearRange": "2005-2011",
+    "engineCode": "ASB / BRE / BPP",
+    "manufacturer": "Siemens VDO",
+    "referencePrice": 8400,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "8K0 907 064 CQ",
+    "hwCode": "8K0 907 064 KM",
+    "swCode": "BCM2-J393-MLB",
+    "crossRefCodes": [
+      "8K0907064CQ",
+      "8K0907064KM",
+      "8K0907064N",
+      "BCM2"
+    ],
+    "category": "IMMOBILIZER",
+    "brand": "Audi",
+    "model": "A4 B8 / A5 / Q5 BCM2 (J393) İmmobilizer & Arka Konfor Beyni",
+    "yearRange": "2008-2015",
+    "engineCode": "CAGA / CGLC / CDNC",
+    "manufacturer": "Continental",
+    "referencePrice": 8900,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "5Q0 907 379 R",
+    "hwCode": "10.0915-0348.3",
+    "swCode": "MK100-ESC-MQB",
+    "crossRefCodes": [
+      "5Q0907379R",
+      "10091503483",
+      "5Q0614517BP",
+      "MK100"
+    ],
+    "category": "ABS",
+    "brand": "Volkswagen",
+    "model": "Golf 7 / Audi A3 8V / Octavia A7 / Leon 5F MK100 ABS ESP Beyni",
+    "yearRange": "2013-2018",
+    "engineCode": "CLHA / CXSA / CRLB",
+    "manufacturer": "ATE",
+    "referencePrice": 9800,
+    "isFeatured": true
+  },
+  {
+    "oemCode": "3Q0 907 379 AA",
+    "hwCode": "10.0916-4319.3",
+    "swCode": "MK100-EPB-B8",
+    "crossRefCodes": [
+      "3Q0907379AA",
+      "10091643193",
+      "3Q0614517AC",
+      "MK100EPB"
+    ],
+    "category": "ABS",
+    "brand": "Volkswagen",
+    "model": "Passat B8 / Tiguan AD1 / Arteon / Superb B8 ABS ESP Modülü",
+    "yearRange": "2015-2021",
+    "engineCode": "DFGA / CRLB / CZEA",
+    "manufacturer": "ATE",
+    "referencePrice": 11900,
+    "isFeatured": false
+  },
+  {
+    "oemCode": "6R0 907 379 AK",
+    "hwCode": "0 265 951 862",
+    "swCode": "ESP8.2i-PQ25",
+    "crossRefCodes": [
+      "6R0907379AK",
+      "0265951862",
+      "6R0614517AF",
+      "ESP82I"
+    ],
+    "category": "ABS",
+    "brand": "Volkswagen",
+    "model": "Polo 6R / SEAT Ibiza 6J / Škoda Fabia ABS ESP Pompa Beyni",
+    "yearRange": "2010-2015",
+    "engineCode": "CAYB / CBZB / CGGB",
+    "manufacturer": "Bosch",
+    "referencePrice": 7600,
+    "isFeatured": false
+  }
+]

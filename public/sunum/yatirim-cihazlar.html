@@ -1,0 +1,3009 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OtoBeyinPazari.com — Test Merkezi Cihaz Listesi, Kurulum Maliyetleri &amp; Yatırım Geri Dönüş (ROI) Sunumu</title>
+  <meta name="description" content="OtoBeyinPazari.com Test Merkezi kurulum maliyetleri, 4 kategoride ECU/TCU cihaz listesi, 3 kademeli yatırım paketi, aylık operasyon giderleri ve canlı ROI amortisman hesaplayıcısı." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy-950: #061529;
+      --navy-900: #0A2240;
+      --navy-800: #11325C;
+      --navy-700: #1B467A;
+      --orange-600: #E06B00;
+      --orange-500: #F57C00;
+      --orange-400: #FF9829;
+      --orange-100: #FFF3E0;
+      --orange-50: #FFF8F0;
+      --emerald-600: #059669;
+      --emerald-500: #10B981;
+      --emerald-100: #D1FAE5;
+      --emerald-50: #ECFDF5;
+      --rose-600: #E11D48;
+      --rose-100: #FFE4E6;
+      --rose-50: #FFF1F2;
+      --amber-600: #D97706;
+      --amber-50: #FFFBEB;
+      --slate-900: #0F172A;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748B;
+      --slate-300: #CBD5E1;
+      --slate-200: #E2E8F0;
+      --slate-100: #F1F5F9;
+      --slate-50: #F8FAFC;
+      --white: #FFFFFF;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 2px 8px rgba(10, 34, 64, 0.06);
+      --shadow-md: 0 10px 30px rgba(10, 34, 64, 0.08);
+      --shadow-lg: 0 20px 50px rgba(10, 34, 64, 0.14);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--slate-900);
+      background-color: var(--slate-50);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      line-height: 1.22;
+      letter-spacing: -0.02em;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* Reading Progress Bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--orange-500), var(--orange-400));
+      z-index: 1001;
+      transition: width 0.1s linear;
+    }
+
+    /* Sticky Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--orange-600);
+      background: var(--orange-100);
+      padding: 3px 9px;
+      border-radius: 999px;
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .brand-tag {
+        display: inline-block;
+      }
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    @media (min-width: 1160px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--slate-700);
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 7px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--navy-900);
+      background: var(--orange-100);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      border: none;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      min-height: 42px;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
+      color: var(--white);
+      box-shadow: 0 6px 18px rgba(245, 124, 0, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(245, 124, 0, 0.36);
+    }
+
+    .btn-navy {
+      background: var(--navy-900);
+      color: var(--white);
+    }
+
+    .btn-navy:hover {
+      background: var(--navy-800);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--navy-900);
+      border: 1.5px solid var(--slate-300);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy-900);
+      background: var(--slate-50);
+    }
+
+    .btn-sm {
+      padding: 7px 11px;
+      font-size: 12.5px;
+      min-height: 36px;
+    }
+
+    .header-ext-link {
+      display: none;
+    }
+
+    @media (min-width: 820px) {
+      .header-ext-link {
+        display: inline-flex;
+      }
+    }
+
+    .menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--slate-200);
+      background: var(--white);
+      color: var(--navy-900);
+    }
+
+    @media (min-width: 1160px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      background: var(--white);
+      border-bottom: 1px solid var(--slate-200);
+      padding: 12px 20px 18px;
+    }
+
+    .mobile-drawer.open {
+      display: block;
+    }
+
+    .mobile-drawer a {
+      display: block;
+      padding: 10px 12px;
+      color: var(--slate-800);
+      font-weight: 600;
+      font-size: 14.5px;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .mobile-drawer a:hover {
+      background: var(--orange-50);
+      color: var(--orange-600);
+    }
+
+    .mobile-drawer-divider {
+      height: 1px;
+      background: var(--slate-200);
+      margin: 8px 0;
+    }
+
+    /* Layout & Sections */
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 64px 0;
+      scroll-margin-top: 66px;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 84px 0;
+      }
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange-600);
+      background: var(--orange-100);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(25px, 3.8vw, 37px);
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: clamp(15px, 1.75vw, 17px);
+      color: var(--slate-600);
+      max-width: 780px;
+    }
+
+    .section-header {
+      margin-bottom: 36px;
+    }
+
+    .section-header.center {
+      text-align: center;
+    }
+
+    .section-header.center .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: radial-gradient(circle at 86% 16%, rgba(245, 124, 0, 0.24), transparent 44%),
+                  radial-gradient(circle at 12% 85%, rgba(27, 70, 122, 0.48), transparent 50%),
+                  linear-gradient(155deg, var(--navy-950) 0%, var(--navy-900) 60%, #0D2D54 100%);
+      color: var(--white);
+      padding: 54px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1.18fr 0.82fr;
+        gap: 44px;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 124, 0, 0.16);
+      border: 1px solid rgba(255, 152, 41, 0.42);
+      color: #FFB76B;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange-400);
+      box-shadow: 0 0 0 0 rgba(255, 152, 41, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 152, 41, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(255, 152, 41, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 152, 41, 0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(27px, 4.1vw, 41px);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 18px;
+      line-height: 1.16;
+    }
+
+    .hero h1 span {
+      color: var(--orange-400);
+    }
+
+    .hero-desc {
+      font-size: clamp(15px, 1.75vw, 17px);
+      color: #CBD5E1;
+      margin-bottom: 24px;
+      max-width: 650px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .hero-stats {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .hero-stat {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .hero-stat.accent {
+      background: rgba(245, 124, 0, 0.14);
+      border-color: rgba(255, 152, 41, 0.45);
+    }
+
+    .hero-stat.emerald {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.36);
+    }
+
+    .hero-stat-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--orange-400);
+      margin-bottom: 3px;
+    }
+
+    .hero-stat.emerald .hero-stat-val {
+      color: #6EE7B7;
+    }
+
+    .hero-stat-lbl {
+      font-size: 12px;
+      color: #CBD5E1;
+      line-height: 1.35;
+    }
+
+    .hero-visual-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-logo-banner {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .hero-logo-banner img {
+      max-height: 44px;
+      width: auto;
+    }
+
+    .hero-logo-sub {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--navy-900);
+      background: var(--slate-100);
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-svg-box {
+      background: #071A33;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      margin-bottom: 14px;
+    }
+
+    .fx-control-strip {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      color: #E2E8F0;
+    }
+
+    .fx-inputs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .fx-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(6, 21, 41, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 4px 8px;
+      font-weight: 600;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .fx-pill input {
+      width: 50px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px dashed var(--orange-400);
+      color: var(--orange-400);
+      font-weight: 700;
+      font-size: 12.5px;
+      text-align: center;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .fx-reset-btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: #CBD5E1;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .fx-reset-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+    }
+
+    .hero-trust-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.36);
+      border-radius: 12px;
+      padding: 11px 14px;
+      font-size: 12.5px;
+      color: #A7F3D0;
+      font-weight: 600;
+    }
+
+    /* SECTION 1: EQUIPMENT INVENTORY & FILTER TABS */
+    .filter-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding: 14px 18px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      padding: 9px 15px;
+      border-radius: 999px;
+      border: 1.5px solid var(--slate-200);
+      background: var(--slate-50);
+      color: var(--slate-700);
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--navy-700);
+      color: var(--navy-900);
+    }
+
+    .filter-btn.active {
+      background: var(--navy-900);
+      color: var(--white);
+      border-color: var(--navy-900);
+      box-shadow: 0 4px 12px rgba(10, 34, 64, 0.2);
+    }
+
+    .filter-count {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .filter-btn:not(.active) .filter-count {
+      background: var(--slate-200);
+      color: var(--slate-700);
+    }
+
+    .filter-hint {
+      font-size: 13px;
+      color: var(--slate-500);
+      font-weight: 500;
+    }
+
+    .equip-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 720px) {
+      .equip-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1120px) {
+      .equip-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .equip-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .equip-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--navy-700);
+    }
+
+    .equip-card.is-hidden {
+      display: none;
+    }
+
+    .equip-card.recommended-star {
+      border-color: rgba(245, 124, 0, 0.45);
+      background: linear-gradient(180deg, #FFFDF9 0%, #FFFFFF 100%);
+    }
+
+    .equip-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .cat-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .cat-ecu { background: #E0E7FF; color: #1E3A8A; }
+    .cat-bench { background: var(--orange-100); color: var(--orange-600); }
+    .cat-lab { background: var(--emerald-100); color: var(--emerald-600); }
+    .cat-ops { background: var(--slate-100); color: var(--slate-700); }
+
+    .sub-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+
+    .sub-free {
+      background: var(--emerald-50);
+      color: var(--emerald-600);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .sub-paid {
+      background: var(--rose-50);
+      color: var(--rose-600);
+      border: 1px solid rgba(225, 29, 72, 0.25);
+    }
+
+    .sub-once {
+      background: var(--slate-100);
+      color: var(--slate-600);
+    }
+
+    .equip-title {
+      font-size: 17.5px;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.28;
+    }
+
+    .equip-desc {
+      font-size: 13.5px;
+      color: var(--slate-600);
+      line-height: 1.52;
+      flex: 1;
+    }
+
+    .equip-price-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      padding: 11px 13px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .equip-fx {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--navy-900);
+    }
+
+    .equip-try {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange-600);
+    }
+
+    .equip-pkg-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--slate-200);
+    }
+
+    .pkg-chip {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .pkg-mvp { background: #E0F2FE; color: #0369A1; }
+    .pkg-pro { background: var(--orange-100); color: var(--orange-600); }
+    .pkg-ind { background: var(--navy-900); color: var(--white); }
+
+    /* Category Summary Strip */
+    .cat-summary-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 680px) {
+      .cat-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1080px) {
+      .cat-summary-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .cat-sum-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-left: 4px solid var(--navy-900);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cat-sum-card.orange { border-left-color: var(--orange-500); }
+    .cat-sum-card.emerald { border-left-color: var(--emerald-500); }
+    .cat-sum-card.slate { border-left-color: var(--slate-600); }
+
+    .cat-sum-card small {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--slate-500);
+      margin-bottom: 4px;
+    }
+
+    .cat-sum-card strong {
+      display: block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      color: var(--navy-900);
+      margin-bottom: 4px;
+    }
+
+    .cat-sum-card span {
+      font-size: 12.5px;
+      color: var(--slate-600);
+    }
+
+    /* SECTION 2: 3 INVESTMENT PACKAGES */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    @media (min-width: 960px) {
+      .packages-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .pkg-card {
+      background: var(--white);
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pkg-card.featured {
+      border: 2.5px solid var(--orange-500);
+      box-shadow: var(--shadow-lg);
+      background: linear-gradient(180deg, #FFFBF5 0%, #FFFFFF 38%);
+    }
+
+    .pkg-ribbon {
+      position: absolute;
+      top: -13px;
+      right: 22px;
+      background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
+      color: var(--white);
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 14px rgba(245, 124, 0, 0.32);
+    }
+
+    .pkg-tier {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate-500);
+      margin-bottom: 6px;
+    }
+
+    .pkg-card.featured .pkg-tier {
+      color: var(--orange-600);
+    }
+
+    .pkg-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy-900);
+      margin-bottom: 12px;
+    }
+
+    .pkg-price-wrap {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 14px;
+      padding: 15px 16px;
+      margin-bottom: 18px;
+    }
+
+    .pkg-card.featured .pkg-price-wrap {
+      background: var(--orange-50);
+      border-color: rgba(245, 124, 0, 0.35);
+    }
+
+    .pkg-try-big {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.15;
+    }
+
+    .pkg-card.featured .pkg-try-big {
+      color: var(--orange-600);
+    }
+
+    .pkg-usd-sub {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      margin-top: 3px;
+    }
+
+    .pkg-cov-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--emerald-600);
+      background: var(--emerald-50);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 5px 11px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    .pkg-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+
+    .pkg-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13.5px;
+      color: var(--slate-700);
+      line-height: 1.45;
+    }
+
+    .pkg-check {
+      color: var(--emerald-600);
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pkg-meta {
+      background: var(--slate-50);
+      border-radius: 10px;
+      padding: 11px 13px;
+      font-size: 12.5px;
+      color: var(--slate-600);
+      margin-bottom: 16px;
+      border: 1px solid var(--slate-200);
+    }
+
+    .pkg-meta strong {
+      color: var(--navy-900);
+    }
+
+    .strategy-callout {
+      margin-top: 28px;
+      background: linear-gradient(135deg, var(--navy-950), var(--navy-900));
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 22px 26px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border: 1px solid rgba(255, 152, 41, 0.35);
+    }
+
+    .strategy-callout h4 {
+      font-size: 17px;
+      color: var(--orange-400);
+      margin-bottom: 4px;
+    }
+
+    .strategy-callout p {
+      font-size: 14px;
+      color: #CBD5E1;
+      max-width: 820px;
+    }
+
+    /* SECTION 3: MONTHLY OPEX */
+    .opex-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    @media (min-width: 960px) {
+      .opex-layout {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .opex-table-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .opex-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .opex-row:last-child {
+      border-bottom: none;
+    }
+
+    .opex-row.total {
+      background: var(--navy-900);
+      color: var(--white);
+    }
+
+    .opex-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-bottom: 3px;
+    }
+
+    .opex-row.total .opex-name {
+      color: var(--white);
+      font-size: 17px;
+    }
+
+    .opex-sub {
+      font-size: 13px;
+      color: var(--slate-600);
+    }
+
+    .opex-row.total .opex-sub {
+      color: #CBD5E1;
+    }
+
+    .opex-amount {
+      text-align: right;
+    }
+
+    .opex-amount strong {
+      display: block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy-900);
+    }
+
+    .opex-row.total .opex-amount strong {
+      color: var(--orange-400);
+      font-size: 22px;
+    }
+
+    .opex-share {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--slate-500);
+      background: var(--slate-100);
+      padding: 2px 8px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-top: 3px;
+    }
+
+    .opex-row.total .opex-share {
+      background: rgba(255, 255, 255, 0.14);
+      color: #E2E8F0;
+    }
+
+    .opex-bar-wrap {
+      padding: 18px 22px;
+      background: var(--slate-50);
+      border-top: 1px solid var(--slate-200);
+    }
+
+    .stacked-bar {
+      height: 14px;
+      border-radius: 999px;
+      overflow: hidden;
+      display: flex;
+      background: var(--slate-200);
+      margin-bottom: 10px;
+    }
+
+    .sb-seg-1 { width: 54%; background: var(--navy-900); }
+    .sb-seg-2 { width: 29%; background: var(--orange-500); }
+    .sb-seg-3 { width: 10%; background: var(--emerald-500); }
+    .sb-seg-4 { width: 7%; background: var(--slate-500); }
+
+    .sb-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--slate-600);
+    }
+
+    .sb-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      margin-right: 5px;
+    }
+
+    .lean-card {
+      background: var(--emerald-50);
+      border: 1.5px solid rgba(16, 185, 129, 0.45);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .lean-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--emerald-600);
+      background: var(--white);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 4px 11px;
+      border-radius: 999px;
+      align-self: flex-start;
+    }
+
+    .lean-card h3 {
+      font-size: 20px;
+      color: var(--navy-900);
+    }
+
+    .lean-card p {
+      font-size: 14px;
+      color: var(--slate-700);
+    }
+
+    .lean-scenarios {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .lean-btn {
+      background: var(--white);
+      border: 1.5px solid var(--slate-200);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      text-align: left;
+      transition: all 0.2s ease;
+    }
+
+    .lean-btn:hover {
+      border-color: var(--emerald-600);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .lean-btn strong {
+      display: block;
+      font-size: 14px;
+      color: var(--navy-900);
+    }
+
+    .lean-btn small {
+      font-size: 12px;
+      color: var(--slate-500);
+    }
+
+    .lean-btn .amt {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--emerald-600);
+      white-space: nowrap;
+    }
+
+    /* SECTION 4: INTERACTIVE ROI CALCULATOR */
+    .calc-card {
+      background: linear-gradient(155deg, var(--navy-950) 0%, var(--navy-900) 100%);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      border: 1.5px solid rgba(255, 152, 41, 0.35);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .calc-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .preset-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .preset-btn {
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      color: #E2E8F0;
+      font-size: 13.5px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .preset-btn:hover {
+      border-color: var(--orange-400);
+      color: #fff;
+    }
+
+    .preset-btn.active {
+      background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
+      border-color: var(--orange-400);
+      color: var(--white);
+      box-shadow: 0 6px 18px rgba(245, 124, 0, 0.32);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (min-width: 900px) {
+      .calc-grid {
+        grid-template-columns: 1.02fr 0.98fr;
+      }
+    }
+
+    .slider-group {
+      margin-bottom: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 13.5px;
+      color: #E2E8F0;
+    }
+
+    .slider-header strong {
+      color: var(--orange-400);
+      font-size: 16px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .slider-sub {
+      font-size: 11.5px;
+      color: #94A3B8;
+      margin-top: 6px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--orange-500);
+      height: 6px;
+      cursor: pointer;
+    }
+
+    .calc-results {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 520px) {
+      .calc-results {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .calc-metric {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .calc-metric.highlight {
+      background: rgba(245, 124, 0, 0.18);
+      border: 1.5px solid var(--orange-500);
+    }
+
+    .calc-metric.emerald {
+      background: rgba(16, 185, 129, 0.14);
+      border-color: rgba(16, 185, 129, 0.42);
+    }
+
+    .calc-metric.rose {
+      background: rgba(225, 29, 72, 0.16);
+      border-color: rgba(225, 29, 72, 0.45);
+    }
+
+    .calc-metric.full-row {
+      grid-column: 1 / -1;
+    }
+
+    .calc-metric small {
+      display: block;
+      font-size: 12px;
+      color: #CBD5E1;
+      margin-bottom: 4px;
+    }
+
+    .calc-metric .val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(20px, 2.7vw, 26px);
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .calc-metric.highlight .val {
+      color: var(--orange-400);
+      font-size: clamp(22px, 3vw, 29px);
+    }
+
+    .calc-metric.emerald .val {
+      color: #6EE7B7;
+    }
+
+    .calc-metric.rose .val {
+      color: #FDA4AF;
+    }
+
+    .calc-note {
+      grid-column: 1 / -1;
+      font-size: 12.5px;
+      color: #CBD5E1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 12px 14px;
+      line-height: 1.55;
+    }
+
+    .timeline-box {
+      margin-top: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+
+    .timeline-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .timeline-head h4 {
+      font-size: 15px;
+      color: var(--white);
+    }
+
+    .timeline-head span {
+      font-size: 12px;
+      color: #94A3B8;
+    }
+
+    .bars-12 {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 6px;
+      align-items: end;
+      height: 110px;
+      padding-top: 16px;
+    }
+
+    .bar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+      gap: 5px;
+    }
+
+    .bar-fill {
+      width: 100%;
+      border-radius: 6px 6px 3px 3px;
+      min-height: 6px;
+      transition: height 0.25s ease, background 0.25s ease;
+    }
+
+    .bar-fill.neg {
+      background: rgba(225, 29, 72, 0.72);
+    }
+
+    .bar-fill.pos {
+      background: linear-gradient(180deg, #34D399, #059669);
+    }
+
+    .bar-fill.payback {
+      background: linear-gradient(180deg, #FFB76B, #F57C00);
+      box-shadow: 0 0 12px rgba(245, 124, 0, 0.5);
+    }
+
+    .bar-lbl {
+      font-size: 10.5px;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--navy-950);
+      color: #94A3B8;
+      padding: 46px 0 36px;
+      border-top: 3px solid var(--orange-500);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-logo-wrap {
+      background: var(--white);
+      padding: 10px 18px;
+      border-radius: 12px;
+    }
+
+    .footer-logo-wrap img {
+      height: 40px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* PRINT STYLES — Executive A4 PDF Layout */
+    @page {
+      size: A4 portrait;
+      margin: 12mm 12mm 14mm 12mm;
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .site-header,
+      .progress-bar,
+      .hero-cta,
+      .filter-toolbar,
+      .preset-bar,
+      .fx-reset-btn,
+      .no-print {
+        display: none !important;
+      }
+
+      html {
+        font-size: 12.5px;
+      }
+
+      body {
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+      }
+
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+
+      section {
+        padding: 18px 0 !important;
+        background: #FFFFFF !important;
+      }
+
+      .section-header {
+        margin-bottom: 14px !important;
+        break-after: avoid;
+      }
+
+      .section-title {
+        font-size: 20px !important;
+        color: #0A2240 !important;
+        margin-bottom: 6px !important;
+      }
+
+      .section-subtitle {
+        font-size: 12px !important;
+        color: #334155 !important;
+      }
+
+      .section-eyebrow {
+        border: 1px solid #F57C00 !important;
+        background: #FFF3E0 !important;
+        color: #C25900 !important;
+        margin-bottom: 6px !important;
+      }
+
+      .hero {
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+        border-top: 6px solid #0A2240 !important;
+        border-bottom: 2px solid #E2E8F0 !important;
+        padding: 16px 0 20px !important;
+        break-after: page;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+
+      .hero-badge {
+        background: #FFF3E0 !important;
+        color: #C25900 !important;
+        border: 1px solid #F57C00 !important;
+      }
+
+      .hero h1 {
+        font-size: 24px !important;
+        color: #0A2240 !important;
+      }
+
+      .hero h1 span {
+        color: #E06B00 !important;
+      }
+
+      .hero-desc {
+        font-size: 12.5px !important;
+        color: #334155 !important;
+        max-width: 100% !important;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
+      }
+
+      .hero-stat {
+        background: #F8FAFC !important;
+        border: 1px solid #CBD5E1 !important;
+        padding: 10px !important;
+      }
+
+      .hero-stat-val {
+        color: #E06B00 !important;
+        font-size: 15px !important;
+      }
+
+      .hero-stat-lbl {
+        color: #334155 !important;
+        font-size: 10.5px !important;
+      }
+
+      .hero-visual-card {
+        background: #F8FAFC !important;
+        border: 1.5px solid #0A2240 !important;
+        padding: 12px !important;
+        break-inside: avoid;
+      }
+
+      .fx-control-strip {
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+        border-color: #CBD5E1 !important;
+      }
+
+      .fx-pill {
+        background: #F8FAFC !important;
+        color: #0A2240 !important;
+        border-color: #CBD5E1 !important;
+      }
+
+      .hero-trust-strip {
+        background: #ECFDF5 !important;
+        color: #065F46 !important;
+        border-color: #10B981 !important;
+      }
+
+      .equip-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+
+      .equip-card {
+        display: flex !important;
+        padding: 12px !important;
+        break-inside: avoid;
+      }
+
+      .cat-summary-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
+        break-inside: avoid;
+      }
+
+      .packages-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
+      }
+
+      .pkg-card {
+        padding: 14px !important;
+        break-inside: avoid;
+      }
+
+      .strategy-callout {
+        background: #F8FAFC !important;
+        color: #0F172A !important;
+        border: 2px solid #0A2240 !important;
+        padding: 14px !important;
+        break-inside: avoid;
+      }
+
+      .strategy-callout h4 {
+        color: #E06B00 !important;
+      }
+
+      .strategy-callout p {
+        color: #334155 !important;
+      }
+
+      .opex-layout {
+        grid-template-columns: 1.15fr 0.85fr !important;
+        gap: 14px !important;
+        break-inside: avoid;
+      }
+
+      .calc-card {
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+        border: 2px solid #0A2240 !important;
+        padding: 16px !important;
+        break-inside: avoid;
+      }
+
+      .calc-card h3,
+      .calc-card h4,
+      .calc-card p {
+        color: #0A2240 !important;
+      }
+
+      .slider-group {
+        background: #F8FAFC !important;
+        border: 1px solid #CBD5E1 !important;
+        padding: 8px 10px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .slider-header {
+        color: #334155 !important;
+        font-size: 11.5px !important;
+      }
+
+      .slider-header strong {
+        color: #0A2240 !important;
+      }
+
+      input[type="range"] {
+        display: none !important;
+      }
+
+      .calc-metric {
+        background: #F8FAFC !important;
+        border: 1px solid #CBD5E1 !important;
+        padding: 10px !important;
+      }
+
+      .calc-metric.highlight {
+        background: #FFF3E0 !important;
+        border: 2px solid #F57C00 !important;
+      }
+
+      .calc-metric small {
+        color: #475569 !important;
+      }
+
+      .calc-metric .val {
+        color: #0A2240 !important;
+      }
+
+      .calc-metric.highlight .val {
+        color: #C25900 !important;
+      }
+
+      .calc-note,
+      .timeline-box {
+        background: #F8FAFC !important;
+        color: #334155 !important;
+        border: 1px solid #CBD5E1 !important;
+      }
+
+      .site-footer {
+        background: #FFFFFF !important;
+        color: #334155 !important;
+        border-top: 2px solid #0A2240 !important;
+        padding: 16px 0 8px !important;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- STICKY HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#kapak" class="brand-link">
+        <img src="/assets/logo-main.jpg" alt="OtoBeyinPazari.com Logo" class="brand-logo-img" />
+        <span class="brand-tag">Yatırım &amp; Cihazlar</span>
+      </a>
+
+      <ul class="nav-links" id="desktopNav">
+        <li><a href="#cihaz-listesi">Cihaz Listesi</a></li>
+        <li><a href="#yatirim-paketleri">3 Yatırım Paketi</a></li>
+        <li><a href="#aylik-giderler">Aylık Giderler</a></li>
+        <li><a href="#roi-hesaplayici">ROI Hesaplayıcı</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="/sunum" class="btn btn-outline btn-sm header-ext-link no-print">İş Modeli</a>
+        <a href="/sunum-global" class="btn btn-outline btn-sm header-ext-link no-print">Global Analiz</a>
+        <a href="/admin" class="btn btn-navy btn-sm header-ext-link no-print">Admin Paneli</a>
+        <button class="btn btn-primary btn-sm no-print" onclick="window.print()" title="PDF olarak kaydet veya yazdır">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>PDF / Yazdır</span>
+        </button>
+        <button class="menu-toggle no-print" id="menuToggle" aria-label="Menüyü aç">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-drawer no-print" id="mobileDrawer">
+      <a href="#cihaz-listesi">1. Detaylı Cihaz &amp; Ekipman Listesi</a>
+      <a href="#yatirim-paketleri">2. 3 Kademeli Yatırım Paketi</a>
+      <a href="#aylik-giderler">3. Aylık Sabit Operasyon Giderleri</a>
+      <a href="#roi-hesaplayici">4. İnteraktif ROI &amp; Amortisman Hesaplayıcı</a>
+      <a href="/sunum-strateji">→ 4. Bağımsız Stratejik Değerlendirme (/sunum-strateji)</a>
+      <div class="mobile-drawer-divider"></div>
+      <a href="/sunum">← İş Modeli Sunumu (/sunum)</a>
+      <a href="/sunum-global">← Global Analiz Sunumu (/sunum-global)</a>
+      <a href="/admin">Admin Paneli'ni Aç →</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="kapak">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Modül 3 • Test Merkezi Cihaz Listesi, CapEx/OpEx &amp; ROI Planı (2025/2026)</span>
+          </div>
+          <h1>
+            <span>Sıfır Stok Sermayesiyle</span> Test Garantili Oto Beyin Merkezi Kurmak İçin Ne Kadar Yatırım Gerekir?
+          </h1>
+          <p class="hero-desc">
+            Geleneksel oto beyinciler milyonlarca liralık ölü stoğa sermaye bağlarken, OtoBeyinPazari.com sermayesini yalnızca <strong>doğrulama, klonlama ve tek tip kargolama</strong> altyapısına yatırır. Gerçek 2025/2026 cihaz fiyatlarıyla 3 kurulum kademesini ve geri dönüş süresini şeffafça inceleyin.
+          </p>
+
+          <div class="hero-cta no-print">
+            <a href="#cihaz-listesi" class="btn btn-primary">19 Cihazı &amp; Maliyetleri İncele</a>
+            <a href="#roi-hesaplayici" class="btn btn-outline" style="background:rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.28);">Canlı ROI Hesaplayıcıya Git</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-val">~320.000 ₺</div>
+              <div class="hero-stat-lbl">Yalın Başlangıç (MVP)<br />~$7.800 • %80 Kapsam</div>
+            </div>
+            <div class="hero-stat accent">
+              <div class="hero-stat-val">~640.000 ₺</div>
+              <div class="hero-stat-lbl">Önerilen Pro Merkez<br />~$15.800 • %95+ Kapsam</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-val">3–5 Ay</div>
+              <div class="hero-stat-lbl">Tahmini Amortisman<br />Ölçekli B2B Hacimde</div>
+            </div>
+            <div class="hero-stat emerald">
+              <div class="hero-stat-val">0 ₺</div>
+              <div class="hero-stat-lbl">Stok Sermayesi<br />Kapalı Çıkmacı Ağı</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-card">
+          <div class="hero-logo-banner">
+            <img src="/assets/logo-main.jpg" alt="OtoBeyinPazari.com" />
+            <span class="hero-logo-sub">CapEx &amp; ROI Raporu</span>
+          </div>
+
+          <div class="fx-control-strip">
+            <span>Canlı Kur Referansı (Tüm Tablolar Otomatik Güncellenir):</span>
+            <div class="fx-inputs">
+              <label class="fx-pill">
+                1 USD =
+                <input type="number" id="fxUsd" value="40" min="20" max="100" step="0.5" aria-label="USD kuru" />
+                ₺
+              </label>
+              <label class="fx-pill">
+                1 EUR =
+                <input type="number" id="fxEur" value="43" min="20" max="110" step="0.5" aria-label="EUR kuru" />
+                ₺
+              </label>
+              <button type="button" class="fx-reset-btn no-print" id="fxResetBtn">Varsayılan (40 / 43)</button>
+            </div>
+          </div>
+
+          <div class="hero-svg-box">
+            <svg viewBox="0 0 460 220" width="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Test Merkezi 4 Katmanlı Altyapı Mimarisi">
+              <rect x="6" y="6" width="448" height="208" rx="12" fill="#061529" stroke="#1B467A" stroke-width="1.2" />
+              <text x="230" y="28" text-anchor="middle" fill="#FF9829" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="800">MERKEZ TEST &amp; KLONLAMA LABORATUVARI MİMARİSİ</text>
+
+              <!-- 4 Pillars -->
+              <rect x="20" y="44" width="202" height="58" rx="8" fill="#0D2D54" stroke="#3B82F6" stroke-width="1" />
+              <text x="32" y="63" fill="#93C5FD" font-family="Inter, sans-serif" font-size="10" font-weight="700">A. ECU / TCU PROGRAMLAMA</text>
+              <text x="32" y="79" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">AutoTuner + Flex + KESS3</text>
+              <text x="32" y="93" fill="#94A3B8" font-family="Inter, sans-serif" font-size="9.5">OBD / Bench / Boot &amp; VIN Klonlama</text>
+
+              <rect x="238" y="44" width="202" height="58" rx="8" fill="#0D2D54" stroke="#F57C00" stroke-width="1" />
+              <text x="250" y="63" fill="#FFB76B" font-family="Inter, sans-serif" font-size="10" font-weight="700">B. TEZGÂH &amp; DİAGNOSTİK</text>
+              <text x="250" y="79" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">MST-9000+ • Godiag • Autel</text>
+              <text x="250" y="93" fill="#94A3B8" font-family="Inter, sans-serif" font-size="9.5">Sensör Simülasyonu &amp; CAN-Bus Testi</text>
+
+              <rect x="20" y="112" width="202" height="58" rx="8" fill="#0D2D54" stroke="#10B981" stroke-width="1" />
+              <text x="32" y="131" fill="#6EE7B7" font-family="Inter, sans-serif" font-size="10" font-weight="700">C. ELEKTRONİK MİKRO LAB</text>
+              <text x="32" y="147" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">4K Mikroskop • Quick 861DW</text>
+              <text x="32" y="161" fill="#94A3B8" font-family="Inter, sans-serif" font-size="9.5">Termal Kamera + ESD + Core Onarım</text>
+
+              <rect x="238" y="112" width="202" height="58" rx="8" fill="#0D2D54" stroke="#94A3B8" stroke-width="1" />
+              <text x="250" y="131" fill="#CBD5E1" font-family="Inter, sans-serif" font-size="10" font-weight="700">D. KARGO &amp; MÜHÜR STANDARTI</text>
+              <text x="250" y="147" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">Hologram Mühür • ESD Kutu</text>
+              <text x="250" y="161" fill="#94A3B8" font-family="Inter, sans-serif" font-size="9.5">QR Test Sertifikası + Zebra Barkod</text>
+
+              <!-- Bottom Output Bar -->
+              <rect x="20" y="180" width="420" height="24" rx="6" fill="#F57C00" />
+              <text x="230" y="196" text-anchor="middle" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="800">SONUÇ: %95+ ARAÇ KAPSAMI • QR SERTİFİKA • TAK-ÇALIŞTIR (+1.500 ₺)</text>
+            </svg>
+          </div>
+
+          <div class="hero-trust-strip">
+            <span>✓ Sıfır Stok + Tam Teşekküllü Test Merkezi</span>
+            <span>Pro Merkez: ~640 Bin ₺</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: 4 CATEGORIES EQUIPMENT LIST -->
+  <section id="cihaz-listesi" style="background: var(--slate-50);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Bölüm 1 • 4 Ana Kategoride Detaylı Cihaz &amp; Ekipman Envanteri</span>
+        <h2 class="section-title">Test Garantili Oto Beyin Merkezi Donanım Listesi</h2>
+        <p class="section-subtitle">
+          2025/2026 güncel global distribütör ve Türkiye tedarik verileriyle hazırlanmış <strong>19 kalem</strong> kritik ekipman. Kategorilere göre filtreleyebilir, yıllık abonelik farklarını ve hangi kurulum paketine dahil olduklarını inceleyebilirsiniz.
+        </p>
+      </div>
+
+      <div class="filter-toolbar no-print">
+        <div class="filter-pills" id="equipFilter">
+          <button type="button" class="filter-btn active" data-filter="all">
+            Tümü <span class="filter-count">19</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="ecu">
+            ECU-TCU Programlama <span class="filter-count">6</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="bench">
+            Tezgâh &amp; Diagnostik <span class="filter-count">5</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="lab">
+            Elektronik Lab <span class="filter-count">4</span>
+          </button>
+          <button type="button" class="filter-btn" data-filter="ops">
+            Kargo &amp; Operasyon <span class="filter-count">4</span>
+          </button>
+        </div>
+        <div class="filter-hint" id="equipFilterStatus">4 kategoride toplam 19 donanım ve operasyon kalemi görüntüleniyor</div>
+      </div>
+
+      <div class="equip-grid" id="equipGrid">
+        <!-- CATEGORY A: ECU / TCU -->
+        <article class="equip-card recommended-star" data-cat="ecu">
+          <div class="equip-top">
+            <span class="cat-badge cat-ecu">A. ECU / TCU Programlama</span>
+            <span class="sub-badge sub-free">0 € Yıllık Abonelik ★</span>
+          </div>
+          <h3 class="equip-title">AutoTuner Master</h3>
+          <p class="equip-desc">
+            Yıllık lisans ücreti olmayan sektör standardı profesyonel cihaz. OBD, Bench ve Boot modlarında ultra hızlı okuma/yazma ile uzun vadede toplam sahip olma maliyeti en düşük ana ünite.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~€4.200</span>
+            <span class="equip-try" data-currency="EUR" data-amount="4200">~180.600 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card recommended-star" data-cat="ecu">
+          <div class="equip-top">
+            <span class="cat-badge cat-ecu">A. ECU / TCU Programlama</span>
+            <span class="sub-badge sub-paid">Yıllık ~€600 Abonelik</span>
+          </div>
+          <h3 class="equip-title">MagicMotorsport Flex Master</h3>
+          <p class="equip-desc">
+            Motor (ECU) yanında otomatik şanzıman (TCU — DSG, ZF, 9G-Tronic) klonlamada çok güçlü. Baz paket (~€1.400) ile başlayıp Full Bench+OBD+TCU (~€4.800) seviyesine çıkılabilir.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~€1.400 baz / ~€4.800 Full</span>
+            <span class="equip-try" data-currency="EUR" data-min="1400" data-max="4800">~60.200 – 206.400 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-pro">Pro Merkez (Baz/Orta) ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel (Full)</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="ecu">
+          <div class="equip-top">
+            <span class="cat-badge cat-ecu">A. ECU / TCU Programlama</span>
+            <span class="sub-badge sub-paid">Yıllık €1.190 Abonelik</span>
+          </div>
+          <h3 class="equip-title">Alientech KESS3 Master</h3>
+          <p class="equip-desc">
+            İtalyan Alientech'in amiral gemisi. Donanım (~€650) üzerine araç/ağır vasıta protokol paketleri eklenerek Full (~€6.500–€8.000) kurulumda maksimum marka kapsamı ve teknik destek sunar.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~€650 donanım / €6.500–€8.000 Full</span>
+            <span class="equip-try" data-currency="EUR" data-min="6500" data-max="8000">Full: ~279.500 – 344.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-ind">Endüstriyel Lab</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="ecu">
+          <div class="equip-top">
+            <span class="cat-badge cat-ecu">A. ECU / TCU Programlama</span>
+            <span class="sub-badge sub-free">0 $ Aboneliksiz</span>
+          </div>
+          <h3 class="equip-title">FoxFlash Master</h3>
+          <p class="equip-desc">
+            Yıllık abonelik gerektirmeyen ekonomik Bench/Boot/OBD okuyucu. Yalın başlangıçta ana cihaz, Pro Merkez kurulumunda ise yoğun işlerde hızlı yedek ikinci istasyon olarak kullanılır.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$800</span>
+            <span class="equip-try" data-currency="USD" data-amount="800">~32.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">Yalın Başlangıç (MVP)</span>
+            <span class="pkg-chip pkg-pro">Pro Yedek</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="ecu">
+          <div class="equip-top">
+            <span class="cat-badge cat-ecu">A. ECU / TCU Programlama</span>
+            <span class="sub-badge sub-once">Tek Seferlik</span>
+          </div>
+          <h3 class="equip-title">Xhorse Multi-Prog</h3>
+          <p class="equip-desc">
+            EEPROM, MCU, Flash ve immobilizer veri okuma-yazma uzmanı. Şifre/PIN kodu çözme ve eski beyinden yeni beyne birebir veri klonlama işlemlerinin temel taşlarından biridir.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$550</span>
+            <span class="equip-try" data-currency="USD" data-amount="550">~22.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="ecu">
+          <div class="equip-top">
+            <span class="cat-badge cat-ecu">A. ECU / TCU Programlama</span>
+            <span class="sub-badge sub-free">Aboneliksiz Tam Paket</span>
+          </div>
+          <h3 class="equip-title">KT200 II Full</h3>
+          <p class="equip-desc">
+            Bench, Boot, BDM ve JTAG destekli tam sürüm okuma-yazma cihazı. Özellikle eski nesil ECU'lar, ticari araçlar ve ağır vasıta beyinlerinde düşük maliyetle geniş kapsama sağlar.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$850</span>
+            <span class="equip-try" data-currency="USD" data-amount="850">~34.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP Opsiyonel</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel Yedek</span>
+          </div>
+        </article>
+
+        <!-- CATEGORY B: BENCH SIMULATION & DIAGNOSTICS -->
+        <article class="equip-card recommended-star" data-cat="bench">
+          <div class="equip-top">
+            <span class="cat-badge cat-bench">B. Tezgâh &amp; Diagnostik</span>
+            <span class="sub-badge sub-once">Zorunlu Çekirdek</span>
+          </div>
+          <h3 class="equip-title">MST-9000+ ECU Test Tezgâhı &amp; Sensör Simülatörü</h3>
+          <p class="equip-desc">
+            Motor, ABS ve şanzıman beyinlerini araç olmadan masaüstünde çalıştırır. Krank/eksantrik sinyali üretir, enjektör ve ateşleme çıkışlarını LED ile canlı doğrulayarak QR rapor kanıtı üretir.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$380</span>
+            <span class="equip-try" data-currency="USD" data-amount="380">~15.200 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel (2x)</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="bench">
+          <div class="equip-top">
+            <span class="cat-badge cat-bench">B. Tezgâh &amp; Diagnostik</span>
+            <span class="sub-badge sub-once">CAN-Bus Köprüsü</span>
+          </div>
+          <h3 class="equip-title">Godiag GT100+ &amp; GT107 DSG Breakout Box</h3>
+          <p class="equip-desc">
+            Masaüstü OBD güç ve CAN-Bus haberleşme kutusu. Anlık voltaj/akım ekranı ile beyin uyanma davranışını izler, GT107 adaptörüyle DSG mekatronik bağlantılarını güvenli hâle getirir.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$220</span>
+            <span class="equip-try" data-currency="USD" data-amount="220">~8.800 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card recommended-star" data-cat="bench">
+          <div class="equip-top">
+            <span class="cat-badge cat-bench">B. Tezgâh &amp; Diagnostik</span>
+            <span class="sub-badge sub-once">IMMO &amp; Kodlama</span>
+          </div>
+          <h3 class="equip-title">Autel MaxiIM IM608 Pro II</h3>
+          <p class="equip-desc">
+            İmmobilizer, anahtar/CAS/FEM/BCM eşleştirme, online SCN kodlama ve gelişmiş OBD arıza tespit tableti. VIN programlama (+1.500 ₺ ek hizmet) gelir kapısının en kârlı aracıdır.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$2.600</span>
+            <span class="equip-try" data-currency="USD" data-amount="2600">~104.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="bench">
+          <div class="equip-top">
+            <span class="cat-badge cat-bench">B. Tezgâh &amp; Diagnostik</span>
+            <span class="sub-badge sub-once">DoIP / CAN-FD</span>
+          </div>
+          <h3 class="equip-title">Launch X431 PAD VII</h3>
+          <p class="equip-desc">
+            Yeni nesil DoIP ve CAN-FD protokolleri ile ağır vasıta modüllerini destekleyen üst düzey diagnostik platformu. Karmaşık ağ topolojisi doğrulamaları için Endüstriyel pakette yer alır.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$1.950</span>
+            <span class="equip-try" data-currency="USD" data-amount="1950">~78.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-ind">Endüstriyel Lab</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="bench">
+          <div class="equip-top">
+            <span class="cat-badge cat-bench">B. Tezgâh &amp; Diagnostik</span>
+            <span class="sub-badge sub-once">Sinyal &amp; Besleme</span>
+          </div>
+          <h3 class="equip-title">Ayarlanabilir DC Güç Kaynağı (30V 10A/30A) + 2 Kanal Osiloskop</h3>
+          <p class="equip-desc">
+            Aşırı akım korumalı hassas laboratuvar güç kaynağı ve 2 kanallı dijital osiloskop. Kısa devreli beynin kartı yakmasını önler; CAN-High/Low ve PWM çıkış sinyallerini doğrular.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$480</span>
+            <span class="equip-try" data-currency="USD" data-amount="480">~19.200 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <!-- CATEGORY C: ELECTRONIC LAB -->
+        <article class="equip-card" data-cat="lab">
+          <div class="equip-top">
+            <span class="cat-badge cat-lab">C. Elektronik Lab</span>
+            <span class="sub-badge sub-once">Görsel Kanıt &amp; QR</span>
+          </div>
+          <h3 class="equip-title">Trinoküler Stereo Mikroskop + 4K Kamera</h3>
+          <p class="equip-desc">
+            Pin eğilmesi, mikro çatlak, soğuk lehim ve su/oksit korozyonunu yüksek büyütmede inceler. 4K kamera görüntüsü doğrudan ürünün QR test sertifikasına kanıt fotoğrafı olarak eklenir.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$550</span>
+            <span class="equip-try" data-currency="USD" data-amount="550">~22.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="lab">
+          <div class="equip-top">
+            <span class="cat-badge cat-lab">C. Elektronik Lab</span>
+            <span class="sub-badge sub-once">SMD &amp; Core Tamir</span>
+          </div>
+          <h3 class="equip-title">Quick 861DW Sıcak Hava İstasyonu + Hassas Havya</h3>
+          <p class="equip-desc">
+            Kurşunsuz yüksek ısılı ECU kartlarında güvenli entegre/EEPROM söküm-takımı sağlar. Core Exchange ile geri gelen arızalı beyinlerin yenilenip yüksek kârla satılmasını mümkün kılar.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$470</span>
+            <span class="equip-try" data-currency="USD" data-amount="470">~18.800 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="lab">
+          <div class="equip-top">
+            <span class="cat-badge cat-lab">C. Elektronik Lab</span>
+            <span class="sub-badge sub-once">Hızlı Arıza Tespiti</span>
+          </div>
+          <h3 class="equip-title">Termal Kamera (QianLi / Topdon / UNI-T)</h3>
+          <p class="equip-desc">
+            Çıkmacıdan gelen beyinlerdeki gizli kısa devreleri, ısınan MOSFET/sürücü entegrelerini kartı kesmeden veya tek tek ölçüm yapmadan saniyeler içinde tespit eder.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$350</span>
+            <span class="equip-try" data-currency="USD" data-amount="350">~14.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="lab">
+          <div class="equip-top">
+            <span class="cat-badge cat-lab">C. Elektronik Lab</span>
+            <span class="sub-badge sub-once">Sıfır Statik Risk</span>
+          </div>
+          <h3 class="equip-title">ESD Anti-Statik Masa, Mat, Bileklik &amp; Ultrasonik Temizleyici</h3>
+          <p class="equip-desc">
+            Hassas otomotiv işlemcilerini statik elektrik deşarjından koruyan topraklı çalışma istasyonu ile korozyonlu/yağlı kartları kimyasal banyoda arındıran ultrasonik temizleme tankı.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$400</span>
+            <span class="equip-try" data-currency="USD" data-amount="400">~16.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP (Temel ESD)</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel (2x)</span>
+          </div>
+        </article>
+
+        <!-- CATEGORY D: SHIPPING, SEALING & DIGITAL OPS -->
+        <article class="equip-card" data-cat="ops">
+          <div class="equip-top">
+            <span class="cat-badge cat-ops">D. Kargo &amp; Operasyon</span>
+            <span class="sub-badge sub-once">Otomasyon</span>
+          </div>
+          <h3 class="equip-title">Termal Barkod &amp; Kargo Yazıcı (Zebra / Argox)</h3>
+          <p class="equip-desc">
+            Sipariş takip etiketi, test merkezi raf barkodu ve müşteriye giden doğrulanabilir QR test sertifikası etiketlerini yüksek hızda, mürekkep maliyeti olmadan basar.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$220</span>
+            <span class="equip-try" data-currency="USD" data-amount="220">~8.800 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="ops">
+          <div class="equip-top">
+            <span class="cat-badge cat-ops">D. Kargo &amp; Operasyon</span>
+            <span class="sub-badge sub-once">Sahte İade Önleme</span>
+          </div>
+          <h3 class="equip-title">Özel Baskılı Hologram Güvenlik Mührü (5.000 adet)</h3>
+          <p class="equip-desc">
+            Testten geçen her beyin vidasına uygulanan "OtoBeyinPazari Test Edildi — Sökülürse Garanti Dışı" kırılgan güvenlik etiketi. Parça değişimi/iade suistimalini %100 önler.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$200</span>
+            <span class="equip-try" data-currency="USD" data-amount="200">~8.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="ops">
+          <div class="equip-top">
+            <span class="cat-badge cat-ops">D. Kargo &amp; Operasyon</span>
+            <span class="sub-badge sub-once">Kurumsal Marka Güveni</span>
+          </div>
+          <h3 class="equip-title">Logolu Darbe Emici Kutu + ESD Poşet (1.000 adet ilk parti)</h3>
+          <p class="equip-desc">
+            Çıkmacı poşeti algısını bitiren antistatik pembe/gümüş ESD poşet, yüksek yoğunluklu sünger yatak ve özel baskılı oluklu mukavva kargo kutusu ilk üretim partisi.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$750</span>
+            <span class="equip-try" data-currency="USD" data-amount="750">~30.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP (250'lik Parti)</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez (1.000'lik) ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel</span>
+          </div>
+        </article>
+
+        <article class="equip-card" data-cat="ops">
+          <div class="equip-top">
+            <span class="cat-badge cat-ops">D. Kargo &amp; Operasyon</span>
+            <span class="sub-badge sub-once">Dijital İstasyon</span>
+          </div>
+          <h3 class="equip-title">İş İstasyonu PC + Çift Monitör + Ürün Fotoğraf Işık Kutusu</h3>
+          <p class="equip-desc">
+            ECU flash dosya arşivi, QR test rapor portalı yönetimi ve her teslim edilecek beynin yüksek kaliteli etiket/pin fotoğrafını çekmek için LED stüdyo ışık kabini.
+          </p>
+          <div class="equip-price-box">
+            <span class="equip-fx">~$1.000</span>
+            <span class="equip-try" data-currency="USD" data-amount="1000">~40.000 ₺</span>
+          </div>
+          <div class="equip-pkg-row">
+            <span class="pkg-chip pkg-mvp">MVP</span>
+            <span class="pkg-chip pkg-pro">Pro Merkez ★</span>
+            <span class="pkg-chip pkg-ind">Endüstriyel (2x)</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Category Cost Summary Strip -->
+      <div class="cat-summary-grid">
+        <div class="cat-sum-card">
+          <small>Kategori A (Pro Seçim)</small>
+          <strong data-currency="EUR" data-amount="5600" data-prefix="~">~240.800 ₺</strong>
+          <span>AutoTuner + Flex Baz + Multi-Prog (~€5.600 + $550)</span>
+        </div>
+        <div class="cat-sum-card orange">
+          <small>Kategori B (Tezgâh &amp; Autel)</small>
+          <strong data-currency="USD" data-amount="3680" data-prefix="~">~147.200 ₺</strong>
+          <span>MST-9000+ • Godiag • Autel IM608 II • DC/Scope</span>
+        </div>
+        <div class="cat-sum-card emerald">
+          <small>Kategori C (Elektronik Lab)</small>
+          <strong data-currency="USD" data-amount="1770" data-prefix="~">~70.800 ₺</strong>
+          <span>4K Mikroskop • Quick 861DW • Termal • ESD</span>
+        </div>
+        <div class="cat-sum-card slate">
+          <small>Kategori D (Kargo &amp; Operasyon)</small>
+          <strong data-currency="USD" data-amount="2170" data-prefix="~">~86.800 ₺</strong>
+          <span>Zebra • 5.000 Mühür • 1.000 Kutu • PC + Işık</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 3-TIER INVESTMENT PACKAGES -->
+  <section id="yatirim-paketleri" style="background: var(--white); border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200);">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-eyebrow">Bölüm 2 • 3 Kademeli Kurulum &amp; Bütçe Senaryosu</span>
+        <h2 class="section-title">İhtiyaca Göre Ölçeklenebilir 3 Yatırım Paketi</h2>
+        <p class="section-subtitle">
+          Tüm araç gruplarına ilk günden sınırsız cihaz almak yerine, sermaye verimliliğini en üst düzeye çıkaran 3 net kurulum kademesi. İstediğiniz paketi tek tıkla aşağıdaki ROI hesaplayıcıya yükleyebilirsiniz.
+        </p>
+      </div>
+
+      <div class="packages-grid">
+        <!-- Paket 1 -->
+        <div class="pkg-card">
+          <div class="pkg-tier">Kademe 1 • Hızlı Saha Çıkışı</div>
+          <h3 class="pkg-name">Paket 1: Yalın Başlangıç (MVP)</h3>
+          <div class="pkg-price-wrap">
+            <div class="pkg-try-big" data-currency="USD" data-amount="7800" data-prefix="~">~312.000 ₺</div>
+            <div class="pkg-usd-sub">~$7.800 Toplam Cihaz &amp; İlk Parti Kurulum</div>
+          </div>
+          <div class="pkg-cov-pill">✓ %80 Türkiye Araç Parkı Kapsamı</div>
+          <ul class="pkg-list">
+            <li><span class="pkg-check">✓</span><span><strong>ECU/MCU:</strong> FoxFlash Master + Xhorse Multi-Prog + KT200 II (yıllık abonelik 0 $)</span></li>
+            <li><span class="pkg-check">✓</span><span><strong>Tezgâh &amp; Diagnostik:</strong> MST-9000+ Simülatör + Godiag GT100+/107 + Orta Seviye Diagnostik + DC Güç/Osiloskop</span></li>
+            <li><span class="pkg-check">✓</span><span><strong>Elektronik Lab:</strong> Stereo Mikroskop + Quick 861DW + Temel ESD Çalışma Matı</span></li>
+            <li><span class="pkg-check">✓</span><span><strong>Kargo &amp; Mühür:</strong> Zebra Barkod Yazıcı + 5.000 Mühür + 250 Kutu + PC İstasyonu</span></li>
+          </ul>
+          <div class="pkg-meta">
+            <strong>Kimin İçin?</strong> Düşük riskle piyasayı doğrulamak, en çok dönen 10 ECU ailesine (EDC17, SID, Marelli, DSG) odaklanarak hızlı nakit üretmek isteyen başlangıç fazı.
+          </div>
+          <button type="button" class="btn btn-outline no-print" onclick="selectPackagePreset(312000, 'Paket 1: Yalın Başlangıç')">
+            ROI Hesaplayıcıda Paket 1'i Seç →
+          </button>
+        </div>
+
+        <!-- Paket 2 (Featured) -->
+        <div class="pkg-card featured">
+          <span class="pkg-ribbon">★ Önerilen Ana Plan</span>
+          <div class="pkg-tier">Kademe 2 • Tam Teşekküllü Test &amp; Klonlama</div>
+          <h3 class="pkg-name">Paket 2: Profesyonel Merkez</h3>
+          <div class="pkg-price-wrap">
+            <div class="pkg-try-big" data-currency="USD" data-amount="15800" data-prefix="~">~632.000 ₺</div>
+            <div class="pkg-usd-sub">~$15.800 Tam Profesyonel Kurulum</div>
+          </div>
+          <div class="pkg-cov-pill">✓ %95+ Araç Kapsamı + VIN Programlama + Core Hazır</div>
+          <ul class="pkg-list">
+            <li><span class="pkg-check">✓</span><span><strong>ECU/TCU Gücü:</strong> AutoTuner Master (0 € abonelik!) + MagicMotorsport Flex + Xhorse Multi-Prog</span></li>
+            <li><span class="pkg-check">✓</span><span><strong>Üst Diagnostik &amp; Tezgâh:</strong> Autel MaxiIM IM608 Pro II + MST-9000+ + Godiag GT100+/107 + DC/Osiloskop</span></li>
+            <li><span class="pkg-check">✓</span><span><strong>Tam Elektronik Lab:</strong> 4K Trinoküler Mikroskop + Quick 861DW + Termal Kamera + Tam ESD &amp; Ultrasonik</span></li>
+            <li><span class="pkg-check">✓</span><span><strong>Kurumsal Operasyon:</strong> 1.000'lik Özel Logolu Kutu &amp; ESD Poşet + 5.000 Hologram Mühür + Çift Monitör + Işık Kutusu</span></li>
+          </ul>
+          <div class="pkg-meta">
+            <strong>Neden Öneriliyor?</strong> AutoTuner'ın 0 € aboneliği sabit maliyeti düşürür; Autel + Flex ikilisi ise <strong>+1.500 ₺ VIN Programlama</strong> ve <strong>+1.250 ₺ Core Exchange</strong> kâr kapılarını ilk günden açar.
+          </div>
+          <button type="button" class="btn btn-primary no-print" onclick="selectPackagePreset(632000, 'Paket 2: Profesyonel Merkez')">
+            ROI Hesaplayıcıda Pro Merkezi Seç →
+          </button>
+        </div>
+
+        <!-- Paket 3 -->
+        <div class="pkg-card">
+          <div class="pkg-tier">Kademe 3 • Endüstriyel Remanufacturing</div>
+          <h3 class="pkg-name">Paket 3: Endüstriyel Laboratuvar</h3>
+          <div class="pkg-price-wrap">
+            <div class="pkg-try-big" data-currency="USD" data-amount="31500" data-prefix="~">~1.260.000 ₺</div>
+            <div class="pkg-usd-sub">~$31.500 ACtronics Ölçeğinde Çift Hatlı Lab</div>
+          </div>
+          <div class="pkg-cov-pill">✓ %99 Kapsam (Binek + Ticari + Ağır Vasıta)</div>
+          <ul class="pkg-list">
+            <li><span class="pkg-check">✓</span><span><strong>Üçlü Master Filo:</strong> AutoTuner Master + Flex Full (ECU+TCU) + Alientech KESS3 Master Full + Multi-Prog</span></li>
+            <li><span class="pkg-check">✓</span><span><strong>Ağır Vasıta &amp; DoIP:</strong> Launch X431 PAD VII + Autel IM608 Pro II + Ağır Vasıta Kablo/Modül Setleri</span></li>
+            <li><span class="pkg-check">✓</span><span><strong>Çift Teknisyen Hattı:</strong> 2x MST-9000+ Tezgâh + BGA Reballing/Onarım İstasyonu + Çift ESD Masa</span></li>
+            <li><span class="pkg-check">✓</span><span><strong>Yüksek Hacim Lojistik:</strong> 2x İş İstasyonu, seri barkod/etiketleme ve B2B filo/sigorta SLA kapasitesi</span></li>
+          </ul>
+          <div class="pkg-meta">
+            <strong>Kimin İçin?</strong> Aylık 150+ sipariş hacmine ulaşan, ticari/tır filolarına ve sigorta şirketlerine aynı gün test + yenileme hizmeti veren büyüme fazı (Faz 2–3).
+          </div>
+          <button type="button" class="btn btn-navy no-print" onclick="selectPackagePreset(1260000, 'Paket 3: Endüstriyel Lab')">
+            ROI Hesaplayıcıda Paket 3'ü Seç →
+          </button>
+        </div>
+      </div>
+
+      <div class="strategy-callout">
+        <div>
+          <h4>Yönetici Strateji Özeti: "Önce Kârlı Çekirdek, Nakit Ürettikçe Ölçekleme"</h4>
+          <p>
+            İlk 90 günde <strong>Paket 2 (Pro Merkez — ~632.000 ₺)</strong> veya nakit hassasiyeti yüksekse <strong>Paket 1 (MVP — ~312.000 ₺)</strong> ile sahaya çıkıp; sipariş hacmi ayda 120 adedi aştığında biriken kâr ile KESS3 Full ve ikinci teknisyen hattına (Paket 3) geçmek özkaynak verimliliğini maksimize eder.
+          </p>
+        </div>
+        <a href="#roi-hesaplayici" class="btn btn-primary btn-sm no-print">Amortisman Simülasyonu →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: MONTHLY OPEX -->
+  <section id="aylik-giderler" style="background: var(--slate-50);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Bölüm 3 • Aylık Sabit Operasyon Giderleri (OpEx)</span>
+        <h2 class="section-title">Türkiye 2026 Gerçekçi Aylık İşletme Maliyeti</h2>
+        <p class="section-subtitle">
+          Sıfır stok modeli sayesinde depo kirası ve finansman yükü olmadan, tam kurumsal test merkezinin aylık sabit gider kırılımı ve yalın başlangıç alternatifleri.
+        </p>
+      </div>
+
+      <div class="opex-layout">
+        <div class="opex-table-card">
+          <div class="opex-row">
+            <div>
+              <div class="opex-name">1. Teknik Operasyon &amp; ECU Test Liderliği (Caner Doğan)</div>
+              <div class="opex-sub">Projenin fikir babası, kurucusu ve uygulayıcısı Caner Doğan'ın doğrudan teknik uzmanlığı — başlangıçta ekstra teknisyen maaş yükü yok</div>
+            </div>
+            <div class="opex-amount">
+              <strong style="color:var(--emerald-600);">0 ₺</strong>
+              <span class="opex-share" style="color:var(--emerald-600);">~65.000 ₺ Tasarruf</span>
+            </div>
+          </div>
+
+          <div class="opex-row">
+            <div>
+              <div class="opex-name">2. Aksaray Merkez Mevcut Şirket Ofisi</div>
+              <div class="opex-sub">Halihazırda kullanılan şirket merkezi ofisi — ekstra kira yok + Türkiye'nin tam coğrafi merkezinden 81 ile 1 günde kargo erişimi</div>
+            </div>
+            <div class="opex-amount">
+              <strong style="color:var(--emerald-600);">0 ₺</strong>
+              <span class="opex-share" style="color:var(--emerald-600);">~35.000 ₺ Tasarruf</span>
+            </div>
+          </div>
+
+          <div class="opex-row">
+            <div>
+              <div class="opex-name">3. Dijital Altyapı, İletişim &amp; Mali Müşavirlik Payı</div>
+              <div class="opex-sub">Coolify VPS sunucu, SMS/WhatsApp API, E-Fatura kontörü, ek operasyon giderleri</div>
+            </div>
+            <div class="opex-amount">
+              <strong>~12.000 ₺</strong>
+              <span class="opex-share">%60 Pay</span>
+            </div>
+          </div>
+
+          <div class="opex-row">
+            <div>
+              <div class="opex-name">4. Cihaz Abonelik Payı &amp; Lab Sarf Karşılığı</div>
+              <div class="opex-sub">Yıllık cihaz lisanslarının aylık karşılığı + lehim, flux, alkol, ESD/hologram sarf malzemesi</div>
+            </div>
+            <div class="opex-amount">
+              <strong>~8.000 ₺</strong>
+              <span class="opex-share">%40 Pay</span>
+            </div>
+          </div>
+
+          <div class="opex-row total">
+            <div>
+              <div class="opex-name">Toplam Gerçek Aylık Sabit Gider (Mevcut Yapı)</div>
+              <div class="opex-sub">Aksaray Merkez mevcut ofis + Caner Doğan teknik liderliği senaryosu</div>
+            </div>
+            <div class="opex-amount">
+              <strong>~20.000 ₺ / ay</strong>
+              <span class="opex-share">100.000 ₺/ay Avantaj</span>
+            </div>
+          </div>
+
+          <div class="opex-bar-wrap">
+            <div class="stacked-bar" aria-label="Aylık sabit gider dağılım çubuğu">
+              <div class="sb-seg-3" style="width:60%;" title="Dijital/SMS/E-Fatura %60"></div>
+              <div class="sb-seg-4" style="width:40%;" title="Abonelik/Sarf %40"></div>
+            </div>
+            <div class="sb-legend">
+              <span><i class="sb-dot" style="background:var(--emerald-500);"></i>Dijital Altyapı &amp; E-Fatura (%60)</span>
+              <span><i class="sb-dot" style="background:var(--slate-500);"></i>Lisans &amp; Lab Sarf (%40)</span>
+              <span><i class="sb-dot" style="background:var(--orange-500);"></i>Kira &amp; Teknisyen Maaşı: 0 ₺</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lean-card">
+          <span class="lean-badge">★ Aksaray Merkez &amp; Kurucu Avantajı</span>
+          <h3>Aylık 100.000 ₺ Sabit Gider Avantajı ile Sıfır Riskli Başlangıç</h3>
+          <p>
+            Aksaray Merkez'deki <strong>mevcut şirket ofisi</strong> sayesinde ekstra kira ödenmez; projenin fikir babası ve uygulayıcısı <strong>Caner Doğan</strong>'ın teknik tecrübesiyle başlangıçta yüksek teknisyen maaşı ve dışa bağımlılık oluşmaz.
+          </p>
+          <p>
+            Bu yapı sayesinde <strong>ayda sadece ~10 siparişle</strong> sabit giderler tamamen karşılanır. Aşağıdaki senaryoları tek tıkla ROI hesaplayıcıda test edebilirsiniz:
+          </p>
+
+          <div class="lean-scenarios no-print">
+            <button type="button" class="lean-btn" onclick="applyOpexScenario(20000)">
+              <div>
+                <strong>Aksaray Merkez — Mevcut Yapı (Varsayılan ★)</strong>
+                <small>Mevcut ofis (0 ₺) + Caner Doğan liderliği (0 ₺) • Başabaş: ~10 sipariş</small>
+              </div>
+              <span class="amt">20.000 ₺/ay</span>
+            </button>
+
+            <button type="button" class="lean-btn" onclick="applyOpexScenario(65000)">
+              <div>
+                <strong>Ölçeklenme Modu (+1 Yardımcı Teknisyen)</strong>
+                <small>Aylık 150+ sipariş hacminde 2. masa / yardımcı personel • Başabaş: ~31 sipariş</small>
+              </div>
+              <span class="amt">65.000 ₺/ay</span>
+            </button>
+
+            <button type="button" class="lean-btn" onclick="applyOpexScenario(120000)">
+              <div>
+                <strong>Standart Sıfırdan Kurulum (Kıyaslama)</strong>
+                <small>Dışarıdan kiralık ofis + maaşlı baş teknisyen olsaydı • Başabaş: ~58 sipariş</small>
+              </div>
+              <span class="amt">120.000 ₺/ay</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: INTERACTIVE ROI & PAYBACK CALCULATOR -->
+  <section id="roi-hesaplayici" style="background: var(--white); border-top: 1px solid var(--slate-200);">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-eyebrow">Bölüm 4 • İnteraktif Yatırım &amp; Amortisman (ROI) Hesaplayıcı</span>
+        <h2 class="section-title">Canlı Geri Dönüş Süresi &amp; 12 Aylık Kâr Projeksiyonu</h2>
+        <p class="section-subtitle">
+          Yatırım paketini seçin; aylık sipariş hacmi, sipariş başı net kâr, VIN/Core ek katkısı ve sabit giderleri değiştirerek yatırımın kaç ayda kendini amorti ettiğini anında görün.
+        </p>
+      </div>
+
+      <div class="calc-card">
+        <div class="calc-top">
+          <div>
+            <span style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--orange-400);">Yönetici Finansal Simülasyonu</span>
+            <h3 style="font-size:clamp(20px, 2.8vw, 26px); color:#fff; margin-top:4px;">Test Merkezi ROI &amp; Nakit Akışı Hesaplayıcı</h3>
+          </div>
+          <span id="selectedPkgBadge" style="font-size:12.5px; color:#FFB76B; background:rgba(245,124,0,0.16); padding:7px 14px; border-radius:999px; border:1px solid rgba(255,152,41,0.4); font-weight:700;">
+            Seçili Yatırım: Paket 2 — Önerilen (632.000 ₺)
+          </span>
+        </div>
+
+        <!-- Preset Package Buttons -->
+        <div class="preset-bar no-print" id="presetBar">
+          <button type="button" class="preset-btn" data-capex="312000" data-label="Paket 1 (312.000 ₺)">
+            Paket 1 (312.000 ₺)
+          </button>
+          <button type="button" class="preset-btn active" data-capex="632000" data-label="Paket 2 — Önerilen (632.000 ₺)">
+            Paket 2 — Önerilen (632.000 ₺)
+          </button>
+          <button type="button" class="preset-btn" data-capex="1260000" data-label="Paket 3 (1.260.000 ₺)">
+            Paket 3 (1.260.000 ₺)
+          </button>
+        </div>
+
+        <div class="calc-grid">
+          <!-- Sliders -->
+          <div>
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Aylık Sipariş Adedi</span>
+                <strong id="lblOrders">75 Adet</strong>
+              </div>
+              <input type="range" id="inpOrders" min="20" max="250" step="5" value="75" />
+              <div class="slider-sub">Test merkezinden onaylanıp hologram mühürle kargolanan aylık toplam sipariş (20–250).</div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Sipariş Başı Ortalama Net Kâr</span>
+                <strong id="lblUnitProfit">1.650 ₺</strong>
+              </div>
+              <input type="range" id="inpUnitProfit" min="1000" max="3500" step="50" value="1650" />
+              <div class="slider-sub">Tedarikçi fiyatı üzerine eklenen test, güvence, paketleme ve kâr marjı net katkısı (1.000–3.500 ₺).</div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>VIN Programlama / Core Exchange Ek Kâr Katkısı</span>
+                <strong id="lblExtraProfit">450 ₺ / sipariş</strong>
+              </div>
+              <input type="range" id="inpExtraProfit" min="0" max="1500" step="50" value="450" />
+              <div class="slider-sub">Klonlama/Virgin (+1.500 ₺) ve eski beyin iadesi (+1.250 ₺) işlemlerinin tüm siparişlere yansıyan ortalaması.</div>
+            </div>
+
+            <div class="slider-group" style="margin-bottom:0;">
+              <div class="slider-header">
+                <span>Aylık Sabit Operasyon Gideri</span>
+                <strong id="lblOpex">20.000 ₺</strong>
+              </div>
+              <input type="range" id="inpOpex" min="10000" max="160000" step="5000" value="20000" />
+              <div class="slider-sub">Mevcut Aksaray ofisi (0 ₺ kira) + Caner Doğan liderliği (0 ₺ ek maaş) ile VPS/SMS/E-Fatura &amp; lisans payı (10.000–160.000 ₺).</div>
+            </div>
+          </div>
+
+          <!-- Live Outputs -->
+          <div class="calc-results">
+            <div class="calc-metric">
+              <small>Aylık Brüt Katkı</small>
+              <div class="val" id="outGross">157.500 ₺</div>
+            </div>
+
+            <div class="calc-metric emerald" id="cardNetProfit">
+              <small>Aylık Net İşletme Kârı</small>
+              <div class="val" id="outNetProfit">137.500 ₺</div>
+            </div>
+
+            <div class="calc-metric highlight" id="cardPayback">
+              <small>Yatırım Geri Dönüş Süresi (Amortisman)</small>
+              <div class="val" id="outPayback">4,6 Ay</div>
+            </div>
+
+            <div class="calc-metric">
+              <small>Başabaş Noktası (Break-Even)</small>
+              <div class="val" id="outBreakeven">10 Sipariş/ay</div>
+            </div>
+
+            <div class="calc-metric full-row emerald" id="cardAnnualNet">
+              <small>12 Aylık Toplam Net Kazanç (Kurulum Yatırımı Düştükten Sonra)</small>
+              <div class="val" id="outAnnualNet">+1.018.000 ₺</div>
+            </div>
+
+            <div class="calc-note" id="calcSummaryNote">
+              Aksaray Merkez mevcut ofis ve Caner Doğan teknik liderliğiyle sabit gider yalnızca 20.000 ₺/ay; 75 sipariş/ay hacminde Paket 2 (~632.000 ₺) sadece 4,6 ayda kendini tamamen amorti eder!
+            </div>
+          </div>
+        </div>
+
+        <!-- 12-Month Cumulative Cashflow Chart -->
+        <div class="timeline-box">
+          <div class="timeline-head">
+            <h4>12 Aylık Kümülatif Nakit Akışı (Kurulum Yatırımı Sonrası Net Durum)</h4>
+            <span id="timelineLegend">Kırmızı: Yatırım Geri Ödeme Dönemi • Turuncu: Başabaş (Amortisman) Ayı • Yeşil: Net Kâr</span>
+          </div>
+          <div class="bars-12" id="cashflowBars"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:36px 0; background:#F1F5F9; border-top:1px solid var(--slate-200);"><div class="container"><div style="background:linear-gradient(135deg, var(--navy-950), var(--navy-900)); color:#fff; border-radius:18px; padding:24px 28px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px;"><div><span style="font-size:11px; font-weight:800; color:var(--orange-400); text-transform:uppercase; letter-spacing:0.08em;">Sunum 4 • Ayrı Yönetim Raporu</span><h3 style="font-size:20px; color:#fff; margin:4px 0;">Bağımsız Stratejik Değerlendirme &amp; Google SEO / Reklam Yol Haritası</h3><p style="font-size:13.5px; color:#CBD5E1;">Türkiye fizibilitesi, Aksaray Merkez &amp; Caner Doğan avantajı, 6 kritik tuzak, başarı/risk otopsisi ve 90 günlük dijital büyüme planı.</p></div><a href="/sunum-strateji" class="btn btn-primary no-print">Stratejik Değerlendirme Sunumunu Aç →</a></div></div></section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo-wrap">
+          <img src="/assets/logo-main.jpg" alt="OtoBeyinPazari.com" />
+        </div>
+        <p style="font-size:14px; max-width:680px;">
+          OtoBeyinPazari.com Test Merkezi Cihaz Listesi, Kurulum Maliyetleri &amp; Yatırım Geri Dönüş (ROI) Sunumu — Sıfır Stoklu Çıkmacı Ağı ile Merkezi Test Güvencesini Birleştiren Sermaye Verimli İş Modeli.
+        </p>
+        <div class="footer-links no-print">
+          <a href="/sunum" class="btn btn-outline btn-sm" style="background:rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.22);">İş Modeli (/sunum)</a>
+          <a href="/sunum-global" class="btn btn-outline btn-sm" style="background:rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.22);">Global Analiz (/sunum-global)</a>
+          <a href="/admin" class="btn btn-primary btn-sm">Admin Paneli (/admin)</a>
+        </div>
+        <div style="font-size:12.5px; color:#64748B;">
+          © 2026 OtoBeyinPazari.com • Modül 3 Cihaz Envanteri, Kurulum Maliyetleri &amp; ROI Analizi
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Reading Progress Bar & Active Nav Highlight
+    const progressBar = document.getElementById('progressBar');
+    const navLinks = document.querySelectorAll('#desktopNav a');
+    const trackedSections = Array.from(navLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { link, el: document.getElementById(id) };
+    }).filter(item => item.el);
+
+    window.addEventListener('scroll', () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      progressBar.style.width = scrolled + '%';
+
+      const scrollPos = window.scrollY + 135;
+      let activeItem = null;
+      trackedSections.forEach(item => {
+        if (item.el.offsetTop <= scrollPos) {
+          activeItem = item;
+        }
+      });
+      navLinks.forEach(a => a.classList.remove('active'));
+      if (activeItem) activeItem.link.classList.add('active');
+    });
+
+    // 2. Mobile Drawer Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    menuToggle.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('open');
+    });
+    mobileDrawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileDrawer.classList.remove('open'));
+    });
+
+    // 3. Equipment Category Filter
+    const filterBtns = document.querySelectorAll('#equipFilter .filter-btn');
+    const equipCards = document.querySelectorAll('#equipGrid .equip-card');
+    const equipFilterStatus = document.getElementById('equipFilterStatus');
+    const filterLabels = {
+      all: '4 kategoride toplam 19 donanım ve operasyon kalemi görüntüleniyor',
+      ecu: 'A. ECU / TCU Okuma-Yazma & Klonlama kategorisinde 6 cihaz görüntüleniyor',
+      bench: 'B. Tezgâh Simülasyonu & Diagnostik kategorisinde 5 cihaz görüntüleniyor',
+      lab: 'C. Fiziksel Kontrol & Mikro-Lehim Laboratuvarı kategorisinde 4 ekipman görüntüleniyor',
+      ops: 'D. Tek Tip Kargo, Mühür & Dijital Operasyon kategorisinde 4 kalem görüntüleniyor'
+    };
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        equipCards.forEach(card => {
+          if (filter === 'all' || card.dataset.cat === filter) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+        equipFilterStatus.textContent = filterLabels[filter] || '';
+      });
+    });
+
+    // 4. Live Exchange Rate Conversion (USD / EUR -> TRY)
+    const fxUsdInput = document.getElementById('fxUsd');
+    const fxEurInput = document.getElementById('fxEur');
+    const fxResetBtn = document.getElementById('fxResetBtn');
+    const fxDynamicNodes = document.querySelectorAll('[data-currency]');
+
+    const formatNumber = (num) => new Intl.NumberFormat('tr-TR').format(Math.round(num));
+    const formatTL = (num) => formatNumber(num) + ' ₺';
+
+    function updateCurrencyEquivalents() {
+      const usdRate = Math.max(1, Number(fxUsdInput.value) || 40);
+      const eurRate = Math.max(1, Number(fxEurInput.value) || 43);
+
+      fxDynamicNodes.forEach(node => {
+        const currency = node.dataset.currency;
+        const rate = currency === 'EUR' ? eurRate : usdRate;
+        const prefix = node.dataset.prefix || '~';
+
+        if (node.dataset.min && node.dataset.max) {
+          const minTry = Math.round((Number(node.dataset.min) * rate) / 100) * 100;
+          const maxTry = Math.round((Number(node.dataset.max) * rate) / 100) * 100;
+          const labelPrefix = Number(node.dataset.min) === 6500 ? 'Full: ~' : '~';
+          node.textContent = `${labelPrefix}${formatNumber(minTry)} – ${formatTL(maxTry)}`;
+        } else if (node.dataset.amount) {
+          const valTry = Math.round((Number(node.dataset.amount) * rate) / 100) * 100;
+          node.textContent = `${prefix}${formatTL(valTry)}`;
+        }
+      });
+    }
+
+    fxUsdInput.addEventListener('input', updateCurrencyEquivalents);
+    fxEurInput.addEventListener('input', updateCurrencyEquivalents);
+    fxResetBtn.addEventListener('click', () => {
+      fxUsdInput.value = '40';
+      fxEurInput.value = '43';
+      updateCurrencyEquivalents();
+    });
+
+    // 5. Interactive ROI & Payback Calculator
+    const presetBtns = document.querySelectorAll('#presetBar .preset-btn');
+    const inpOrders = document.getElementById('inpOrders');
+    const inpUnitProfit = document.getElementById('inpUnitProfit');
+    const inpExtraProfit = document.getElementById('inpExtraProfit');
+    const inpOpex = document.getElementById('inpOpex');
+    const selectedPkgBadge = document.getElementById('selectedPkgBadge');
+    const cashflowBars = document.getElementById('cashflowBars');
+
+    let currentCapex = 632000;
+    let currentPkgLabel = 'Paket 2 — Önerilen (632.000 ₺)';
+
+    function updateROI() {
+      const orders = Number(inpOrders.value);
+      const unitProfit = Number(inpUnitProfit.value);
+      const extraProfit = Number(inpExtraProfit.value);
+      const opex = Number(inpOpex.value);
+
+      const totalPerOrder = unitProfit + extraProfit;
+      const monthlyGross = orders * totalPerOrder;
+      const monthlyNet = monthlyGross - opex;
+      const breakevenOrders = totalPerOrder > 0 ? Math.ceil(opex / totalPerOrder) : 0;
+      const annualNetAfterCapex = (monthlyNet * 12) - currentCapex;
+
+      document.getElementById('lblOrders').textContent = orders + ' Adet';
+      document.getElementById('lblUnitProfit').textContent = formatTL(unitProfit);
+      document.getElementById('lblExtraProfit').textContent = formatTL(extraProfit) + ' / sipariş';
+      document.getElementById('lblOpex').textContent = formatTL(opex);
+
+      document.getElementById('outGross').textContent = formatTL(monthlyGross);
+      document.getElementById('outBreakeven').textContent = breakevenOrders + ' Sipariş/ay';
+
+      const cardNetProfit = document.getElementById('cardNetProfit');
+      const outNetProfit = document.getElementById('outNetProfit');
+      outNetProfit.textContent = (monthlyNet >= 0 ? '' : '-') + formatTL(Math.abs(monthlyNet));
+      cardNetProfit.classList.toggle('emerald', monthlyNet > 0);
+      cardNetProfit.classList.toggle('rose', monthlyNet <= 0);
+
+      const cardPayback = document.getElementById('cardPayback');
+      const outPayback = document.getElementById('outPayback');
+      let paybackMonths = null;
+
+      if (monthlyNet > 0) {
+        paybackMonths = currentCapex / monthlyNet;
+        outPayback.textContent = paybackMonths.toFixed(1).replace('.', ',') + ' Ay';
+        cardPayback.classList.remove('rose');
+        cardPayback.classList.add('highlight');
+      } else {
+        outPayback.textContent = 'Başabaş Altı';
+        cardPayback.classList.remove('highlight');
+        cardPayback.classList.add('rose');
+      }
+
+      const cardAnnualNet = document.getElementById('cardAnnualNet');
+      const outAnnualNet = document.getElementById('outAnnualNet');
+      const sign = annualNetAfterCapex >= 0 ? '+' : '-';
+      outAnnualNet.textContent = sign + formatTL(Math.abs(annualNetAfterCapex));
+      cardAnnualNet.classList.toggle('emerald', annualNetAfterCapex >= 0);
+      cardAnnualNet.classList.toggle('rose', annualNetAfterCapex < 0);
+
+      const summaryNote = document.getElementById('calcSummaryNote');
+      if (monthlyNet > 0) {
+        const paybackRound = Math.ceil(paybackMonths);
+        const fastOrders = Math.ceil((currentCapex / 4 + opex) / totalPerOrder);
+        summaryNote.textContent =
+          `${orders} aylık siparişte (${formatTL(totalPerOrder)}/sipariş toplam katkı), ${formatTL(opex)} sabit gider düşüldükten sonra ayda ${formatTL(monthlyNet)} net kâr oluşur. ${currentPkgLabel} yatırımı ${paybackMonths.toFixed(1).replace('.', ',')} ayda (${paybackRound}. ay içinde) kendini amorti eder. 4 ayda tam amortisman için hedef hacim: ~${fastOrders} sipariş/ay.`;
+      } else {
+        const deficit = breakevenOrders - orders;
+        summaryNote.textContent =
+          `Mevcut parametrelerde aylık gider başabaşın üzerindedir. Başabaş noktasına (${breakevenOrders} sipariş/ay) ulaşmak için aylık +${deficit} sipariş artışı veya sabit gider optimizasyonu gerekir.`;
+      }
+
+      // Render 12-Month Cumulative Cashflow Bars
+      const cumValues = [];
+      let firstPaybackMonth = null;
+      for (let m = 1; m <= 12; m++) {
+        const cum = (monthlyNet * m) - currentCapex;
+        cumValues.push(cum);
+        if (firstPaybackMonth === null && cum >= 0) {
+          firstPaybackMonth = m;
+        }
+      }
+
+      const maxAbs = Math.max(currentCapex, ...cumValues.map(v => Math.abs(v)), 1);
+      cashflowBars.innerHTML = '';
+
+      cumValues.forEach((val, idx) => {
+        const month = idx + 1;
+        const pctHeight = Math.max(8, Math.round((Math.abs(val) / maxAbs) * 86));
+        const col = document.createElement('div');
+        col.className = 'bar-col';
+
+        const fill = document.createElement('div');
+        fill.className = 'bar-fill ' + (val < 0 ? 'neg' : (month === firstPaybackMonth ? 'payback' : 'pos'));
+        fill.style.height = pctHeight + 'px';
+        fill.title = `${month}. Ay Kümülatif Net Durum: ${val >= 0 ? '+' : '-'}${formatTL(Math.abs(val))}`;
+
+        const lbl = document.createElement('span');
+        lbl.className = 'bar-lbl';
+        lbl.textContent = month + '.Ay';
+
+        col.appendChild(fill);
+        col.appendChild(lbl);
+        cashflowBars.appendChild(col);
+      });
+    }
+
+    presetBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        presetBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCapex = Number(btn.dataset.capex);
+        currentPkgLabel = btn.dataset.label;
+        selectedPkgBadge.textContent = 'Seçili Yatırım: ' + currentPkgLabel;
+        updateROI();
+      });
+    });
+
+    window.selectPackagePreset = function(capex, label) {
+      const targetBtn = Array.from(presetBtns).find(b => Number(b.dataset.capex) === capex);
+      if (targetBtn) {
+        targetBtn.click();
+      } else {
+        currentCapex = capex;
+        currentPkgLabel = label;
+        selectedPkgBadge.textContent = 'Seçili Yatırım: ' + currentPkgLabel;
+        updateROI();
+      }
+      document.getElementById('roi-hesaplayici').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.applyOpexScenario = function(opexVal) {
+      inpOpex.value = String(opexVal);
+      updateROI();
+      document.getElementById('roi-hesaplayici').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    [inpOrders, inpUnitProfit, inpExtraProfit, inpOpex].forEach(el => {
+      el.addEventListener('input', updateROI);
+    });
+
+    updateCurrencyEquivalents();
+    updateROI();
+  </script>
+</body>
+</html>

@@ -1,6 +1,10 @@
 .git
 .gitignore
-README.md
-*.log
-.DS_Store
-Thumbs.db
+node_modules
+.next
+.env
+.env.local
+.superpowers
+docs
+tests
+*.md

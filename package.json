@@ -1,0 +1,41 @@
+{
+  "name": "otobeyinpazari",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:import-archive": "tsx prisma/import-archive.ts",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "bcryptjs": "^3.0.2",
+    "jose": "^6.0.10",
+    "lucide-react": "^0.503.0",
+    "next": "^15.3.1",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
+    "@types/node": "^22.15.2",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "prisma": "^6.6.0",
+    "tailwindcss": "^4.1.4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  }
+}
