@@ -24,6 +24,7 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
+ENV HOME=/tmp
 
 RUN addgroup --system --gid 1001 nodejs \
   && adduser --system --uid 1001 nextjs
@@ -32,9 +33,13 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Prisma CLI, runtime client, schema, JSON OEM archive & pre-bundled seed scripts
+# Isolated Prisma CLI with all transitive dependencies (effect, @prisma/config, engines, wasm)
+RUN mkdir -p /app/prisma-cli \
+  && npm install --prefix /app/prisma-cli --no-audit --no-fund prisma@6
+
+# Runtime Prisma Client, schema, JSON OEM archive & pre-bundled seed scripts
 COPY --from=builder /app/prisma ./prisma
-COPY --from=builder /app/node_modules/prisma ./node_modules/prisma
+COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 
 COPY docker-entrypoint.sh /app/docker-entrypoint.sh

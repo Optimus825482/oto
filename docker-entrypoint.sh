@@ -4,7 +4,7 @@ set -e
 echo "[OtoBeyinPazari] Veritabanı şeması senkronize ediliyor..."
 ATTEMPT=0
 MAX_ATTEMPTS=10
-until node ./node_modules/prisma/build/index.js db push --skip-generate; do
+until /app/prisma-cli/node_modules/.bin/prisma db push --skip-generate --schema=./prisma/schema.prisma; do
   ATTEMPT=$((ATTEMPT + 1))
   if [ "$ATTEMPT" -ge "$MAX_ATTEMPTS" ]; then
     echo "[OtoBeyinPazari] Veritabanı bağlantısı kurulamadı ($MAX_ATTEMPTS deneme sonrası)."
